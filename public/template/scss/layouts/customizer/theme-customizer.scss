@@ -1,0 +1,566 @@
+.theme-customizer-trigger {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    padding: 11px;
+    background: var(--x_24);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 255;
+    .tct-trigger-content {
+        svg {
+            color: #fff;
+
+            animation-name: spin;
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+    }
+}
+
+.theme-customizor-container {
+    position: fixed;
+    width: 340px;
+    left: auto;
+    right: -380px;
+    height: 100vh;
+    z-index: 1059;
+    top: 11px;
+    bottom: 0;
+    transition: right .5s;
+
+    .tc-header {
+        padding: 22px 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        
+        .tc-title {
+            h5 {
+                margin-bottom: 0;
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--x_14);
+            }
+        }
+        .tc-action-close {
+            cursor: pointer;
+            color: var(--x_4);
+
+            .icon {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    color: var(--x_14);
+                }
+            }
+            
+            &:hover {
+                color: #fff;
+            }
+            
+        }
+    }
+
+    .tc-content-container {
+        background: #fff;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        
+        .tc-options-categories {
+            overflow: hidden;
+            overflow-y: auto;
+            height: calc(100vh - 155px);
+            position: relative;
+            
+            .tc-option-item {
+
+                .tc-option-container {
+                        .tc-options-header {
+                            display: flex;
+                            padding: 15px 20px;
+                            border-bottom: none;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            background-color: var(--secondary_100);
+                            
+                            .tc-content {
+                                display: flex;
+                                
+                                .tc-option-icon {
+                                    margin-right: 12px;
+                                    align-self: center;
+
+                                    .tc-icon {
+                                        padding: 7px 7px;
+                                        background: #fff;
+                                        border-radius: 8px;
+
+                                        svg {
+                                            color: var(--x_24);
+                                            width: 20px;
+                                            height: 20px;
+                                        }
+                                    }
+                                }
+    
+                                .tc-option-title {
+                                    h6 {
+                                        margin-bottom: 0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                    }
+                                    p {
+                                        margin-bottom: 0;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+
+                            .tc-arrow {
+                                align-self: center;
+                                svg {
+                                    transform: rotate(0deg);
+                                    transition: .5s;
+                                    height: 18px;
+                                    width: 18px;
+                                    color: var(--x_24);
+                                }
+                            }
+                            
+
+                            &:not(.collapsed) {
+                                .tc-arrow {
+                                    svg {
+                                        transform: rotate(-180deg);
+                                    }
+                                }
+                            }
+                            
+                        }
+
+                        .tc-option-collapse {
+                            
+                            .options {
+                                padding: 15px 20px;
+
+                                .tc-title {
+                                    h6 {
+                                        margin-top: 15px;
+                                        margin-bottom: 15px;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        padding-bottom: 9px;
+                                        display: inline-block;
+
+                                        svg {
+                                            width: 19px;
+                                            height: 19px;
+                                            color: var(--x_24);
+                                            stroke-width: 1.7px;
+                                            vertical-align: sub;
+                                        }
+                                        
+                                    }
+
+                                    &.inline-switch-item {
+                                        display: flex;
+                                        align-items: center;
+                                        margin-top: 16px;
+                                        justify-content: space-between;
+
+
+                                        h6 {
+                                            padding: 0;
+                                            margin: 0;
+                                        }
+                                        
+                                        .switch {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+
+                                
+                                
+                                .tc-option {
+
+                                    margin-right: 16px;
+                                    padding: 0;
+    
+                                    .form-check-input {
+                                        display: none;
+
+                                        &:checked {
+                                            ~.form-check-label {
+                                                border: 1px solid var(--x_24);
+                                                opacity: 1;
+
+                                                &:before {
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .form-check-label {
+                                        position: relative;
+                                        border: 1px solid #fff;
+                                        padding: 11px;
+                                        border-radius: 8px;
+                                        cursor: pointer;
+                                        margin-bottom: 0;
+                                        
+                                        .tc-content {
+                                            img {
+                                                display: block;
+                                                background-size: cover;
+                                                background-repeat: no-repeat;
+                                                background-position: center center;
+                                                object-fit: cover;
+                                                border-radius: 4px;
+                                                width: 45px;
+                                                height: 45px;
+                                                margin: 0 auto;
+                                            }
+                                            p {
+                                                margin-bottom: 0;
+                                                font-size: 11px;
+                                                font-weight: 500;
+                                                text-align: center;
+                                                margin-top: 8px;
+                                            }
+                                        }
+
+                                        &:before {
+                                            position: absolute;
+                                            content: '';
+                                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check' style='color: %237d30cb;'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+                                            height: 17px;
+                                            width: 17px;
+                                            top: -10px;
+                                            right: -5px;
+                                            z-index: 3;
+                                            background-color: var(--x_24);
+                                            background-color: var(--secondary_100);
+                                            display: none;
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            border-radius: 5px;
+                                        }
+                                        
+                                        
+                                    }
+
+                                    
+                                    
+                                }
+
+                                .form-color-swatch-collapsible-container {
+                                    background-color: var(--x_2);
+                                    display: flex;
+                                    padding: 8px;
+                                    border-radius: 10px;
+                                    flex-wrap: wrap;
+
+                                    .tc-option {
+                                        margin-right: 5px;
+                                        padding: 0;
+                                        display: flex;
+                                        width: 14%;
+                                        &.form-color-swatch {
+
+                                            .form-check-input {
+                                                &:checked {
+                                                    ~.form-check-label {
+                                                        border: 1px solid #1ad271;
+                                                        .tc-content {
+                                                            border-radius: 50%;
+                                                        }
+                                                        &:before {
+                                                            display: block;
+                                                        }
+                                                    }
+                                                }
+                                            }
+    
+                                            .form-check-label {
+                                                padding: 4px;
+                                                border: 1px solid var(--x_2);
+                                                border-radius: 50%;
+                                                &:before {
+                                                    position: absolute;
+                                                    content: '';
+                                                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check' style='color: %23ffffff;'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+                                                    height: 14px;
+                                                    width: 14px;
+                                                    top: 10px;
+                                                    right: 9.5px;
+                                                    z-index: 3;
+                                                    background-color: transparent;
+                                                    display: none;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                    border-radius: 5px;
+                                                }
+                                            }
+                                            
+                                            .tc-content {
+                                                display: block;
+                                                height: 24px;
+                                                width: 24px;
+                                                background: #000;
+                                                border-radius: 50%;
+                                                transition: .3s;
+                                            }
+    
+                                            &.form-color-swatch-primary {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #3d5df3;
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                .tc-content {
+                                                    background-color: #3d5df3;
+                                                }
+                                            }
+                                            &.form-color-swatch-info {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid var(--info_500);
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-color: var(--info_500);
+                                                }
+                                            }
+                                            &.form-color-swatch-secondary {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid var(--x_24);
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-color: var(--x_24);
+                                                }
+                                            }
+                                            &.form-color-swatch-success {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #01964c;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-color: #01964c;
+                                                }
+                                            }
+                                            &.form-color-swatch-warning {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #e19822;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-color: #e19822;
+                                                }
+                                            }
+                                            &.form-color-swatch-danger {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #c53a42;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-color: #c53a42;
+                                                }
+                                            }
+                                            
+                                            /*
+                                            *
+                                            * G R A D I E N T     C O L O R S
+                                            *
+                                            */
+                                            
+                                            &.form-color-swatch-gradient-primary {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #3d5df3;
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                .tc-content {
+                                                    background-image: linear-gradient(115deg, #3754db 50%, #db4049 120%);
+                                                }
+                                            }
+                                            &.form-color-swatch-gradient-info {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid var(--info_500);
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-image: linear-gradient(to right, #006bbf 0%, #4dc187 100%);
+                                                }
+                                            }
+                                            &.form-color-swatch-gradient-secondary {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid var(--x_24);
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-image: linear-gradient(to right, var(--x_24) 0%, #778ef7 100%);
+                                                }
+                                            }
+                                            &.form-color-swatch-gradient-success {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #01964c;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-image: linear-gradient(to right, #01a754 0%, #a9721a 100%);
+                                                }
+                                            }
+                                            &.form-color-swatch-gradient-warning {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #e19822;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-image: linear-gradient(115deg, #cb891f 50%, #c53a42 120%);
+                                                }
+                                            }
+                                            &.form-color-swatch-gradient-danger {
+                                                .form-check-input {
+                                                    &:checked {
+                                                        ~.form-check-label {
+                                                            border: 1px solid #c53a42;
+                                                        }
+                                                    }
+                                                }
+
+                                                .tc-content {
+                                                    background-image: linear-gradient(118deg, #db4049 56%, #eab764 100%);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .choice-container-radio {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                }
+
+                                .goog-te-gadget {
+                                    color: transparent;
+
+                                    .goog-logo-link {
+                                        display: none;
+                                    }
+                                }
+
+                                .list-group {
+                                    .list-group-item {
+                                        margin-bottom: 0;
+                                        cursor: pointer;
+                                    }
+                                }
+                                
+                            }
+                        }
+                }
+                
+            }
+        }
+        
+        .tc-options-action-buttons {
+            padding: 15px 20px;
+            background: #fff;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+    }
+    
+}
+
+body {
+    &.theme-customizer-show {
+
+        .main-container {
+            .tc-overlay {
+                display: none;
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                background: rgb(0 0 0 / 12%);
+                background: linear-gradient(75deg, rgba(22, 28, 36, 0.48) 0%, rgb(22, 28, 36) 100%);
+                z-index: 1032 !important;
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                touch-action: pan-y;
+                user-select: none;
+                -webkit-user-drag: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                
+                &.show {
+                    display: block!important;
+                    opacity: 1!important;
+                }
+            }
+        }
+        
+        .theme-customizor-container {
+            right: 12px;
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

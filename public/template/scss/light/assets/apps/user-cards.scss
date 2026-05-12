@@ -1,0 +1,138 @@
+@import '../../../base/base';
+
+.profile-user-cards-collection {}
+
+.profile-user-card {
+  overflow: hidden;
+
+  border-radius: 18px;
+  background: #fff;
+  padding-bottom: 25px;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+
+  .pucard-header {
+    /* height: 150px; */
+    position: relative;
+    height: 220px;
+    background: #000;
+    background-image: url(../../../img/apps/users/abstract-cover-1.jpg);
+
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .pucard-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.65;
+      background: linear-gradient(75deg, rgba(22, 28, 36, 0.48) 0%, rgb(22, 28, 36) 100%);
+    }
+  }
+
+  .pucard-content {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 32px;
+    border-bottom: 1px dashed var(--x_4);
+
+    .profile-image {
+      position: relative;
+      margin-top: -50px;
+      margin-bottom: 30px;
+
+      &:before {
+        content: '';
+        background: var(--primary_100);
+        height: 90px;
+        width: 90px;
+        position: absolute;
+        z-index: 0;
+        border-radius: 60px;
+        top: -5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+
+      img {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 68px;
+        z-index: 1;
+      }
+    }
+
+    .pucard-name {
+      font-size: 16.5px;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-bottom: 2px;
+      color: #292b38;
+    }
+
+    .media-text {
+      /* letter-spacing: 0; */
+      font-size: 14px;
+
+      /* font-weight: 500; */
+      color: var(--x_7);
+      margin-bottom: 20px;
+
+      /* font-size: 12px; */
+      font-weight: 500;
+
+      /* color: #6c6e78; */
+    }
+
+    .social .pf-social {
+      &.pf-social-facebook svg {
+        color: #3d5df3;
+      }
+
+      &.pf-social-instagram svg {
+        color: #db4049;
+      }
+
+      &.pf-social-linkedin svg {
+        color: var(--x_24);
+      }
+
+      &.pf-social-xtweeter svg {
+        color: #2d303e;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+        stroke-width: 1.5px;
+      }
+    }
+  }
+
+  .pucard-bottom-content {
+    text-align: center;
+    justify-content: space-evenly;
+
+    h6 {
+      font-size: 11px;
+      font-weight: 500;
+      color: #abacb2;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: #292b38;
+    }
+
+    .pucard-follower, .pucard-following, .pucard-post {}
+  }
+}

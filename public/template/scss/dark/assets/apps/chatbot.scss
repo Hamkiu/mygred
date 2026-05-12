@@ -1,0 +1,822 @@
+@import '../../../base/base';
+
+body {
+  &.dark {
+
+    .layout-px-spacing {
+        min-height: calc(100vh - 184px) !important;
+    }
+
+  }
+}
+
+body {
+
+  &.dark {
+
+    &.chatbot-sidebar-show {
+        .chatbot-container {
+            .chatbot-list {
+                width: 100%;
+                margin-right: 10px;
+            }
+        }
+  
+        .chatbot-content-container {
+            .gpt-sidebar-open {
+                display: none!important;
+            }
+            
+            .chatbot-addnew {
+                display: none!important;
+            }
+            
+            // .searchbar-toggle {
+            //     display: none;
+            // }
+        }
+    }
+  
+    &.chatbot-chat-active {
+  
+        .chatbot-container {
+  
+            .chatbot-content-container {
+                
+                .chatbot-content-scroll {
+                    
+                    .chatbot-content-area {
+                        // display: block;
+  
+                        align-items: flex-end;
+  
+                        .chatbot-content {
+                            &.chatbot-content-new {
+                                display: none;
+                            }
+  
+                            &.chatbot-content-active {
+                                // display: block;
+                                display: block;
+                            }
+                        }
+                        
+                    }
+        
+                }
+            }
+        }
+        
+    }
+    
+  }
+  
+}
+
+body {
+  &.dark {
+    .chatbot-container {
+        // background-color: var(--dark_100);
+        // padding: 10px 10px 10px 10px;
+        // border-radius: 15px;
+      
+        .chatbot-overlay {
+          display: none;
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 1035 !important;
+          opacity: 0;
+          transition: all 0.5s ease-in-out;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          touch-action: pan-y;
+          user-select: none;
+          -webkit-user-drag: none;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+      
+        .aside-action-btns {
+          display: none;
+          margin-bottom: 8px;
+      
+            .gpt-sidebar-close, .chatbot-list-toggle {
+                display: none;
+                margin-right: 10px;
+                background: #f9f5fc;
+                padding: 5px;
+                border-radius: 8px;
+                cursor: pointer;
+        
+                svg {
+                    width: 25px;
+                    height: 26px;
+                    color: #2d303e;
+                }
+            }
+        }
+      
+        
+      
+        .chatbot-list {
+        //   width: 100%;
+          width: 0;
+          max-width: 305px;
+          // background-color: #fff;
+          // border: 1px solid var(--dark_500);
+          background-color: var(--x_14);
+          padding: 20px 0 8px 0;
+          margin: 0;
+          border-radius: 10px;
+          height: 100%;
+          transition: width .1s, margin-right .1s;
+          
+    
+          .chatbot-sidebar-header {
+            padding: 12px 29px;
+    
+            .gpt-sidebar-close {
+                cursor: pointer;
+                color: var(--dark_100);
+                
+                &:hover {
+                    color: var(--dark_300);
+                }
+            }
+    
+            .searchbar-toggle {
+                cursor: pointer;
+                color: var(--dark_100);
+                
+                &:hover {
+                    color: var(--dark_300);
+                }
+            }
+    
+            .chatbot-addnew {
+                cursor: pointer;
+                color: var(--dark_100);
+                
+                &:hover {
+                    color: var(--dark_300);
+                }
+            }
+    
+            
+          }
+          
+      
+            .search {
+                position: relative;
+                padding: 0 20px;
+        
+                svg {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto auto;
+                    left: 30px;
+                    width: 22px;
+                    height: 22px;
+                }
+        
+                .form-control {
+                    padding-left: 40px;
+                }
+            }
+        
+            .list-group {
+                position: relative;
+                border-radius: 0;
+                // height: calc(100vh - 300px);
+                height: calc(100vh - 276px);
+                overflow: auto;
+                margin: 8px 20px;
+    
+                .chatbot-section {
+    
+                    .chatbot-meta {
+                        // font-size: 14px;
+                        // font-weight: 600;
+                        // letter-spacing: 0;
+
+                        color: var(--dark_50);
+    
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                    }
+                    
+                    .list-group-item {
+                        background: transparent;
+                        border: none;
+                        padding: 12px 12px;
+                        z-index: 0;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        margin-bottom: 5px;
+    
+                        &:hover {
+                            background-color: var(--dark_700);
+                        }
+            
+                        &.active {
+                            // background-color: var(--x_1);
+                            // background-color: var(--dark_100);
+                            background-color: var(--dark_600);
+    
+                            &:hover {
+                                background-color: var(--dark_700);
+                            }
+                        }
+            
+                        &:not(:last-child) {
+                            /* padding: 0 0 12px 0; */
+                            /* margin-bottom: 12px; */
+                        }
+    
+                        // h5 label {
+                        //   font-size: 14px;
+                        //   margin-bottom: 0;
+                        //   font-weight: 600;
+                        //   letter-spacing: 0;
+                        // }
+                
+                        // small {
+                        //   font-size: 11px;
+                        //   margin-bottom: 0;
+                        //   font-weight: 500;
+                        //   color: var(--x_7);
+                        //   align-self: center;
+                        // }
+                
+                        p {
+                            font-size: 13px;
+                            font-weight: 500; 
+                            // margin-left: 30px;
+                            // letter-spacing: 0px;
+                            letter-spacing: 0.5px;
+                            color: var(--dark_200);
+    
+                            svg {
+                                // stroke-width: 1.5px;
+                                stroke-width: 1.2px;
+                                color: var(--dark_200);
+                            }
+                        }
+                
+                        // .bottom-section {
+                        //   align-items: center;
+                        // }
+                
+                        // .action-btn {
+                        //   margin-left: 30px;
+                
+                        //   /* margin-top: 15px; */
+                
+                        //   svg {
+                        //     color: var(--x_7);
+                        //     width: 18px;
+                        //     height: 18px;
+                        //   }
+                        // }
+                    }
+                }
+        
+            }
+        }
+      
+        .chatbot-content-container {
+          position: relative;
+          width: 100%;
+          // background-color: #fff;
+          // border: 1px solid var(--dark_500);
+          background-color: var(--x_14);
+          padding: 20px 20px 20px 20px;
+          border-radius: 10px;
+          min-width: 0;
+    
+            .gpt-sidebar-open {
+                display: block;
+                cursor: pointer;
+                color: var(--dark_100);
+                
+                &:hover {
+                    color: var(--dark_300);
+                }
+            }
+            
+            .chatbot-addnew {
+                display: block;
+                cursor: pointer;
+                color: var(--dark_400);
+                
+                &:hover {
+                    color: var(--dark_300);
+                }
+            }
+            
+            // .searchbar-toggle {
+            //     display: none;
+            // }
+          
+            .chatbot-content-scroll {
+    
+                .chatbot-content-area {
+    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // height: calc(100vh - 250px);
+                    // height: calc(100vh - 287px);
+                    // max-width: 650px;
+                    // max-width: 850px;
+                    // margin: 0 auto;
+    
+    
+                    // height: calc(100vh - 280px);
+                    // height: calc(100vh - 288px);
+                    height: calc(100vh - 304px);
+                    margin: 0 auto;
+                    // padding-top: 15px;
+                    // margin-top: 15px;
+                    
+                    .chatbot-content {
+                        width: 100%;
+    
+                        &.chatbot-content-new {
+                            display: block;
+                            max-width: 830px;
+                        }
+    
+                        &.chatbot-content-active {
+                            display: none;
+    
+                            .chatbot-conversation {
+                                position: relative;
+                                padding: 15px;
+                                // height: calc(100vh - 500px);
+                                height: calc(100vh - 425px);
+                                overflow: auto;
+    
+                                .gpt-messages {
+                                    padding: 20px 20px;
+                                    background: #fafafa;
+                                    margin-bottom: 25px;
+                                    border-radius: 14px;
+    
+                                    h6 {
+                                        font-size: 14px;
+                                        font-weight: 500;
+                                    }
+    
+                                    p {
+                                        margin-bottom: 0;
+                                        // color: var(--dark_700);
+                                        color: var(--dark_50);
+                                    }
+    
+                                    code {
+                                        margin: 0;
+                                        color: var(--dark_500) !important;
+                                        font-weight: 700;
+                                        background: var(--dark_200);
+                                    }
+    
+                                    &.gpt-msg-outgoing {
+                                        // background: var(--dark_50);
+                                        background: var(--dark_500);
+                                        margin-left: auto;
+                                        // max-width: 500px;
+                                        max-width: 650px;
+                                    }
+    
+                                    &.gpt-msg-incoming {
+                                        // background: var(--dark_600);
+                                        background: none;
+    
+                                        ul {
+                                            li {
+                                                font-size: 14px;
+                                                color: var(--dark_50);
+    
+                                                &:not(:last-child) {
+                                                    margin-bottom: 10px;
+                                                }
+                                            }
+                                        }
+                                        
+                                        .code-snippet {
+    
+                                            // font-size: 12px;
+                                            // border-radius: 10px;
+                                            // background: var(--x_1) !important;
+                                            // border: 1px solid var(--dark_100);
+                                            // padding: 15px;
+    
+                                            position: relative;
+                                            border-radius: 10px;
+                                            background: var(--dark_700) !important;
+                                            border: 1px solid var(--dark_500);
+                                            // padding: 12px;
+                                            padding: 20px;
+                                            
+                                            p {
+                                                margin-bottom: 10px;
+                                                color: var(--dark_800);
+                                                font-size: 12px;
+                                                font-weight: 600;
+    
+                                                padding: 9px 20px;
+                                                background: var(--dark_100);
+                                                border-radius: 10px;
+                                                display: inline-block;
+                                            }
+    
+                                            pre {
+                                                // border-radius: 10px;
+                                                // background: var(--x_1) !important;
+                                                // border: 1px solid var(--dark_100);
+    
+                                                background: none !important;
+                                                padding: 5px;
+                                                
+                                                code {
+    
+                                                    background: none!important;
+                                                    color: var(--dark_200) !important;
+    
+                                                    .token.block-comment,
+                                                    .token.cdata,
+                                                    .token.comment,
+                                                    .token.doctype,
+                                                    .token.prolog {
+                                                        color: var(--dark_400);
+                                                    }
+    
+                                                    .token.punctuation {
+                                                        color: var(--dark_400);
+                                                    }
+    
+                                                    .token.boolean,
+                                                    .token.function,
+                                                    .token.number {
+                                                        color: var(--warning_600);
+                                                    }
+                                                    
+                                                }
+                                            }
+    
+                                            .copy-icon {
+                                                position: absolute;
+                                                top: 12px;
+                                                right: 13px;
+                                                cursor: pointer;
+    
+                                                svg {
+                                                    width: 18px;
+                                                    height: 18px;
+                                                }
+                                                span {
+                                                    font-size: 12px;
+                                                    font-weight: 600;
+                                                }
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+    
+                                }
+                                
+                            }
+                        }
+            
+                        .chatbot-input {
+                            // padding: 15px;
+                            // background: var(--dark_50);
+                            // border-radius: 20px;
+    
+                            // padding: 15px;
+                            padding: 12px 13px;
+                            background: none;
+                            border-radius: 20px;
+                            border: 1px solid var(--dark_500);
+    
+                            input {
+                                border: none;
+                                background: transparent;
+                            }
+    
+                            .chatbot-bottom {
+                                .btn-icon {
+                                    &.btn-xs {
+                                        svg {
+                                            width: 18px;
+                                            height: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+    
+                }
+                
+            }
+          
+        }
+    }
+  }
+}
+
+
+
+/* 
+=========================
+    Search Content
+=========================
+*/
+
+body {
+  &.dark {
+    .gpt-search-content-modal {
+
+        .modal-dialog {
+        //   max-width: 600px;
+          .modal-content {
+            
+            .modal-body {
+          
+              padding: 0;
+          
+                .search-modal {
+                  padding: 10px 20px;
+                  align-items: center;
+            
+                  .search-modal-icon {
+                    svg {
+              
+                    }
+                  }
+          
+                  input {
+                      border: none;
+                      background: transparent;
+                  }
+      
+                  .search-modal-close {
+                    cursor: pointer;
+      
+                    svg {
+                      width: 18px;
+                      height: 18px;
+                    }
+                  }
+                  
+                }
+              
+              .gpt-modal-search-container {
+          
+                max-width: 550px;
+                
+                .gpt-search-content {
+                //   padding: 65px;
+                  padding: 30px 25px;
+                  align-items: center;
+              
+                  .gpt-search-list-content {
+              
+                    h6 {
+                      font-size: 12px;
+                      text-transform: uppercase;
+                    }
+              
+                    .search-list {
+                      li {
+                        .search-list-icon {
+                          svg {
+                            stroke-width: 1.5px;
+                          }
+                        }
+              
+                        span {
+                          font-size: 13px;
+                        }
+                      }
+                    }
+                    
+                  }
+      
+      
+                  .search-row-two {
+                    display: none;
+                  }
+                  
+                  .gpt-searchable-list-content {
+              
+                    h6 {
+                      font-size: 12px;
+                      text-transform: uppercase;
+                    }
+              
+                    .searchable-list {
+                      li {
+                        a {
+                          padding: 10px 10px;
+                          border-radius: 8px;
+                          width: 100%;
+      
+                          .search-list-icon {
+                            svg {
+                              stroke-width: 1.5px;
+                            }
+                          }
+                
+                          span {
+                            font-size: 13px;
+                          }
+                        }
+                        
+                      }
+                    }
+                    
+                  }
+                  
+                }
+          
+              }
+              
+              
+            }      
+          }
+        }
+        
+        
+        
+    }
+  }
+}
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    body.dark {
+        .gpt-search-content-modal {
+            .modal-dialog {
+              max-width: 600px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1299px) {
+
+  body {
+      &.dark.fixed-footer .footer-wrapper {
+          position: initial;
+      }
+  }
+
+}
+
+
+@media (max-width: 1199px) {    
+    
+    body {
+        &.dark {
+
+            .chatbot-container {
+                
+                .chatbot-list {
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    z-index: 9999;
+                    left: 0;
+                    border-radius: 0;
+                    /* width: 328px; */
+                    max-width: 0;
+                    left: -255px;
+                    transition: width 0.1s, margin-right 0.1s, left 0.1s;
+
+
+                    .list-group {
+                        height: calc(100vh - 84px);
+                    }
+                }
+            }
+
+        }
+    }
+
+    body.dark {
+
+        &.chatbot-sidebar-show {
+            .chatbot-container {
+
+                .chatbot-overlay {
+                    display: block;
+                    opacity: 1;
+                }
+                
+                .chatbot-list {
+                    left: 0;
+                    max-width: 250px;
+                }
+            }
+        }
+        
+
+
+        .gpt-search-content-modal {
+            z-index: 9999;
+            
+            .modal-dialog {
+                .modal-content {
+                    .modal-body {
+                        .gpt-modal-search-container {
+                            max-width: none;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+
+    
+
+}
+@media (max-width: 767px) { 
+
+  body {
+    &.dark {
+  
+      .chatbot-container {
+          .chatbot-content-container {
+      
+              .chatbot-content-scroll {
+                  .chatbot-content-area {
+                      .chatbot-content {
+                          &.chatbot-content-active {
+      
+                              .chatbot-conversation {
+                                  height: calc(100vh - 472px);
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+
+    }
+  }
+    
+}
+
+
+
+/*
+
+    CHANGES MADE AS PER THE DEMOS
+
+*/
+
+/*
+===============================
+    Horizontal Light Menu
+===============================
+*/
+
+body.dark {
+    &._horizontal-light-menu_ {
+      
+        .layout-px-spacing {
+            min-height: calc(100vh - 150px) !important;
+        }
+
+        .chatbot-container .chatbot-list .list-group {
+            height: calc(100vh - 295px);
+        }
+
+        .chatbot-container .chatbot-content-container .chatbot-content-scroll .chatbot-content-area {
+            height: calc(100vh - 322px);
+        }
+    
+    }
+}

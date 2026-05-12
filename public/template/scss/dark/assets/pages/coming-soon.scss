@@ -1,0 +1,146 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Coming Soon Wrapper------------
+
+*/
+
+/* 
+
+Coming Soon
+
+*/
+
+body.dark #coming-soon {
+  position: relative;
+  height: calc(100vh - 74px);
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+
+  /* background: #fff; */
+
+  .coming-soon-wrapper {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark_100);
+
+      span {
+        color: #3754db;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #abacb2;
+      font-weight: 500;
+    }
+
+    .cs-timer-content #cs-timer {
+      .cs-counts {
+        padding: 20px;
+
+        h4 {
+          font-size: 45px;
+          font-weight: 900;
+          color: #cfd7fc;
+          letter-spacing: 4px;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          color: #abacb2;
+        }
+      }
+
+      .seperator {
+        padding: 10px 0;
+
+        p {
+          font-size: 45px;
+          font-weight: 700;
+          color: #cfd7fc;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .cs-social-media .pf-social {
+      svg {
+        width: 25px;
+        height: 25px;
+        stroke-width: 1.5px;
+      }
+
+      &.pf-social-facebook svg {
+        color: #778ef7;
+      }
+
+      &.pf-social-instagram svg {
+        color: #e67980;
+      }
+
+      &.pf-social-linkedin svg {
+        color: #a46edb;
+      }
+
+      &.pf-social-xtweeter svg {
+        color: #6c6e78;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  body.dark {
+    .page-coming-soon .navbar .navbar-nav .nav-item .nav-link {
+      padding: 0 14px;
+    }
+
+    #coming-soon {
+      height: auto;
+      padding: 50px 30px;
+    }
+  }
+}
+
+@media (max-height: 800px) {
+  body.dark #coming-soon {
+    height: auto;
+    padding: 50px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.dark #coming-soon .coming-soon-wrapper .cs-timer-content #cs-timer {
+    .cs-counts {
+      padding: 20px 8px;
+
+      h4 {
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+
+    .seperator {
+      padding: 10px 0;
+
+      p {
+        font-size: 29px;
+        font-weight: 700;
+      }
+    }
+  }
+}

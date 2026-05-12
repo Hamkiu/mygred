@@ -1,0 +1,103 @@
+// @import '../base/base';
+
+// Border Width
+
+
+// All
+
+@for $i from 0 through 10 {
+    .border-width\:#{$i} {
+      border-width: #{$i}px;
+    }
+}
+
+
+// Top
+
+@for $i from 0 through 10 {
+    .border-top-width\:#{$i} {
+      border-top-width: #{$i}px;
+    }
+}
+
+
+// Bottom
+
+@for $i from 0 through 10 {
+    .border-bottom-width\:#{$i} {
+      border-bottom-width: #{$i}px;
+    }
+}
+
+
+// Right
+
+@for $i from 0 through 10 {
+    .border-right-width\:#{$i} {
+      border-right-width: #{$i}px;
+    }
+}
+
+
+// Left
+
+@for $i from 0 through 10 {
+    .border-left-width\:#{$i} {
+      border-left-width: #{$i}px;
+    }
+}
+
+
+
+
+
+:is(.dark) {
+    .dark {
+
+
+        // All
+
+        @for $i from 0 through 10 {
+            &\:border-width\:#{$i} {
+            border-width: #{$i}px;
+            }
+        }
+
+
+        // Top
+
+        @for $i from 0 through 10 {
+            &\:border-top-width\:#{$i} {
+            border-top-width: #{$i}px;
+            }
+        }
+
+
+        // Bottom
+
+        @for $i from 0 through 10 {
+            &\:border-bottom-width\:#{$i} {
+            border-bottom-width: #{$i}px;
+            }
+        }
+
+
+        // Right
+
+        @for $i from 0 through 10 {
+            &\:border-right-width\:#{$i} {
+            border-right-width: #{$i}px;
+            }
+        }
+
+
+        // Left
+
+        @for $i from 0 through 10 {
+            &\:border-left-width\:#{$i} {
+            border-left-width: #{$i}px;
+            }
+        }
+        
+    }
+}

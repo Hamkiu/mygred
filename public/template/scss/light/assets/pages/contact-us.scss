@@ -1,0 +1,54 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Contact Us Wrapper------------
+
+*/
+
+/* 
+
+Header Wrapper
+
+ */
+
+ #headerWrapper .contact-us-locations {
+  h5 {
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    color: var(--dark_100);
+  }
+}
+
+/* 
+
+Contact Us Wrapper
+
+*/
+
+#contactUsWrapper {
+  padding: 84px 30px 84px 30px;
+
+  .contact-us-wrapper h3 {
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 32px;
+  }
+
+  #contact-us {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  #contactUsWrapper {
+    padding: 84px 12px;
+  }
+}

@@ -1,0 +1,184 @@
+@import '../../../base/base';
+body.dark {
+.flatpickr-calendar {
+  width: 336.875px;
+  padding: 15px;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--x_12);
+  background: var(--x_12);
+
+  &.open {
+    display: inline-block;
+    z-index: 900;
+  }
+
+  &.arrowTop:before {
+    border-bottom-color: var(--x_12);
+  }
+
+  &.arrowBottom:before {
+    border-top-color: var(--x_12);
+  }
+
+  &:before {
+    border-width: 9px;
+  }
+
+  &:after {
+    border-width: 0px;
+  }
+}
+
+.flatpickr-months {
+  .flatpickr-prev-month, .flatpickr-next-month {
+    top: 8%;
+    padding: 5px 13px;
+    background: var(--x_12);
+    border-radius: 4px;
+    height: 40px;
+  }
+
+  .flatpickr-prev-month svg, .flatpickr-next-month svg {
+    fill: var(--x_5);
+  }
+
+  .flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
+    fill: #009688;
+  }
+}
+
+.flatpickr-current-month .numInputWrapper span {
+  &.arrowUp:after {
+    border-bottom-color: var(--x_5);
+  }
+
+  &.arrowDown:after {
+    border-top-color: var(--x_5);
+  }
+}
+
+.flatpickr-day.today {
+  border-color: #009688;
+  color: #009688;
+  font-weight: 700;
+}
+
+.flatpickr-current-month {
+  .flatpickr-monthDropdown-months {
+    height: auto;
+    border: 1px solid var(--dark_500);
+    color: var(--x_5);
+    font-size: 15px;
+    padding: 12px 16px;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    .flatpickr-monthDropdown-month {
+      background-color: var(--x_12);
+    }
+  }
+
+  input.cur-year {
+    height: auto;
+    border: 1px solid var(--dark_500);
+    border-left: none;
+    color: var(--x_5);
+    font-size: 15px;
+    padding: 13px 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+}
+
+.flatpickr-months .flatpickr-month {
+  height: 76px;
+}
+
+.flatpickr-day.flatpickr-disabled {
+  cursor: not-allowed;
+  color: var(--x_4);
+
+  &:hover {
+    cursor: not-allowed;
+    color: var(--x_4);
+  }
+}
+
+span.flatpickr-weekday {
+  color: var(--x_7);
+}
+
+.flatpickr-day {
+  color: var(--x_7);
+  font-weight: 500;
+
+  &.flatpickr-disabled {
+    color: rgba(136, 142, 168, 0.22);
+
+    &:hover {
+      color: rgba(136, 142, 168, 0.22);
+    }
+  }
+
+  &.prevMonthDay, &.nextMonthDay {
+    color: rgba(136, 142, 168, 0.22);
+  }
+
+  &.notAllowed {
+    color: rgba(136, 142, 168, 0.22);
+
+    &.prevMonthDay, &.nextMonthDay {
+      color: rgba(136, 142, 168, 0.22);
+    }
+  }
+
+  &.inRange, &.prevMonthDay.inRange, &.nextMonthDay.inRange, &.today.inRange, &.prevMonthDay.today.inRange, &.nextMonthDay.today.inRange, &:hover, &.prevMonthDay:hover, &.nextMonthDay:hover, &:focus, &.prevMonthDay:focus, &.nextMonthDay:focus {
+    background: var(--x_13);
+    border-color: var(--x_13);
+    -webkit-box-shadow: -5px 0 0 var(--x_13), 5px 0 0 var(--x_13);
+    box-shadow: -5px 0 0 var(--x_13), 5px 0 0 var(--x_13);
+  }
+
+  &.selected, &.startRange, &.endRange, &.selected.inRange, &.startRange.inRange, &.endRange.inRange, &.selected:focus, &.startRange:focus, &.endRange:focus, &.selected:hover, &.startRange:hover, &.endRange:hover, &.selected.prevMonthDay, &.startRange.prevMonthDay, &.endRange.prevMonthDay, &.selected.nextMonthDay, &.startRange.nextMonthDay, &.endRange.nextMonthDay {
+    background: #009688;
+    color: var(--x_14);
+    border-color: #009688;
+    font-weight: 700;
+  }
+}
+
+.flatpickr-time {
+  input {
+    color: var(--x_5);
+
+    &:hover {
+      background: var(--x_14);
+    }
+  }
+
+  .flatpickr-am-pm:hover, input:focus, .flatpickr-am-pm:focus {
+    background: var(--x_14);
+  }
+
+  .flatpickr-time-separator, .flatpickr-am-pm {
+    color: var(--x_5);
+  }
+
+  .numInputWrapper span {
+    &.arrowUp:after {
+      border-bottom-color: #009688;
+    }
+
+    &.arrowDown:after {
+      border-top-color: #009688;
+    }
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .form-control {
+    height: auto;
+  }
+}
+}

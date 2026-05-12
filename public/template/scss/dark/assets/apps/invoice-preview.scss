@@ -1,0 +1,275 @@
+@import '../../../base/base';
+
+body.dark {
+  .invoice-preview-section {
+    .ip-logo img {
+      width: 65px;
+      height: 65px;
+    }
+
+    .ip-id h4 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .ic-from {
+      position: relative;
+
+      .ic-from-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .ic-title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #6c6e78;
+      }
+
+      .ic-from-name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .ic-from-address, .ic-from-phone {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+
+    .ic-date-create {
+      .ic-date-create-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .ic-date-create-value {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+
+    .ic-to {
+      position: relative;
+
+      .ic-to-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .ic-title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #6c6e78;
+      }
+
+      .ic-to-name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .ic-to-address, .ic-to-phone {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+
+    .filter-section {
+      border-top: 1px dashed var(--x_4);
+      border-bottom: 1px dashed var(--x_4);
+      padding: 25px 0;
+    }
+
+    .ic-due-date {
+      .ic-date-due-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .ic-date-due-value {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .ic-item-details {
+    border-bottom: 1px dashed #2d303e;
+
+    .add-edit-form {
+      border-top: 1px dashed #2d303e;
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0;
+      color: var(--x_7);
+    }
+
+    .table-responsive {}
+
+    table {
+      thead tr th, tbody tr {}
+    }
+
+    .table tbody tr td {
+      white-space: normal;
+
+      &.icTitle {
+        font-size: 14px;
+        font-weight: 500;
+        color: #cbcbcf;
+      }
+
+      .icDescription {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--dark_400);
+        text-decoration: underline;
+      }
+
+      .icService {
+        font-weight: 500;
+        font-size: 13.5px;
+        letter-spacing: 0;
+      }
+
+      &.icQuantity {
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      &.icPrice, &.icTotal {
+        font-weight: 500;
+        color: var(--x_7);
+      }
+    }
+  }
+
+  .invoice-preview-section {
+    .totals-row {
+      max-width: 11rem;
+      margin-left: auto;
+
+      .invoice-totals-row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        .invoice-summary-label {
+          min-width: 75px;
+          font-size: 15px;
+          color: #cbcbcf;
+          font-weight: 400;
+        }
+
+        .invoice-summary-value {
+          min-width: 75px;
+          text-align: right;
+          font-size: 14px;
+          color: #778ef7;
+          font-weight: 400;
+        }
+
+        &.invoice-summary-balance-due {
+          padding-top: 5px;
+          margin-top: 5px;
+          border-top: 1px dashed var(--x_4);
+        }
+      }
+    }
+
+    .ic-from #icFromModal .modal-body .ab-billingName-list .ab-billingName, .ic-to #icToModal .modal-body .ab-billingName-list .ab-billingName {
+      position: relative;
+      cursor: pointer;
+      padding: 20px 20px;
+      border: 1px solid var(--x_4);
+      border-radius: 15px;
+      box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+
+      .pf-dropdown {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+
+        .dropdown-toggle svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      h5.aab-item-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 9px;
+
+        .aab-item-location {
+          color: var(--x_7);
+          font-weight: 500;
+          font-size: 12px;
+        }
+      }
+
+      .aab-item-address {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 2px;
+        color: var(--x_7);
+      }
+
+      .aab-item-phone {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 0;
+        color: var(--x_7);
+      }
+    }
+  }
+}
+
+/* MODAL */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #ct {
+    visibility: visible;
+
+    * {
+      visibility: visible;
+    }
+  }
+
+  .doc-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -155px;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 0mm;
+}
+
+@media (max-width: 767px) {
+  body.dark .ic-item-details .table tbody tr td {
+    white-space: nowrap;
+  }
+}

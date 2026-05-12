@@ -1,0 +1,620 @@
+// @import '../base/base';
+
+// BUTTONS COLORS
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    border-color: transparent;
+}
+
+
+
+// ===================
+//      Pure Colors
+// ===================
+
+.btn-white {
+    background-color: var(--white);
+}
+
+.btn-black {
+    background-color: var(--black);
+}
+
+// ===================
+//      PRIMARY
+// ===================
+
+.btn-primary {
+    background-color: var(--primary_500);
+}
+.btn-primary\:50 {
+    background-color: var(--primary_50);
+}
+.btn-primary\:100 {
+    background-color: var(--primary_100);
+}
+.btn-primary\:200 {
+    background-color: var(--primary_200);
+}
+.btn-primary\:300 {
+    background-color: var(--primary_300);
+}
+.btn-primary\:400 {
+    background-color: var(--primary_400);
+}
+.btn-primary\:500 {
+    background-color: var(--primary_500);
+}
+.btn-primary\:600 {
+    background-color: var(--primary_600);
+}
+.btn-primary\:700 {
+    background-color: var(--primary_700);
+}
+.btn-primary\:800 {
+    background-color: var(--primary_800);
+}
+.btn-primary\:900 {
+    background-color: var(--primary_900);
+}
+.btn-primary\:1000 {
+    background-color: var(--primary_1000);
+}
+
+
+// ===================
+//      INFO
+// ===================
+
+.btn-info {
+    background-color: var(--info_500);
+}
+.btn-info\:50 {
+    background-color: var(--info_50);
+}
+.btn-info\:100 {
+    background-color: var(--info_100);
+}
+.btn-info\:200 {
+    background-color: var(--info_200);
+}
+.btn-info\:300 {
+    background-color: var(--info_300);
+}
+.btn-info\:400 {
+    background-color: var(--info_400);
+}
+.btn-info\:500 {
+    background-color: var(--info_500);
+}
+.btn-info\:600 {
+    background-color: var(--info_600);
+}
+.btn-info\:700 {
+    background-color: var(--info_700);
+}
+.btn-info\:800 {
+    background-color: var(--info_800);
+}
+.btn-info\:900 {
+    background-color: var(--info_900);
+}
+.btn-info\:1000 {
+    background-color: var(--info_1000);
+}
+
+// ===================
+//      SUCCESS
+// ===================
+
+.btn-success {
+    background-color: var(--success_500);
+}
+.btn-success\:50 {
+    background-color: var(--success_50);
+}
+.btn-success\:100 {
+    background-color: var(--success_100);
+}
+.btn-success\:200 {
+    background-color: var(--success_200);
+}
+.btn-success\:300 {
+    background-color: var(--success_300);
+}
+.btn-success\:400 {
+    background-color: var(--success_400);
+}
+.btn-success\:500 {
+    background-color: var(--success_500);
+}
+.btn-success\:600 {
+    background-color: var(--success_600);
+}
+.btn-success\:700 {
+    background-color: var(--success_700);
+}
+.btn-success\:800 {
+    background-color: var(--success_800);
+}
+.btn-success\:900 {
+    background-color: var(--success_900);
+}
+.btn-success\:1000 {
+    background-color: var(--success_1000);
+}
+
+// ===================
+//      WARNING
+// ===================
+
+.btn-warning {
+    background-color: var(--warning_500);
+}
+.btn-warning\:50 {
+    background-color: var(--warning_50);
+}
+.btn-warning\:100 {
+    background-color: var(--warning_100);
+}
+.btn-warning\:200 {
+    background-color: var(--warning_200);
+}
+.btn-warning\:300 {
+    background-color: var(--warning_300);
+}
+.btn-warning\:400 {
+    background-color: var(--warning_400);
+}
+.btn-warning\:500 {
+    background-color: var(--warning_500);
+}
+.btn-warning\:600 {
+    background-color: var(--warning_600);
+}
+.btn-warning\:700 {
+    background-color: var(--warning_700);
+}
+.btn-warning\:800 {
+    background-color: var(--warning_800);
+}
+.btn-warning\:900 {
+    background-color: var(--warning_900);
+}
+.btn-warning\:1000 {
+    background-color: var(--warning_1000);
+}
+
+// ===================
+//      DANGER
+// ===================
+
+.btn-danger {
+    background-color: var(--danger_500);
+}
+.btn-danger\:50 {
+    background-color: var(--danger_50);
+}
+.btn-danger\:100 {
+    background-color: var(--danger_100);
+}
+.btn-danger\:200 {
+    background-color: var(--danger_200);
+}
+.btn-danger\:300 {
+    background-color: var(--danger_300);
+}
+.btn-danger\:400 {
+    background-color: var(--danger_400);
+}
+.btn-danger\:500 {
+    background-color: var(--danger_500);
+}
+.btn-danger\:600 {
+    background-color: var(--danger_600);
+}
+.btn-danger\:700 {
+    background-color: var(--danger_700);
+}
+.btn-danger\:800 {
+    background-color: var(--danger_800);
+}
+.btn-danger\:900 {
+    background-color: var(--danger_900);
+}
+.btn-danger\:1000 {
+    background-color: var(--danger_1000);
+}
+
+// ===================
+//      SECONDARY
+// ===================
+
+.btn-secondary {
+    background-color: var(--secondary_500);
+}
+.btn-secondary\:50 {
+    background-color: var(--secondary_50);
+}
+.btn-secondary\:100 {
+    background-color: var(--secondary_100);
+}
+.btn-secondary\:200 {
+    background-color: var(--secondary_200);
+}
+.btn-secondary\:300 {
+    background-color: var(--secondary_300);
+}
+.btn-secondary\:400 {
+    background-color: var(--secondary_400);
+}
+.btn-secondary\:500 {
+    background-color: var(--secondary_500);
+}
+.btn-secondary\:600 {
+    background-color: var(--secondary_600);
+}
+.btn-secondary\:700 {
+    background-color: var(--secondary_700);
+}
+.btn-secondary\:800 {
+    background-color: var(--secondary_800);
+}
+.btn-secondary\:900 {
+    background-color: var(--secondary_900);
+}
+.btn-secondary\:1000 {
+    background-color: var(--secondary_1000);
+}
+
+// ===================
+//      DARK
+// ===================
+
+.btn-dark {
+    background-color: var(--dark_500);
+}
+.btn-dark\:50 {
+    background-color: var(--dark_50);
+}
+.btn-dark\:100 {
+    background-color: var(--dark_100);
+}
+.btn-dark\:200 {
+    background-color: var(--dark_200);
+}
+.btn-dark\:300 {
+    background-color: var(--dark_300);
+}
+.btn-dark\:400 {
+    background-color: var(--dark_400);
+}
+.btn-dark\:500 {
+    background-color: var(--dark_500);
+}
+.btn-dark\:600 {
+    background-color: var(--dark_600);
+}
+.btn-dark\:700 {
+    background-color: var(--dark_700);
+}
+.btn-dark\:800 {
+    background-color: var(--dark_800);
+}
+.btn-dark\:900 {
+    background-color: var(--dark_900);
+}
+.btn-dark\:1000 {
+    background-color: var(--dark_1000);
+}
+
+
+
+
+:is(.dark) {
+
+    .dark {
+
+        // ===================
+        //      Pure Colors
+        // ===================
+
+        &\:btn-white {
+            background-color: var(--white);
+        }
+
+        &\:btn-black {
+            background-color: var(--black);
+        }
+        
+        // ===================
+        //      PRIMARY
+        // ===================
+        
+        &\:btn-primary {
+            background-color: var(--primary_500);
+        }
+        &\:btn-primary\:50 {
+            background-color: var(--primary_50);
+        }
+        &\:btn-primary\:100 {
+            background-color: var(--primary_100);
+        }
+        &\:btn-primary\:200 {
+            background-color: var(--primary_200);
+        }
+        &\:btn-primary\:300 {
+            background-color: var(--primary_300);
+        }
+        &\:btn-primary\:400 {
+            background-color: var(--primary_400);
+        }
+        &\:btn-primary\:500 {
+            background-color: var(--primary_500);
+        }
+        &\:btn-primary\:600 {
+            background-color: var(--primary_600);
+        }
+        &\:btn-primary\:700 {
+            background-color: var(--primary_700);
+        }
+        &\:btn-primary\:800 {
+            background-color: var(--primary_800);
+        }
+        &\:btn-primary\:900 {
+            background-color: var(--primary_900);
+        }
+        &\:btn-primary\:1000 {
+            background-color: var(--primary_1000);
+        }
+        
+        
+        // ===================
+        //      INFO
+        // ===================
+
+        &\:btn-info {
+            background-color: var(--info_500);
+        }
+        &\:btn-info\:50 {
+            background-color: var(--info_50);
+        }
+        &\:btn-info\:100 {
+            background-color: var(--info_100);
+        }
+        &\:btn-info\:200 {
+            background-color: var(--info_200);
+        }
+        &\:btn-info\:300 {
+            background-color: var(--info_300);
+        }
+        &\:btn-info\:400 {
+            background-color: var(--info_400);
+        }
+        &\:btn-info\:500 {
+            background-color: var(--info_500);
+        }
+        &\:btn-info\:600 {
+            background-color: var(--info_600);
+        }
+        &\:btn-info\:700 {
+            background-color: var(--info_700);
+        }
+        &\:btn-info\:800 {
+            background-color: var(--info_800);
+        }
+        &\:btn-info\:900 {
+            background-color: var(--info_900);
+        }
+        &\:btn-info\:1000 {
+            background-color: var(--info_1000);
+        }
+
+        // ===================
+        //      SUCCESS
+        // ===================
+
+        &\:btn-success {
+            background-color: var(--success_500);
+        }
+        &\:btn-success\:50 {
+            background-color: var(--success_50);
+        }
+        &\:btn-success\:100 {
+            background-color: var(--success_100);
+        }
+        &\:btn-success\:200 {
+            background-color: var(--success_200);
+        }
+        &\:btn-success\:300 {
+            background-color: var(--success_300);
+        }
+        &\:btn-success\:400 {
+            background-color: var(--success_400);
+        }
+        &\:btn-success\:500 {
+            background-color: var(--success_500);
+        }
+        &\:btn-success\:600 {
+            background-color: var(--success_600);
+        }
+        &\:btn-success\:700 {
+            background-color: var(--success_700);
+        }
+        &\:btn-success\:800 {
+            background-color: var(--success_800);
+        }
+        &\:btn-success\:900 {
+            background-color: var(--success_900);
+        }
+        &\:btn-success\:1000 {
+            background-color: var(--success_1000);
+        }
+
+        // ===================
+        //      WARNING
+        // ===================
+
+        &\:btn-warning {
+            background-color: var(--warning_500);
+        }
+        &\:btn-warning\:50 {
+            background-color: var(--warning_50);
+        }
+        &\:btn-warning\:100 {
+            background-color: var(--warning_100);
+        }
+        &\:btn-warning\:200 {
+            background-color: var(--warning_200);
+        }
+        &\:btn-warning\:300 {
+            background-color: var(--warning_300);
+        }
+        &\:btn-warning\:400 {
+            background-color: var(--warning_400);
+        }
+        &\:btn-warning\:500 {
+            background-color: var(--warning_500);
+        }
+        &\:btn-warning\:600 {
+            background-color: var(--warning_600);
+        }
+        &\:btn-warning\:700 {
+            background-color: var(--warning_700);
+        }
+        &\:btn-warning\:800 {
+            background-color: var(--warning_800);
+        }
+        &\:btn-warning\:900 {
+            background-color: var(--warning_900);
+        }
+        &\:btn-warning\:1000 {
+            background-color: var(--warning_1000);
+        }
+
+        // ===================
+        //      DANGER
+        // ===================
+
+        &\:btn-danger {
+            background-color: var(--danger_500);
+        }
+        &\:btn-danger\:50 {
+            background-color: var(--danger_50);
+        }
+        &\:btn-danger\:100 {
+            background-color: var(--danger_100);
+        }
+        &\:btn-danger\:200 {
+            background-color: var(--danger_200);
+        }
+        &\:btn-danger\:300 {
+            background-color: var(--danger_300);
+        }
+        &\:btn-danger\:400 {
+            background-color: var(--danger_400);
+        }
+        &\:btn-danger\:500 {
+            background-color: var(--danger_500);
+        }
+        &\:btn-danger\:600 {
+            background-color: var(--danger_600);
+        }
+        &\:btn-danger\:700 {
+            background-color: var(--danger_700);
+        }
+        &\:btn-danger\:800 {
+            background-color: var(--danger_800);
+        }
+        &\:btn-danger\:900 {
+            background-color: var(--danger_900);
+        }
+        &\:btn-danger\:1000 {
+            background-color: var(--danger_1000);
+        }
+
+        // ===================
+        //      SECONDARY
+        // ===================
+
+        &\:btn-secondary {
+            background-color: var(--secondary_500);
+        }
+        &\:btn-secondary\:50 {
+            background-color: var(--secondary_50);
+        }
+        &\:btn-secondary\:100 {
+            background-color: var(--secondary_100);
+        }
+        &\:btn-secondary\:200 {
+            background-color: var(--secondary_200);
+        }
+        &\:btn-secondary\:300 {
+            background-color: var(--secondary_300);
+        }
+        &\:btn-secondary\:400 {
+            background-color: var(--secondary_400);
+        }
+        &\:btn-secondary\:500 {
+            background-color: var(--secondary_500);
+        }
+        &\:btn-secondary\:600 {
+            background-color: var(--secondary_600);
+        }
+        &\:btn-secondary\:700 {
+            background-color: var(--secondary_700);
+        }
+        &\:btn-secondary\:800 {
+            background-color: var(--secondary_800);
+        }
+        &\:btn-secondary\:900 {
+            background-color: var(--secondary_900);
+        }
+        &\:btn-secondary\:1000 {
+            background-color: var(--secondary_1000);
+        }
+
+        // ===================
+        //      DARK
+        // ===================
+
+        &\:btn-dark {
+            background-color: var(--dark_500);
+        }
+        &\:btn-dark\:50 {
+            background-color: var(--dark_50);
+        }
+        &\:btn-dark\:100 {
+            background-color: var(--dark_100);
+        }
+        &\:btn-dark\:200 {
+            background-color: var(--dark_200);
+        }
+        &\:btn-dark\:300 {
+            background-color: var(--dark_300);
+        }
+        &\:btn-dark\:400 {
+            background-color: var(--dark_400);
+        }
+        &\:btn-dark\:500 {
+            background-color: var(--dark_500);
+        }
+        &\:btn-dark\:600 {
+            background-color: var(--dark_600);
+        }
+        &\:btn-dark\:700 {
+            background-color: var(--dark_700);
+        }
+        &\:btn-dark\:800 {
+            background-color: var(--dark_800);
+        }
+        &\:btn-dark\:900 {
+            background-color: var(--dark_900);
+        }
+        &\:btn-dark\:1000 {
+            background-color: var(--dark_1000);
+        }
+
+    }
+        
+}

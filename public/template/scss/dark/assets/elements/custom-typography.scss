@@ -1,0 +1,53 @@
+@import '../../../base/base';
+body.dark {
+.element-background {
+  padding: 15px;
+  border: 1px solid var(--x_13);
+  border-radius: 6px;
+}
+
+.font-family-showcase {
+  width: 18rem;
+  border: 1px solid var(--x_13);
+  border-radius: 6px;
+  background: var(--x_13);
+  margin: 0 auto;
+
+  .font-family-text {
+    padding: 20px;
+    border-bottom: 1px solid var(--x_14);
+
+    p {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  .font-family-info {
+    padding: 20px;
+    background-color: var(--x_13);
+
+    h5 {
+      font-size: 17px;
+      margin-bottom: 0;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--x_5);
+    }
+
+    .font-family-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .font-family-showcase {
+    width: auto;
+  }
+}
+}

@@ -1,0 +1,50 @@
+@import '../../../base/base';
+.element-background {
+  padding: 15px;
+  border: 1px solid var(--x_4);
+  border-radius: 6px;
+}
+
+.font-family-showcase {
+  width: 18rem;
+  border: 1px solid var(--x_4);
+  border-radius: 6px;
+  background: #fff;
+  margin: 0 auto;
+
+  .font-family-text {
+    padding: 20px;
+    border-bottom: 1px solid var(--x_4);
+
+    p {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  .font-family-info {
+    padding: 20px;
+    background-color: var(--x_3);
+
+    h5 {
+      font-size: 17px;
+      margin-bottom: 0;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .font-family-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .font-family-showcase {
+    width: auto;
+  }
+}

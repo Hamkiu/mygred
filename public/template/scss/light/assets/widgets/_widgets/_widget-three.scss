@@ -1,0 +1,130 @@
+@import '../../../base/base';
+  /*
+      ====================
+          Order Summary
+      ====================
+  */
+  // body.dark {
+    .widget-three {
+      position: relative;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      height: 100%;
+      border: 1px solid var(--x_4);
+      box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+    
+      .widget-heading {
+        margin-bottom: 54px;
+        display: flex;
+        justify-content: space-between;
+    
+        h5 {
+          font-size: 19px;
+          display: block;
+          color: var(--x_14);
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+    
+        .task-action {
+          .dropdown-toggle svg {
+            color: var(--x_7);
+            width: 19px;
+            height: 19px;
+          }
+    
+          .dropdown-menu {
+            transform: translate3d(-141px, 0, 0px);
+          }
+        }
+      }
+    
+      .widget-content {
+        font-size: 17px;
+    
+        .summary-list {
+          display: flex;
+    
+          &:not(:last-child) {
+            margin-bottom: 30px;
+          }
+        }
+    
+        .w-icon {
+          display: inline-block;
+          padding: 8px 8px;
+          border-radius: 50%;
+          display: inline-flex;
+          align-self: center;
+          height: 34px;
+          width: 34px;
+          margin-right: 12px;
+    
+          svg {
+            display: block;
+            width: 17px;
+            height: 17px;
+          }
+        }
+    
+        .summary-list {
+          &:nth-child(1) .w-icon {
+            background: var(--secondary_100);
+          }
+    
+          &:nth-child(2) .w-icon {
+            background: var(--success_100);
+          }
+    
+          &:nth-child(3) .w-icon {
+            background: var(--warning_100);
+          }
+    
+          &:nth-child(1) .w-icon svg {
+            color: var(--secondary_500);
+          }
+    
+          &:nth-child(2) .w-icon svg {
+            color: #009688;
+          }
+    
+          &:nth-child(3) .w-icon svg {
+            color: var(--warning_500);
+          }
+        }
+    
+        .w-summary-details {
+          width: 100%;
+          align-self: center;
+        }
+    
+        .w-summary-info {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1px;
+    
+          h6 {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: var(--x_7);
+          }
+    
+          p {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: var(--x_7);
+          }
+        }
+    
+        .w-summary-stats .progress {
+          margin-bottom: 0;
+          height: 6px;
+          border-radius: 20px;
+          box-shadow: none;
+        }
+      }
+    }
+  // }

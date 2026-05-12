@@ -1,0 +1,298 @@
+@import '../../../base/base';
+
+.badge-tabs {
+  ul.nav-tabs {
+    border: none;
+    padding: 9px 0;
+
+    li {
+
+      &.nav-item {
+        
+        a {
+          
+          &.nav-link {
+            position: relative;
+            border: none;
+            cursor: pointer;
+            padding-left: 0;
+            padding-right: 0;
+            // margin-left: 16px;
+            margin-right: 20px;
+            background: transparent;
+
+            &:disabled {
+              opacity: .5;
+            }
+
+
+            &::before {
+              content: '';
+              position: absolute;
+              right: 0;
+              left: auto;
+              border-radius: 20px;
+              bottom: -8px;
+              height: 3px;
+              width: 30%;
+              background: var(--black);
+              opacity: 0;
+              margin: 0 auto;
+              transition: .3s;
+            }
+      
+            svg {
+              color: #292b38;
+              width: 26px;
+              height: 26px;
+              stroke-width: 1.5;
+              margin-right: 2px;
+              fill: #292b38;
+            }
+      
+            span:not(.badge) {
+              font-size: 13px;
+              font-weight: 600;
+              color: #292b38;
+            }
+      
+            &#nav-all-tab.active::before {
+              opacity: 1;
+              background: var(--x_7);
+              width: 40px;
+            }
+      
+            &#nav-active-tab.active::before {
+              opacity: 1;
+              background: #01964c;
+              width: 40px;
+            }
+      
+            &#nav-pending-tab.active::before {
+              opacity: 1;
+              background: #cb891f;
+              width: 40px;
+            }
+      
+            &#nav-banned-tab.active::before {
+              opacity: 1;
+              background: #c53a42;
+              width: 40px;
+            }
+      
+            &#nav-rejected-tab.active::before {
+              opacity: 1;
+              background: #292b38;
+              width: 40px;
+            }
+      
+            &.active {
+              svg {
+                color: #016432;
+                fill: #016432;
+              }
+      
+              span:not(.badge) {
+                color: #016432;
+              }
+            }
+            
+          }
+          
+        }
+      }
+      
+    }
+      
+  }
+}
+
+
+
+.profile-menu-2 {
+  ul.nav-tabs {
+    border: none;
+  
+    li.nav-item a.nav-link {
+      position: relative;
+      border: none;
+      cursor: pointer;
+      padding-left: 0;
+      padding-right: 0;
+      margin-right: 16px;
+      background: transparent;
+
+      &.active {
+        background: transparent;
+    }
+  
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30%;
+        background: #000;
+        opacity: 0;
+        margin: 0 auto;
+        transition: .2s;
+      }
+  
+      svg {
+        color: #292b38;
+        width: 26px;
+        height: 26px;
+        stroke-width: 1.5;
+        margin-right: 2px;
+        fill: #292b38;
+      }
+  
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--x_7);
+      }
+  
+      &.active {
+        &::before {
+          opacity: 1;
+          background: #016432;
+          width: 60px;
+        }
+  
+        svg {
+          color: #016432;
+          fill: #016432;
+        }
+  
+        span {
+          color: #016432;
+        }
+      }
+    }
+  }
+}
+
+
+
+.nav {
+
+    
+    
+    &.nav-tabs {
+        border: none;
+        li {
+            &.nav-item {
+                button {
+                    &.nav-link {
+
+                        border: none;
+                        font-weight: 500;
+                        padding: 8px 14px;
+                        letter-spacing: 1px;
+                        color: var(--x_7);
+                        background: transparent;
+
+                        svg {
+                            vertical-align: bottom;
+                            stroke-width: 1.6;
+                            color: var(--success_800);
+                        }
+
+                        &.active {
+                            border-bottom: 1.6px solid var(--success_800);
+                            color: var(--success_800);
+
+                            svg {
+                                color: var(--success_800);
+                            }
+                        }
+
+                        &:disabled {
+                            opacity: .5;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+    &.nav-pills {
+        border: none;
+        padding: 0;
+        // background: var(--x_2);
+        border-radius: 8px;
+
+        li {
+            &.nav-item {
+                button {
+                    &.nav-link {
+
+                        border: none;
+                        font-weight: 500;
+                        padding: 8px 14px;
+                        letter-spacing: 1px;
+                        color: var(--x_7);
+
+                        svg {
+                            vertical-align: bottom;
+                            stroke-width: 1.6;
+                            color: var(--success_800);
+                        }
+
+                        &.active {
+                            border-bottom: none;
+                            background-color: var(--success_100);
+                            color: var(--success_800);
+                        }
+
+                        &:disabled {
+                            opacity: .5;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        &[aria-orientation="vertical"] {
+            button {
+                &.nav-link {
+
+                    border: none;
+                    font-weight: 500;
+                    padding: 8px 14px;
+                    letter-spacing: 1px;
+                    color: var(--x_7);
+
+                    svg {
+                        vertical-align: bottom;
+                        stroke-width: 1.6;
+                        color: var(--success_800);
+                    }
+
+                    &.active {
+                        border-bottom: none;
+                        background-color: var(--success_100);
+                        color: var(--success_800);
+                    }
+
+                    &:disabled {
+                        opacity: .5;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+
+
+
+  
+}

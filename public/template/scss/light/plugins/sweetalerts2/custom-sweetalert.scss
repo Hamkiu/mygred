@@ -1,0 +1,66 @@
+@import '../../../base/base';
+.swal2-popup {
+  background-color: #fff !important;
+}
+
+.swal2-title {
+  color: var(--dark_500);
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.swal2-html-container {
+  color: var(--x_19);
+}
+
+.swal2-styled {
+  &.swal2-default-outline:focus, &.swal2-confirm:focus {
+    box-shadow: none;
+  }
+}
+
+  
+.swal2-icon {
+  
+  &.swal2-success {
+    
+    .swal2-success-ring {
+      border-color: var(--success_100);
+    }
+
+    [class^=swal2-success-line] {
+      background-color: var(--success_500);
+    }
+    
+  }
+
+  &.swal2-error {
+    border-color: var(--danger_100);
+
+    [class^=swal2-x-mark-line] {
+      background-color: var(--danger_500);
+    }
+    
+  }
+
+
+  &.swal2-warning {
+    border-color: var(--warning_100);
+    color: var(--warning_500);
+  }
+
+  &.swal2-info {
+    border-color: var(--info_100);
+    color: var(--info_500);
+  }
+
+  &.swal2-question {
+    border-color: var(--secondary_100);
+    color: var(--secondary_500);
+  }
+  
+}
+
+.swal2-image {
+  border-radius: 10px;
+}

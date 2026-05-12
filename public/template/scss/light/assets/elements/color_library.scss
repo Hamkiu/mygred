@@ -1,0 +1,113 @@
+@import '../../../base/base';
+
+/*---------Palette Box--------*/
+
+.color-box-container {
+  display: flex;
+    flex-wrap: wrap;
+}
+
+
+.color-box {
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 12px;
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 5%);
+  box-shadow: 0 6px 15px rgb(36 37 38 / 8%);
+  background: #fff;
+  margin-right: 9px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #fff 100%);
+  border: 1px solid var(--x_2);
+  width: 100%;
+  margin-bottom: 11px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  .cl--code {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .color--copy-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background: #e3d6d6;
+    align-items: center;
+    border-radius: 12px;
+    flex-direction: column;
+    z-index: -1;
+    opacity: .3;
+    transition: none;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    
+    &.show {
+      opacity: 1;
+      z-index: 1;
+      transition: .2s;
+    }
+    
+    span {
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+    p {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+    }
+  }
+  
+
+  .cl-example {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 36%;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 18px;
+  }
+
+  &:hover .cl-example {
+    -webkit-transform: scale(1.09);
+    transform: scale(1.09);
+  }
+
+  .cl-info {
+    text-align: center;
+  }
+
+  .cl-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: var(--dark_500);
+    padding: 4px 9px;
+  }
+
+  .cl-info span {
+    font-size: 15px;
+    color: var(--x_9);
+    font-weight: 400;
+  }
+}
+
+
+
+@media (min-width: 1400px) and (max-width: 1799px) {
+  .col-xxl-1 {
+    flex: 0 0 auto;
+    width: 12.333333%;
+  }
+}

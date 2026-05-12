@@ -1,0 +1,149 @@
+@import '../../../base/base';
+
+.kanban-board {
+    border-radius: 20px;
+  
+    &:first-child {
+      margin-left: 0 !important;
+    }
+  
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  
+    .kanban-drag {
+      padding: 14px;
+    }
+  
+    .kanban-board-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: move;
+  
+      .kanban-title-board {
+        font-size: 15px;
+        letter-spacing: 0;
+        font-weight: 600;
+        color: #000;
+      }
+    }
+  }
+  
+  .kanban-item {
+    border-radius: 20px;
+  
+    .kanban-card .kc-card-actions {
+      justify-content: end;
+      margin-bottom: 0;
+      height: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+  
+    &:hover .kanban-card .kc-card-actions {
+      height: 30px;
+      margin-bottom: 12px;
+    }
+  
+    .kanban-card {
+      .kc-card-actions {
+        .kc-card-edit {
+          margin-right: 8px;
+  
+          svg {
+            color: #3d5df3;
+          }
+        }
+  
+        .kc-card-delete svg {
+          color: #db4049;
+        }
+      }
+  
+      .kc-task-image {
+        margin-bottom: 20px;
+  
+        img {
+          width: 100%;
+          border-radius: 16px;
+          height: 300px;
+        }
+      }
+  
+      .kc-status {
+        margin-left: auto;
+  
+        svg {}
+      }
+  
+      .kc-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin-top: 8px;
+      }
+  
+      .kc-task-comments {
+        display: flex;
+        margin-right: 9px;
+  
+        .icon {
+          margin-right: 3px;
+  
+          svg {
+            width: 20px;
+            height: 20px;
+            color: #abacb2;
+          }
+        }
+  
+        .count {
+          font-weight: 600;
+          color: #abacb2;
+        }
+      }
+  
+      .kc-task-attachments {
+        display: flex;
+  
+        .icon {
+          margin-right: 3px;
+  
+          svg {
+            width: 20px;
+            height: 20px;
+            color: #abacb2;
+          }
+        }
+  
+        .count {
+          font-weight: 600;
+          color: #abacb2;
+        }
+      }
+  
+      .avatar--group {
+        margin-right: 0;
+      }
+  
+      .avatar {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  
+  .kanban-container {
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+  
+  .kb-add-task {
+    padding: 0;
+    height: 25px;
+    width: 31px;
+    height: 32px;
+    font-size: 20px;
+  }
+  

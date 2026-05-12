@@ -1,0 +1,66 @@
+@import '../../../base/base';
+
+
+/* 
+
+--------------Maintenance Wrapper------------
+
+*/
+
+/* 
+
+Maintenance
+
+*/
+
+body.dark #maintenance {
+  position: relative;
+  height: calc(100vh - 74px);
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+
+  .maintenance-wrapper {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark_100);
+
+      span {
+        color: #3754db;
+      }
+    }
+
+    p {
+      /* font-size: 20px;
+      color: #6c6e78;
+      font-weight: 400; */
+
+      font-size: 16px;
+      color: #abacb2;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  body.dark {
+    .page-maintenance .navbar .navbar-nav .nav-item .nav-link {
+      padding: 0 14px;
+    }
+
+    #maintenance {
+      height: auto;
+      padding: 50px 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body.dark #maintenance .maintenance-wrapper h1 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,123 @@
+@import '../../../base/base';
+
+body {
+    &.dark {
+        .ts-wrapper {
+            
+            .ts-control {
+                border: 1px solid var(--dark_500);
+                border-radius: 6px;
+                background: var(--dark_800);
+                color: #fff;
+                padding: 11.2px 14px;
+
+                input {
+                    color: #fff;
+
+                    &::placeholder {
+                        color: var(--x_5);
+                    }
+
+                }
+            }
+
+            .ts-dropdown {
+                background: var(--dark_600);
+                border: none;
+                color: var(--dark_50);
+
+                .dropdown-header {
+
+                    background: var(--dark_700);
+                    border-bottom: 1px solid var(--dark_500);
+
+                    .dropdown-header-title {
+
+                        .dropdown-header-label {
+                            color: var(--dark_300);
+                        }
+
+                        .dropdown-header-close {
+                            color: var(--dark_50);
+                        }
+                        
+                    }
+                }
+
+                .active {
+                    background-color: var(--x_14);
+                    color: #fff;
+                    &.create {
+                        color: #fff;
+
+                        strong {
+                            font-weight: 500;
+                            color: var(--success_500);
+                        }
+                    }
+                }
+
+                .no-results {
+                    color: var(--x_4);
+                }
+            }
+            
+            &.multi {
+                .ts-control {
+                    .item {
+                        // background: var(--x_15);
+                        background-color: var(--dark_600);
+                        border: 0 solid #dee2e6;
+                        color: var(--x_4);
+                        margin: 0 6px 3px 0;
+                        padding: 4px 7px;
+                        font-weight: 500;
+                        border-radius: 6px;
+
+                        &.active {
+                            background-color: var(--x_11);
+                        }
+
+                        .remove {
+                            border-left: 1px solid var(--dark_400);
+                        }
+                    }
+                }
+
+                .ts-dropdown-content {
+                    .optgroup {
+                        .optgroup-header {
+                            background: var(--dark_800);
+                            color: var(--dark_300);
+                        }
+
+                    }
+                }
+
+                &.plugin-optgroup_columns {
+                    .optgroup {
+                        border-right: 1px solid var(--dark_400);
+                    }
+                }
+
+                &.has-items {
+                    .ts-control {
+                        padding: 6.5px 14px;
+                    }
+
+                    .item {
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+        
+            &.focus {
+                .ts-control {
+                    border-color: var(--dark_500);
+                    box-shadow: none;
+                    background: var(--dark_700);
+                }
+            }
+        }
+    }
+}

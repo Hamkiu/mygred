@@ -1,0 +1,138 @@
+
+// @import '../base/base';
+@import '../base/color_variables';
+
+
+:root {
+
+    --white: #{$white};
+    --black: #{$black};
+    
+    
+    
+    // Primary
+
+    --primary_50: #{$primary_50};
+    --primary_100: #{$primary_100};
+    --primary_200: #{$primary_200};
+    --primary_300: #{$primary_300};
+    --primary_400: #{$primary_400};
+    --primary_500: #{$primary_500};
+    --primary_600: #{$primary_600};
+    --primary_700: #{$primary_700};
+    --primary_800: #{$primary_800};
+    --primary_900: #{$primary_900};
+    --primary_1000: #{$primary_1000};
+
+    // Info
+
+    --info_50: #{$info_50};
+    --info_100: #{$info_100};
+    --info_200: #{$info_200};
+    --info_300: #{$info_300};
+    --info_400: #{$info_400};
+    --info_500: #{$info_500};
+    --info_600: #{$info_600};
+    --info_700: #{$info_700};
+    --info_800: #{$info_800};
+    --info_900: #{$info_900};
+    --info_1000: #{$info_1000};
+
+    // Success
+
+    --success_50: #{$success_50};
+    --success_100: #{$success_100};
+    --success_200: #{$success_200};
+    --success_300: #{$success_300};
+    --success_400: #{$success_400};
+    --success_500: #{$success_500};
+    --success_600: #{$success_600};
+    --success_700: #{$success_700};
+    --success_800: #{$success_800};
+    --success_900: #{$success_900};
+    --success_1000: #{$success_1000};
+
+    // Warning
+
+    --warning_50: #{$warning_50};
+    --warning_100: #{$warning_100};
+    --warning_200: #{$warning_200};
+    --warning_300: #{$warning_300};
+    --warning_400: #{$warning_400};
+    --warning_500: #{$warning_500};
+    --warning_600: #{$warning_600};
+    --warning_700: #{$warning_700};
+    --warning_800: #{$warning_800};
+    --warning_900: #{$warning_900};
+    --warning_1000: #{$warning_1000};
+
+    // Danger
+
+    --danger_50: #{$danger_50};
+    --danger_100: #{$danger_100};
+    --danger_200: #{$danger_200};
+    --danger_300: #{$danger_300};
+    --danger_400: #{$danger_400};
+    --danger_500: #{$danger_500};
+    --danger_600: #{$danger_600};
+    --danger_700: #{$danger_700};
+    --danger_800: #{$danger_800};
+    --danger_900: #{$danger_900};
+    --danger_1000: #{$danger_1000};
+
+    // Secondary
+
+    --secondary_50: #{$secondary_50};
+    --secondary_100: #{$secondary_100};
+    --secondary_200: #{$secondary_200};
+    --secondary_300: #{$secondary_300};
+    --secondary_400: #{$secondary_400};
+    --secondary_500: #{$secondary_500};
+    --secondary_600: #{$secondary_600};
+    --secondary_700: #{$secondary_700};
+    --secondary_800: #{$secondary_800};
+    --secondary_900: #{$secondary_900};
+    --secondary_1000: #{$secondary_1000};
+
+    // Dark
+
+    --dark_50: #{$dark_50};
+    --dark_100: #{$dark_100};
+    --dark_200: #{$dark_200};
+    --dark_300: #{$dark_300};
+    --dark_400: #{$dark_400};
+    --dark_500: #{$dark_500};
+    --dark_600: #{$dark_600};
+    --dark_700: #{$dark_700};
+    --dark_800: #{$dark_800};
+    --dark_900: #{$dark_900};
+    --dark_1000: #{$dark_1000};
+
+    //  Extra Colors
+
+    --x_1: #{$x_1};
+    --x_2: #{$x_2};
+    --x_3: #{$x_3};
+    --x_4: #{$x_4};
+    --x_5: #{$x_5};
+    --x_6: #{$x_6};
+    --x_7: #{$x_7};
+    --x_8: #{$x_8};
+    --x_9: #{$x_9};
+    --x_10: #{$x_10};
+    --x_11: #{$x_11};
+    --x_12: #{$x_12};
+    --x_13: #{$x_13};
+    --x_14: #{$x_14};
+    --x_15: #{$x_15};
+    // --x_16: #{$x_16};
+    --x_17: #{$x_17};
+    --x_18: #{$x_18};
+    --x_19: #{$x_19};
+    --x_20: #{$x_20};
+    --x_21: #{$x_21};
+    --x_22: #{$x_22};
+    --x_23: #{$x_23};
+    // --x_24: #{$x_24};
+
+}

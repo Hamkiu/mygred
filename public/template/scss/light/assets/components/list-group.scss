@@ -1,0 +1,154 @@
+@import '../../../base/base';
+.list-group-item {
+  border: 1px solid var(--x_4);
+  padding: 10px 12px;
+  background-color: transparent;
+  color: var(--dark_500);
+  margin-bottom: 0;
+
+  .form-check-input:not(:checked) {
+    background-color: var(--x_4);
+    border-color: var(--x_4);
+  }
+
+  &.active {
+    color: var(--secondary_600);
+    background-color: var(--secondary_100);
+    border-color: transparent;
+
+    &:hover, &:focus {
+      color: var(--secondary_600);
+      background-color: var(--secondary_200);
+    }
+  }
+
+  &.disabled, &:disabled {
+    background: var(--dark_200);
+    color: var(--dark_500);
+  }
+}
+
+.new-control-indicator {
+  background-color: var(--x_2);
+}
+
+a.list-group-item.list-group-item-action.active i {
+  color: #010156;
+}
+
+code {
+  color: var(--danger_500);
+}
+
+.list-group-item-action {
+  &:hover {
+    color: var(--x_15);
+    background-color: var(--x_2);
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: var(--x_15);
+  }
+}
+
+/*------list group-----*/
+
+/*
+    Icons Meta
+*/
+
+.list-group {
+  &.list-group-icons-meta .list-group-item {
+    &.active .media {
+      svg {
+        font-size: 27px;
+        color: var(--secondary_600);
+      }
+
+      .media-body {
+        h6, p {
+          color: var(--secondary_600);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .media {
+      svg {
+        width: 20px;
+        color: var(--primary_500);
+        height: 20px;
+      }
+
+      .media-body {
+        h6 {
+          color: var(--dark_500);
+          font-weight: 500;
+          margin-bottom: 0;
+          font-size: 16px;
+        }
+
+        p {
+          color: var(--x_7);
+          margin-bottom: 0;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &.list-group-media .list-group-item {
+    &.active .media .media-body {
+      h6, p {
+        color: var(--secondary_600);
+        font-weight: 400;
+      }
+    }
+
+    .media {
+      img {
+        color: var(--primary_500);
+        width: 42px;
+        height: 42px;
+      }
+
+      .media-body {
+        align-self: center;
+
+        h6 {
+          color: var(--dark_500);
+          font-weight: 500;
+          margin-bottom: 0;
+          font-size: 16px;
+        }
+
+        p {
+          color: var(--x_7);
+          margin-bottom: 0;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &.task-list-group .list-group-item-action.active {
+    background-color: var(--x_13);
+    color: #fff;
+
+    .new-control.new-checkbox {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+}
+
+/*
+    Image Meta
+*/
+
+/*
+    task-list-group
+*/

@@ -1,0 +1,59 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Maintenance Wrapper------------
+
+*/
+
+/* 
+
+Maintenance
+
+*/
+
+#maintenance {
+  position: relative;
+  height: calc(100vh - 74px);
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+
+  .maintenance-wrapper {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #000;
+
+      span {
+        color: #3754db;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #6c6e78;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .page-maintenance .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 14px;
+  }
+
+  #maintenance {
+    height: auto;
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #maintenance .maintenance-wrapper h1 {
+    font-size: 25px;
+  }
+}

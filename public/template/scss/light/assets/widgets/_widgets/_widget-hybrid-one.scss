@@ -1,0 +1,75 @@
+@import '../../../base/base';
+// body.dark {
+    .widget-one_hybrid {
+      background: #fff;
+      background: #fff;
+      padding: 0 !important;
+    
+      .widget-heading {
+        padding: 20px 13px;
+    
+        .w-title {
+          display: flex;
+          margin-bottom: 15px;
+        }
+    
+        .w-icon {
+          display: inline-block;
+          align-self: center;
+          padding: 10px;
+          border-radius: 12px;
+          margin-right: 16px;
+        }
+    
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+    
+        .w-value {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 0;
+          align-self: center;
+        }
+    
+        h5 {
+          margin-bottom: 0;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--x_8);
+          letter-spacing: 1px;
+        }
+      }
+    
+      .apexcharts-canvas svg {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    
+      &.widget-followers .widget-heading .w-icon {
+        color: var(--primary_500);
+        background: var(--primary_100);
+      }
+    
+      &.widget-referral .widget-heading .w-icon {
+        color: var(--danger_500);
+        background-color: var(--danger_100);
+      }
+    
+      &.widget-social {
+        background: var(--info_100);
+        background: var(--primary_500);
+    
+        .widget-heading .w-icon {
+          color: var(--info_500);
+          border: 1px solid var(--info_500);
+        }
+      }
+    
+      &.widget-engagement .widget-heading .w-icon {
+        color: #009688;
+        background-color: var(--success_100);
+      }
+    }
+  // }

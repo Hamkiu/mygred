@@ -1,0 +1,48 @@
+@import '../../../base/base';
+
+.section-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--x_4);
+  
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  
+    p {
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  
+  .gender-select h5 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .ql-container {
+    display: block;
+    height: 174px;
+  }
+  
+  .multiple-file-upload .filepond {
+    height: 200px !important;
+  }
+  
+  .filepond--root .filepond--drop-label {
+    min-height: 204px;
+  }
+  
+  .ql-toolbar.ql-snow {
+    border: 1px solid var(--x_5);
+  
+    + .ql-container.ql-snow {
+      border: 1px solid var(--x_5);
+    }
+  }
+  
+  .ecommerce-create-section {
+    border-radius: 8px;
+  }
+  

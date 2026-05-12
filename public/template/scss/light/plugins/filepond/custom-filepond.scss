@@ -1,0 +1,107 @@
+@import '../../../base/base';
+.filepond {
+  margin: 0 auto;
+}
+
+.profile-image .filepond {
+  width: 120px;
+  height: 120px !important;
+}
+
+.multiple-file-upload .filepond {
+  width: 100%;
+}
+
+.filepond--drop-label {
+  cursor: pointer;
+
+  label {
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: inherit;
+  }
+}
+
+.filepond .no-image-placeholder {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.filepond--panel {
+  background-color: var(--dark_100) !important;
+
+  &[data-scalable=true] {
+    background-color: var(--dark_100) !important;
+  }
+}
+
+.filepond--root .filepond--drop-label, .filepond--drip, .filepond--panel-center, .filepond--panel-top, .filepond--panel-bottom {
+  background-color: var(--dark_100);
+  border-radius: 9px;
+}
+
+[data-filepond-item-state*=error] .filepond--item-panel, [data-filepond-item-state*=invalid] .filepond--item-panel {
+  background-color: var(--x_4);
+}
+
+.filepond--file {
+  background-color: var(--x_11) !important;
+  color: #fff
+}
+
+.filepond--file-action-button {
+  background-color: var(--x_4) !important;
+  color: #000
+}
+
+.filepond--file-info {
+  background-color: transparent!important;
+  color: #fff;
+
+  .filepond--file-info-main {
+    background-color: transparent !important;
+  }
+}
+
+.filepond--file .filepond--file-status {
+  background-color: var(--x_11) !important;
+}
+
+[data-filepond-item-state=processing-complete] .filepond--item-panel {
+  background-color: #369763 !important;
+  background-color: #369763 !important;
+  background-color: #369763 !important;
+}
+
+.filepond--file-action-button {
+  &.filepond--file-action-button svg {
+    background: var(--x_4);
+    border-radius: 60px;
+    color: var(--dark_500);
+  }
+
+  &:focus, &:hover {
+    box-shadow: none;
+  }
+}
+
+.filepond {
+  .no-image-placeholder svg {
+    height: 34px;
+    width: 34px;
+    stroke-width: 1.2;
+    color: #000;
+    fill: #0000001f;
+  }
+
+  .drag-para {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #000;
+    margin-top: 9px;
+  }
+}
+
+.filepond--root .filepond--credits {
+  display: none;
+}

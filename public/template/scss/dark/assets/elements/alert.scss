@@ -1,0 +1,58 @@
+@import '../../../base/base';
+/*      Alert       */
+body.dark {
+  .alert {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 0.9375rem;
+  
+    p {
+
+      &.alert-title {
+        font-size: 14px;
+      }
+      
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+  
+    ul {
+      font-size: 13px;
+    }
+  
+    .btn {
+      // margin-right: 27px;
+  
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  
+    .alert-icon svg {
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      // stroke-width: 1.2;
+    }
+  
+    .btn-close {
+      color: #000;
+      opacity: 1;
+      width: 18px;
+      background: transparent;
+      padding: 13px 12px;
+      box-shadow: none;
+  
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .btn-alert-close {
+      cursor: pointer;
+    }
+  }
+}

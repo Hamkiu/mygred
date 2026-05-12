@@ -1,0 +1,86 @@
+@import '../../../base/base';
+  /*
+      ==================
+          Total Sales
+      ==================
+  */
+  // body.dark {
+    .widget-two {
+      position: relative;
+      background: #fff;
+      padding: 0;
+      border-radius: 6px;
+      height: 100%;
+      box-shadow: none;
+      border: 1px solid var(--x_4);
+      box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+    
+      .widget-content {
+        font-size: 17px;
+      }
+    
+      .w-chart {
+        position: absolute;
+        bottom: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    
+      .w-numeric-value {
+        display: flex;
+        color: #fff;
+        font-weight: 500;
+        padding: 20px;
+        justify-content: space-between;
+    
+        .w-icon {
+          display: inline-block;
+          background: var(--warning_100);
+          padding: 13px 12px;
+          border-radius: 50%;
+          display: inline-flex;
+          align-self: center;
+          height: 45px;
+          width: 45px;
+        }
+    
+        svg {
+          display: block;
+          color: var(--warning_500);
+          width: 20px;
+          height: 20px;
+        }
+    
+        .w-value {
+          margin-bottom: -9px;
+          letter-spacing: 0px;
+          font-size: 19px;
+          display: block;
+          color: var(--x_14);
+          font-weight: 500;
+        }
+    
+        .w-numeric-title {
+          font-size: 13px;
+          color: var(--x_7);
+          font-weight: 500;
+        }
+      }
+    }
+// }
+
+
+@media (max-width: 575px) {
+    /*
+        ==================
+            Total Sales
+        ==================
+    */
+    // body.dark {
+        .widget-two .w-chart {
+        position: inherit;
+        }
+    // }
+    
+  }

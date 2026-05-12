@@ -1,0 +1,187 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Payment Wrapper------------
+
+*/
+
+/* 
+
+Payment
+
+*/
+
+#payment {
+  position: relative;
+  height: calc(100vh - 74px);
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+
+  .payment-wrapper {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #000;
+
+      span {
+        color: #3754db;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #6c6e78;
+      font-weight: 500;
+    }
+  }
+
+  .payment-form {
+    /* padding: 40px; */
+    padding: 30px 26px;
+    border: 1px dashed var(--x_4);
+    border-radius: 20px;
+
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .pm-payment-method {
+      padding: 15px;
+      border-radius: 14px;
+      border: 1px solid var(--x_4);
+
+      .form-check-label {
+        font-weight: 600;
+      }
+
+      .pm-pm-image img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .pmPaymentMethod-collapsable {
+      &.show {}
+
+      .credit-debit-content {
+        overflow: hidden;
+        transition: .2s;
+        height: 0;
+      }
+
+      &.show .credit-debit-content {
+        position: relative;
+        padding: 20px 0;
+        height: 160px;
+
+        .pm-content-bottom-section {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .payment-form-preview {
+    background-image: linear-gradient(to right, #f9f5fc 0%, #fff 100%);
+    padding: 30px 26px;
+    border: 1px dashed var(--dark_100);
+    border-radius: 20px;
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+
+    h6 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .pfp-subscription h5, .pfp-billed-monthly h5 {
+      font-size: 13px;
+      font-weight: 500;
+      color: #6c6e78;
+
+      div {}
+    }
+
+    .pfp-total-cost p.pf-total-cost {
+      span {
+        &.pf-currency {
+          font-size: 18px;
+          font-weight: 800;
+          color: #16181e;
+          vertical-align: top;
+          display: inline-block;
+          margin-right: 4px;
+        }
+
+        &.pf-frequency {
+          font-size: 15px;
+          font-weight: 600;
+          color: #6c6e78;
+        }
+      }
+
+      font-size: 35px;
+      color: #16181e;
+      font-weight: 800;
+    }
+
+    .pfp-total-billed {
+      border-top: 1px dashed #cbcbcf;
+      border-bottom: 1px dashed #cbcbcf;
+
+      h5 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .pfp-note span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #6c6e78;
+    }
+
+    .pfp-security {
+      p {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .page-payment .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 14px;
+  }
+
+  #payment {
+    height: auto;
+    padding: 50px 0;
+  }
+}
+
+@media (max-height: 800px) {
+  #payment {
+    height: auto;
+    padding: 50px 10px;
+  }
+}

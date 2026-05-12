@@ -1,0 +1,543 @@
+@import '../../../base/base';
+
+body.dark {
+  .layout-spacing {
+    padding-bottom: 25px;
+  }
+
+  .widget {
+    position: relative;
+    padding: 20px;
+    border-radius: 16px;
+    background: #1b1d25;
+    border: 1px solid #1b1d25;
+    box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+
+    .widget-heading {
+      margin-bottom: 15px;
+
+      h5 {
+        letter-spacing: 0px;
+        font-size: 18px;
+        display: block;
+
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .apexcharts-yaxis .apexcharts-yaxis-label tspan, .apexcharts-xaxis .apexcharts-xaxis-label tspan {
+    fill: var(--dark_100);
+    font-weight: 500;
+  }
+
+  .apexcharts-tooltip.apexcharts-active {
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .apex-chart-custom-tooltip {
+    padding: 5px;
+    border-radius: 10px;
+
+    .acct-tooltip-header {
+      padding: 6px 13px;
+      border-radius: 7px;
+
+      .acct-tooltip-title {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+
+    .acct-tooltip-content .acct-tooltip-content-series {
+      .acct-tooltip-marker {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border-radius: 16px;
+        margin-right: 9px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 600;
+
+        .acct-tooltip-text {}
+
+        .acct-tooltip-value {
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .widget-banner-one {
+    padding: 35px 35px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .widget-content {
+      .banner-content {
+        h4 {
+
+          font-size: 32px;
+          font-weight: 900;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 17px;
+        }
+      }
+
+      .b_o-todays-sales {
+        padding-right: 40px;
+        margin-right: 40px;
+        border-right: 1px solid #cbcbcf;
+
+        h2 {
+          font-weight: 800;
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+
+      .b_o-overall-performance {
+        h2 {
+          font-weight: 800;
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .widget-carousel-one {
+    padding: 0;
+    overflow: hidden;
+
+    .widget-content {
+      img, h4 {}
+
+      .carousel {
+        .carousel-indicators {
+          right: -30px;
+          left: auto;
+
+          li {
+            list-style: none;
+            border-radius: 50%;
+            width: 7px;
+            height: 7px;
+          }
+        }
+
+        .carousel-inner .carousel-item {
+          .carousel-overflow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(195deg, rgb(30, 46, 119, 0.22) 0%, rgb(22, 28, 36) 100%);
+          }
+
+          img {
+            max-height: 300px;
+          }
+
+          .carousel-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 23px 23px 33px 23px;
+
+            span {
+              font-weight: 600;
+            }
+
+            h3 {
+              font-size: 20px;
+              font-weight: 800;
+            }
+
+            a {}
+          }
+        }
+      }
+    }
+  }
+
+  .widget-stat-card-one {
+    /* padding: 30px; */
+
+    .widget-content {
+      .s_o-product-sold, .s_o-total-balance, .s_o-sales-profit {
+        h6 {
+          font-size: 14px;
+          letter-spacing: 0;
+        }
+
+        h2 {
+          font-weight: 700;
+          font-size: 30px;
+        }
+
+        h5 {
+          font-size: 15px;
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .widget-yearly-sales {
+    /* padding: 30px; */
+
+    .widget-heading {
+      h5, p {}
+    }
+
+    .widget-content .apex_chart_label-yearly-sales .acl-yearly-sales-content {
+      .acl-yearly-content-series {
+        .acl-yearly-marker {
+          display: inline-block;
+          height: 13px;
+          width: 13px;
+          border-radius: 16px;
+          margin-right: 9px;
+        }
+
+        p .acl-yearly-value {
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0;
+        }
+      }
+
+      .acl-yearly-content-text {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .widget-sale-by-gender {
+    /* padding: 30px; */
+
+    .widget-content .apex_chart_label-yearly-sales {
+      border-top: 1px dashed #2d303e;
+
+      .acl-yearly-sales-content {
+        .acl-yearly-content-series {
+          .acl-yearly-marker {
+            display: inline-block;
+            height: 13px;
+            width: 13px;
+            border-radius: 16px;
+            margin-right: 9px;
+          }
+
+          p .acl-yearly-value {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0;
+          }
+        }
+
+        .acl-yearly-content-text {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .widget-chart-list-one {
+
+    .widget-heading {
+
+      h5, p {}
+    }
+
+    .widget-content {
+      #weekly_stats {}
+
+      .c_l-weekly-stats-list .c_l-weekly-stats-item {
+        .c_l-icon {
+          padding: 12px;
+
+          /* background: #000; */
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+
+        h4 {
+          font-size: 16px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .badge {}
+      }
+    }
+  }
+
+  .widget-chart-list-two {
+    /* padding: 30px; */
+
+    .widget-heading {
+      /* padding: 30px; */
+
+      h5, p {}
+    }
+
+    .widget-content {
+      #yearly_stats {}
+
+      .c_l-yearly-stats-list .c_l-yearly-stats-item {
+        .c_l-icon {
+          padding: 12px;
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+
+        h4 {
+          font-size: 16px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .badge {}
+      }
+    }
+  }
+
+  .widget-card-list-one {
+    /* padding: 30px; */
+
+    .widget-heading {
+      /* padding: 30px; */
+
+      h5, p {}
+    }
+
+    .widget-content {
+      #yearly_stats {}
+
+      .c_l-payment-gateway-list .c_l-payment-gateway-item {
+        .c_l-icon {
+          padding: 12px;
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+
+        h4 {
+          font-size: 16px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .badge {}
+      }
+    }
+  }
+
+  .widget-stats-progress-one {
+    /* padding: 30px; */
+
+    .widget-heading {
+      /* padding: 30px; */
+
+      h5, p {}
+    }
+
+    .widget-content .s_p_o-sales-overview-item {
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+
+      h4 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      p {
+        letter-spacing: 0;
+      }
+
+      .progress {
+        height: 8px;
+
+        .progress-bar {}
+      }
+    }
+  }
+
+  .widget-account-overview-one {
+    /* padding: 30px; */
+
+    .widget-content {
+      h6 {
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .a_o-current-balance {
+        h2 {
+          font-weight: 700;
+          font-size: 34px;
+
+          /* font-size: 36px; */
+        }
+
+        span {
+          font-weight: 900;
+          font-size: 34px;
+
+          /* 
+              font-weight: 900;
+              font-size: 28px;
+              vertical-align: super; */
+        }
+
+        h5 {
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        p {
+          /* font-weight: 800; */
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .widget-table-one {
+    /* padding: 30px; */
+
+    .widget-heading h5 {}
+
+    .widget-content .table-responsive table {
+      thead tr th {}
+
+      tbody tr td .table-flag-img {
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .widget-listing-badges-one {
+    /* padding: 30px; */
+
+    .widget-heading h5 {}
+
+    .widget-content .l_b_o-recent-orders-list .l_b_o-recent-orders-item {
+      .lbo-img {
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      h5 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      p {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+
+
+/*
+    ======================
+        Media Query
+    ======================
+*/
+
+
+@media (max-width: 575px) {
+  body.dark {
+    .widget-banner-one {
+      padding: 30px 30px;
+      .widget-content {
+        .b_o-todays-sales h2 {
+          font-size: 22px;
+        }
+        .b_o-overall-performance h2 {
+          font-weight: 800;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

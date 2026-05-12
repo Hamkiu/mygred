@@ -1,0 +1,202 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Pricing Wrapper------------
+
+*/
+
+/* 
+
+Pricing
+
+*/
+
+#pricing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+  height: auto;
+  padding: 50px 10px;
+
+  .pricing-wrapper {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #000;
+
+      span {
+        color: #3754db;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #6c6e78;
+      font-weight: 500;
+    }
+
+    .pricing-switch p {
+      font-size: 15px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .pricing-table-3 .pricing-plans-container {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto 2em;
+      align-items: center;
+
+      .pricing-plan {
+        padding: 20px;
+
+        /* padding: 50px 30px; */
+        padding: 50px 40px;
+
+        /* border: 1px dashed var(--x_4); */
+        border-radius: 14px;
+        width: 100%;
+        max-width: 350px;
+        box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+        background: #fff;
+
+        &.plan-starter, &.plan-premium {
+          margin-left: -10px;
+        }
+
+        &.active {
+          box-shadow: none;
+        }
+
+        .pricing-plan-popular {
+          position: relative;
+
+          .badge {
+            position: absolute;
+            right: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+
+        .pricing-plan-image img {
+          width: 85px;
+        }
+
+        .pricing-header-section {
+          border-bottom: 1px dashed var(--x_4);
+
+          .pricing-header {
+            h3 {
+              font-size: 19px;
+              font-weight: 700;
+            }
+
+            p {
+              font-size: 13px;
+              font-weight: 600;
+              margin-bottom: 0;
+
+              /* letter-spacing: 0; */
+              color: #778ef7;
+            }
+          }
+
+          .pricing-header-pricing {
+            display: flex;
+            align-items: flex-end;
+
+            .dollar-pricing {
+              align-self: flex-start;
+              margin-bottom: 0;
+              font-size: 24px;
+              margin-right: 5px;
+              font-weight: 800;
+              color: #000;
+            }
+
+            .monthly-pricing {
+              /* font-size: 33px; */
+              font-size: 40px;
+              font-weight: 900;
+              color: #000;
+              margin-bottom: 0;
+            }
+
+            .yearly-pricing {
+              display: none;
+            }
+
+            .monthly-pricing-label {
+              margin-bottom: 0;
+              font-size: 14px;
+              font-weight: 700;
+              align-self: center;
+              letter-spacing: 0;
+            }
+          }
+        }
+
+        .pricing-plan-features {
+          h5 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-bottom: 0;
+          }
+
+          p {
+            margin-bottom: 0;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: underline;
+          }
+
+          ul li {
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #6c6e78;
+            letter-spacing: 0;
+
+            span {
+              margin-right: 10px;
+
+              svg {
+                width: 15px;
+                height: 15px;
+                stroke-width: 3px;
+                color: #01964c;
+              }
+            }
+          }
+        }
+
+        a.btn-pricing-btn {}
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .page-pricing .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 14px;
+  }
+
+  #pricing {
+    height: auto;
+    padding: 50px 0;
+  }
+}

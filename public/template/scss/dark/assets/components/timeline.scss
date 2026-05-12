@@ -1,0 +1,136 @@
+@import '../../../base/base';
+body.dark {
+
+    .timeline {
+
+        .timeline-meta {
+            h4 {
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0;
+            }
+        }
+    
+        .timeline-content-container {
+    
+            &.hover-timeline-content {
+                // padding: 5px;
+                border-radius: 8px;
+                
+                .timeline-progress {
+    
+                    &:before {
+                        top: 0;
+                    }
+    
+                    div {
+                        div {
+                            border: 2px solid var(--dark_500);
+                        }
+                    }
+                    
+                }
+            }
+    
+            &.icons-avatars-timeline-content {
+                
+                .timeline-progress {
+    
+                    &:before {
+                        left: 19px;
+                    }
+    
+                    div {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        div {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+                    }
+                    
+                }
+            }
+            
+    
+            .meta-time {
+                span {
+                    font-weight: 500;
+                    font-size: 12px;
+                }
+            }
+            
+            .timeline-progress {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 13px;
+                    top: 28px;
+                    bottom: 0;
+                    width: 2px;
+                    background-color: var(--dark_500);
+                }
+                
+                div {
+                    width: 28px;
+                    height: 28px;
+                    div {
+                        width: 8px;
+                        height: 8px;
+                    }
+                }
+            }
+            
+            .timeline-content {
+    
+                .card {
+                    max-width: 400px;
+                }
+    
+                .timeline-gallery {
+                    img {
+                        width: 14%;
+                        border-radius: 6px;
+                        cursor: pointer;
+                    }
+                }
+                
+                h3 {
+                    font-size: 15px;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+    
+                p {
+                    font-size: 13px;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                }
+    
+                span {
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    border: 1px solid var(--dark_500);
+                    padding: 3px 6px;
+                    border-radius: 50px;
+                    // font-size: 14px;
+                    
+                    img {
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+            }
+            
+            
+            
+        }
+      
+    }
+
+}

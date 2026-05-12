@@ -1,0 +1,184 @@
+@import '../../../base/base';
+body.dark {
+
+    .tooltip-inner {
+      border-radius: 6px;
+    }
+    
+    .tooltip .tooltip-item {
+      color: #fff;
+      padding: 0 9px;
+    }
+    
+    .tooltip-section h6 {
+      color: var(--dark_500);
+      font-size: 0.875rem;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .tooltip .tooltip-inner {
+      background-color: var(--x_15);
+    }
+
+    .bs-tooltip-top .tooltip-tooltip-arrow::before {
+      border-top-color: var(--x_15);
+    }
+  }
+    /*
+        ==================
+            Colors
+        =================
+    */
+    
+    /*
+        Tooltips
+    */
+    
+    /*		Tooltip Inner 	*/
+    body.dark {
+
+    .tooltip-primary .tooltip-inner {
+      color: var(--primary_500);
+      background-color: var(--primary_1000);
+    }
+    
+    .tooltip-success .tooltip-inner {
+      color: var(--success_500);
+      background-color: var(--success_1000);
+    }
+    
+    .tooltip-info .tooltip-inner {
+      color: var(--info_500);
+      background-color: var(--info_1000);
+    }
+    
+    .tooltip-danger .tooltip-inner {
+      color: var(--danger_500);
+      background-color: var(--danger_1000);
+    }
+    
+    .tooltip-warning .tooltip-inner {
+      color: var(--warning_500);
+      background-color: var(--warning_1000);
+    }
+    
+    .tooltip-secondary .tooltip-inner {
+      color: var(--secondary_400);
+      background-color: var(--secondary_1000);
+    }
+    
+    .tooltip-dark .tooltip-inner {
+      color: var(--dark_300);
+      background-color: var(--dark_700);
+    }
+
+
+
+
+
+
+    // .tooltip-primary .tooltip-arrow {
+    //   // color: var(--primary_500);
+    //   background-color: var(--primary_1000);
+    // }
+    
+    // .tooltip-success .tooltip-arrow {
+    //   // color: var(--success_500);
+    //   background-color: var(--success_1000);
+    // }
+    
+    // .tooltip-info .tooltip-arrow {
+    //   // color: var(--info_500);
+    //   background-color: var(--info_1000);
+    // }
+    
+    // .tooltip-danger .tooltip-arrow {
+    //   // color: var(--danger_500);
+    //   background-color: var(--danger_1000);
+    // }
+    
+    // .tooltip-warning .tooltip-arrow {
+    //   // color: var(--warning_500);
+    //   background-color: var(--warning_1000);
+    // }
+    
+    // .tooltip-secondary .tooltip-arrow {
+    //   // color: var(--secondary_500);
+    //   background-color: var(--secondary_1000);
+    // }
+    
+    // .tooltip-dark .tooltip-arrow {
+    //   // color: var(--x_5);
+    //   background-color: var(--dark_1000);
+    // }
+    
+    
+    
+    
+  }
+    
+    /*		Tooltip arrow 		*/
+    body.dark {
+    .tooltip {
+      &.bs-tooltip-top .tooltip-arrow:before {
+        border-top-color: var(--dark_400);
+      }
+    
+      &.bs-tooltip-bottom .tooltip-arrow:before {
+        border-bottom-color: var(--dark_400);
+      }
+    
+      &.bs-tooltip-left .tooltip-arrow:before {
+        border-left-color: var(--dark_400);
+      }
+    
+      &.bs-tooltip-right .tooltip-arrow:before {
+        border-right-color: var(--dark_400);
+      }
+    }
+    
+    .tooltip-primary {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--primary_1000);
+      }
+    }
+  
+    .tooltip-info {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--info_1000);
+      }
+    }
+  
+    .tooltip-success {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--success_1000);
+      }
+    }
+    .tooltip-warning {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--warning_1000);
+      }
+    }
+  
+    .tooltip-danger {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--danger_1000);
+      }
+    }
+  
+    .tooltip-secondary {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--secondary_1000);
+      }
+    }
+  
+    .tooltip-dark {
+      &.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow:before {
+        border-top-color: var(--dark_1000);
+      }
+    }
+  
+
+    
+}

@@ -1,0 +1,22 @@
+@import '../../../base/base';
+body.dark {
+.apexcharts-canvas {
+    margin: 0 auto;
+  }
+  
+  .apexcharts-title-text, .apexcharts-yaxis-label, .apexcharts-xaxis-label {
+    fill: var(--x_4);
+  }
+  
+  .apexcharts-legend-text {
+    color: var(--x_4) !important;
+  }
+  
+  .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
+    stroke: var(--x_13);
+  }
+  
+  .apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+    fill: var(--x_5);
+  }
+}

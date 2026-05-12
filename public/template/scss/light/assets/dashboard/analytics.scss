@@ -1,0 +1,614 @@
+@import '../../../base/base';
+
+.layout-spacing {
+    padding-bottom: 25px;
+  }
+  
+  .widget {
+    position: relative;
+    padding: 20px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--x_4);
+    box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+  
+    .widget-heading {
+      margin-bottom: 15px;
+  
+      h5 {
+        letter-spacing: 0px;
+        font-size: 18px;
+        display: block;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  /* 
+  
+      APEX CHART
+  
+  */
+  
+  .apexcharts-yaxis .apexcharts-yaxis-label tspan, .apexcharts-xaxis .apexcharts-xaxis-label tspan {
+    fill: #2d303e;
+    font-weight: 500;
+  }
+  
+  /* Apex Chart Custom Tooltip Design  */
+  
+  .apexcharts-tooltip.apexcharts-active {
+    border: none !important;
+    background: transparent !important;
+  }
+  
+  .apex-chart-custom-tooltip {
+    padding: 5px;
+    border-radius: 10px;
+  
+    .acct-tooltip-header {
+      padding: 6px 13px;
+      border-radius: 7px;
+  
+      .acct-tooltip-title {
+        font-size: 13px !important;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+  
+    .acct-tooltip-content .acct-tooltip-content-series {
+      .acct-tooltip-marker {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border-radius: 16px;
+        margin-right: 9px;
+      }
+  
+      p {
+        font-size: 12px;
+        font-weight: 600;
+  
+        .acct-tooltip-text {}
+  
+        .acct-tooltip-value {
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  
+  /*
+      =====================
+          Stat Card One
+      =====================
+  */
+  
+  .widget-stat-card-one .widget-content {
+    .s_o-weekly-sales {
+      h6 {
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+  
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+      }
+  
+      .s_o-weekly-sales-top {
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+  
+        h5 {
+          font-size: 13px;
+        }
+      }
+  
+      .c_l-icon {
+        font-size: 15px;
+  
+        svg {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
+          stroke-width: 1.5px;
+        }
+      }
+    }
+  
+    .s_o-new-users {
+      h6 {
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+  
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+      }
+  
+      .s_o-new-users-top {
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+  
+        h5 {
+          font-size: 13px;
+        }
+      }
+  
+      .c_l-icon {
+        font-size: 15px;
+  
+        svg {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
+          stroke-width: 1.5px;
+        }
+      }
+    }
+  
+    .s_o-purchase-orders {
+      h6 {
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+  
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+      }
+  
+      .s_o-purchase-orders-top {
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+  
+        h5 {
+          font-size: 13px;
+        }
+      }
+  
+      .c_l-icon {
+        font-size: 15px;
+  
+        svg {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
+          stroke-width: 1.5px;
+        }
+      }
+    }
+  
+    .s_o-messages {
+      h6 {
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+  
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+      }
+  
+      .s_o-messages-top {
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+  
+        h5 {
+          font-size: 13px;
+        }
+      }
+  
+      .c_l-icon {
+        font-size: 15px;
+  
+        svg {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
+          stroke-width: 1.5px;
+        }
+      }
+    }
+  }
+  
+  /* Stat Card One ==> Product Sold  */
+  
+  /* Stat Card One ==> Total Balance  */
+  
+  /* Stat Card One ==> Total Balance  */
+  
+  /* Stat Card One ==> Total Balance  */
+  
+  /*
+      =====================
+          Current visits
+      =====================
+  */
+  
+  .widget-chart-one .widget-content .apex_chart_label-current-visits {
+    border-top: 1px dashed var(--x_4);
+  
+    .acl-current-visits-content {
+      .acl-current-visit-content-series {
+        .acl-current-visit-marker {
+          display: inline-block;
+          height: 13px;
+          width: 13px;
+          border-radius: 16px;
+          margin-right: 9px;
+        }
+  
+        p .acl-current-visit-value {
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0;
+        }
+      }
+  
+      .acl-yearly-content-text {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /*
+      =====================
+          Sales by Country
+      =====================
+  */
+  
+  .widget-chart-list-one {
+    .widget-heading {
+      h5, p {}
+    }
+  
+    .widget-content {
+      #weekly_stats {}
+  
+      .c_l-sales-by-country .c_l-sales-by-country-item {
+        .c_l-img img {
+          width: 35px;
+          height: 35px;
+          border-radius: 10px;
+        }
+  
+        h4 {
+          font-size: 15px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+  
+        p {
+          font-size: 12px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+  
+        .badge {}
+      }
+    }
+  }
+  
+  /*
+      =====================
+          Total Earning
+      =====================
+  */
+  
+  .widget-chart-list-two {
+    .widget-heading {
+      h5, p {}
+    }
+  
+    .widget-content {
+      #yearly_stats {}
+  
+      .c_l-total-earning-stats p {
+        font-size: 38px;
+  
+        span {
+          font-size: 15px;
+          vertical-align: super;
+          letter-spacing: 0;
+  
+          svg {
+            font-size: 17px;
+            vertical-align: middle;
+          }
+        }
+      }
+  
+      .c_l-total-earning-list .c_l-total-earning-item {
+        .c_l-icon {
+          padding: 12px;
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+  
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+  
+        h4 {
+          font-size: 14px;
+          font-weight: 600;
+        }
+  
+        p {
+          font-size: 12px;
+          letter-spacing: 0;
+          font-weight: 500;
+        }
+  
+        .badge {}
+      }
+    }
+  }
+  
+  /*
+      =====================
+          Monthly Campaign State
+      =====================
+  */
+  
+  .widget-card-list-one {
+    .widget-heading {
+      h5, p {}
+    }
+  
+    .widget-content {
+      #yearly_stats {}
+  
+      .c_l-monthly-camp-state-list .c_l-monthly-camp-state-item {
+        .c_l-icon {
+          padding: 12px;
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+  
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+  
+        h4 {
+          font-size: 14px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+  
+        p {
+          font-size: 13px;
+        }
+  
+        .badge {}
+      }
+    }
+  
+    .widget-heading {
+      h5, p {}
+    }
+  
+    .widget-content {
+      #yearly_stats {}
+  
+      .c_l-source-visits-list .c_l-source-visits-item {
+        .c_l-icon {
+          padding: 12px;
+          align-self: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-radius: 12px;
+  
+          svg {
+            width: 23px;
+            height: 23px;
+          }
+        }
+  
+        h4 {
+          font-size: 14px;
+          letter-spacing: 0;
+          font-weight: 600;
+        }
+  
+        p {
+          font-size: 13px;
+        }
+  
+        .badge {}
+      }
+    }
+  }
+  
+  /*
+      =====================
+          Source Visits
+      =====================
+  */
+  
+  /*
+      =====================
+          Project List
+      =====================
+  */
+  
+  .widget-stats-progress-one {
+    .widget-heading {
+      h5, p {}
+    }
+  
+    .widget-content .table-responsive table {
+      thead tr th {}
+  
+      tbody tr td .media {
+        .avatar img {}
+  
+        .media-body {
+          h6 {
+            font-size: 14px;
+          }
+  
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  
+  /*
+      =================================
+          Support Tickets Chart
+      =================================
+  */
+
+  .widget-chart-list-three {
+
+    .c_l-support-tickets-chart {
+
+    }
+
+    .c_l-support-tickets-list {
+
+      .c_l-support-tickets-item {
+
+        p {
+          font-size: 13px;
+        }
+        
+        span {
+
+        }
+
+      }
+      
+    }
+    
+  }
+  
+  
+  
+  
+  /*
+      =============
+          Tasks
+      =============
+  */
+  
+  // .widget-list-group-checklist-one {
+  //   .widget-heading {
+  //     padding: 20px;
+  
+  //     h5, p {}
+  //   }
+  
+  //   .widget-content {
+  //     .l_g_c-tasks-list .l_g_c-tasks-item {
+  //       padding: 0 20px;
+  
+  //       &:not(:last-child) {
+  //         border-bottom: 1px dashed var(--x_4);
+  //       }
+  
+  //       .form-check {
+  //         input {}
+  
+  //         label.form-check-label {
+  //           font-size: 13px;
+  //           margin-top: 2px;
+  //         }
+  //       }
+  
+  //       p {
+  //         font-size: 12px;
+  //       }
+  //     }
+  
+  //     .l_g-news-bottom {
+  //       padding: 20px;
+  //       border-top: 1px dashed var(--x_4);
+  
+  //       button {}
+  //     }
+  //   }
+  // }
+  
+  /*
+      =============
+          News
+      =============
+  */
+  
+  .widget-list-group-one {
+    .widget-heading {
+      padding: 20px;
+  
+      h5, p {}
+    }
+  
+    .widget-content {
+      .l_g-news-list .l_g-news-item {
+        padding: 0 20px;
+  
+        &:not(:last-child) {
+          border-bottom: 1px dashed var(--x_4);
+        }
+  
+        .l_g-img {
+          width: 55px;
+          height: 55px;
+  
+          img {
+            border-radius: 11px;
+          }
+        }
+  
+        .l_g-content {
+          flex: 1;
+        }
+  
+        h6 {
+          font-size: 13px;
+        }
+  
+        p {
+          font-size: 12px;
+        }
+      }
+  
+      .l_g-news-bottom {
+        padding: 10px 20px;
+        border-top: 1px dashed var(--x_4);
+  
+        button {}
+      }
+    }
+  }
+  

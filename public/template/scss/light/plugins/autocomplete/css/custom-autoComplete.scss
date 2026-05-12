@@ -1,0 +1,99 @@
+@import '../../../../base/base';
+.autoComplete_wrapper {
+  display: block;
+
+  > {
+    input {
+      height: 3rem;
+      width: 100%;
+      margin: 0;
+      padding: 0 2rem 0 2rem;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-size: 1rem;
+      text-overflow: ellipsis;
+      color: var(--dark_500);
+      outline: none;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: none;
+      border: 1px solid var(--x_5);
+      
+      &::placeholder {
+        color: var(--x_7);
+        transition: all 0.3s ease;
+      }
+    }
+
+    ul {
+      background-color: #fff;
+      border: 1px solid var(--x_4);
+      border-radius: 8px;
+      overflow-y: auto;
+      box-shadow: none;
+
+      > li {
+        color: var(--x_12);
+        background-color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+
+        mark {
+          color: var(--success_500);
+        }
+      }
+
+      scrollbar-color: var(--x_12) var(--x_12);
+      scrollbar-width: thin;
+
+      .no_result {
+        font-size: 15px;
+        color: var(--x_14);
+        padding: 8px 10px;
+      }
+      
+    }
+  }
+
+  &:hover > ul {
+    scrollbar-color: var(--x_8) var(--x_12);
+    scrollbar-width: thin;
+  }
+
+  ul {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: var(--x_12);
+    }
+
+    &::-webkit-scrollbar-thumb:vertical {
+      height: 30px;
+      background-color: var(--x_12);
+      border-radius: 2px;
+    }
+  }
+
+  &:hover > ul::-webkit-scrollbar-thumb:vertical {
+    height: 30px;
+    background-color: var(--x_8);
+  }
+}
+
+.autocomplete-btn {
+  position: relative;
+  display: block;
+
+  .btn {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    letter-spacing: 1px;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}

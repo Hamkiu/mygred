@@ -1,0 +1,615 @@
+@import '../../base/base';
+
+// BACKGROUND COLORS
+
+
+.hover {
+
+    // ===================
+    //      Pure Colors
+    // ===================
+
+    &\:bg-white:hover {
+        background-color: var(--white) !important;
+    }
+    &\:bg-black:hover {
+        background-color: var(--black) !important;
+    }
+    // ===================
+    //      PRIMARY
+    // ===================
+
+    &\:bg-primary:hover {
+        background-color: var(--primary_500) !important;
+    }
+    &\:bg-primary\:50:hover {
+        background-color: var(--primary_50) !important;
+    }
+    &\:bg-primary\:100:hover {
+        background-color: var(--primary_100) !important;
+    }
+    &\:bg-primary\:200:hover {
+        background-color: var(--primary_200) !important;
+    }
+    &\:bg-primary\:300:hover {
+        background-color: var(--primary_300) !important;
+    }
+    &\:bg-primary\:400:hover {
+        background-color: var(--primary_400) !important;
+    }
+    &\:bg-primary\:500:hover {
+        background-color: var(--primary_500) !important;
+    }
+    &\:bg-primary\:600:hover {
+        background-color: var(--primary_600) !important;
+    }
+    &\:bg-primary\:700:hover {
+        background-color: var(--primary_700) !important;
+    }
+    &\:bg-primary\:800:hover {
+        background-color: var(--primary_800) !important;
+    }
+    &\:bg-primary\:900:hover {
+        background-color: var(--primary_900) !important;
+    }
+    &\:bg-primary\:1000:hover {
+        background-color: var(--primary_1000) !important;
+    }
+
+
+    // ===================
+    //      INFO
+    // ===================
+
+    &\:bg-info:hover {
+        background-color: var(--info_500) !important;
+    }
+    &\:bg-info\:50:hover {
+        background-color: var(--info_50) !important;
+    }
+    &\:bg-info\:100:hover {
+        background-color: var(--info_100) !important;
+    }
+    &\:bg-info\:200:hover {
+        background-color: var(--info_200) !important;
+    }
+    &\:bg-info\:300:hover {
+        background-color: var(--info_300) !important;
+    }
+    &\:bg-info\:400:hover {
+        background-color: var(--info_400) !important;
+    }
+    &\:bg-info\:500:hover {
+        background-color: var(--info_500) !important;
+    }
+    &\:bg-info\:600:hover {
+        background-color: var(--info_600) !important;
+    }
+    &\:bg-info\:700:hover {
+        background-color: var(--info_700) !important;
+    }
+    &\:bg-info\:800:hover {
+        background-color: var(--info_800) !important;
+    }
+    &\:bg-info\:900:hover {
+        background-color: var(--info_900) !important;
+    }
+    &\:bg-info\:1000:hover {
+        background-color: var(--info_1000) !important;
+    }
+
+    // ===================
+    //      SUCCESS
+    // ===================
+
+    &\:bg-success:hover {
+        background-color: var(--success_500) !important;
+    }
+    &\:bg-success\:50:hover {
+        background-color: var(--success_50) !important;
+    }
+    &\:bg-success\:100:hover {
+        background-color: var(--success_100) !important;
+    }
+    &\:bg-success\:200:hover {
+        background-color: var(--success_200) !important;
+    }
+    &\:bg-success\:300:hover {
+        background-color: var(--success_300) !important;
+    }
+    &\:bg-success\:400:hover {
+        background-color: var(--success_400) !important;
+    }
+    &\:bg-success\:500:hover {
+        background-color: var(--success_500) !important;
+    }
+    &\:bg-success\:600:hover {
+        background-color: var(--success_600) !important;
+    }
+    &\:bg-success\:700:hover {
+        background-color: var(--success_700) !important;
+    }
+    &\:bg-success\:800:hover {
+        background-color: var(--success_800) !important;
+    }
+    &\:bg-success\:900:hover {
+        background-color: var(--success_900) !important;
+    }
+    &\:bg-success\:1000:hover {
+        background-color: var(--success_1000) !important;
+    }
+
+    // ===================
+    //      WARNING
+    // ===================
+
+    &\:bg-warning:hover {
+        background-color: var(--warning_500) !important;
+    }
+    &\:bg-warning\:50:hover {
+        background-color: var(--warning_50) !important;
+    }
+    &\:bg-warning\:100:hover {
+        background-color: var(--warning_100) !important;
+    }
+    &\:bg-warning\:200:hover {
+        background-color: var(--warning_200) !important;
+    }
+    &\:bg-warning\:300:hover {
+        background-color: var(--warning_300) !important;
+    }
+    &\:bg-warning\:400:hover {
+        background-color: var(--warning_400) !important;
+    }
+    &\:bg-warning\:500:hover {
+        background-color: var(--warning_500) !important;
+    }
+    &\:bg-warning\:600:hover {
+        background-color: var(--warning_600) !important;
+    }
+    &\:bg-warning\:700:hover {
+        background-color: var(--warning_700) !important;
+    }
+    &\:bg-warning\:800:hover {
+        background-color: var(--warning_800) !important;
+    }
+    &\:bg-warning\:900:hover {
+        background-color: var(--warning_900) !important;
+    }
+    &\:bg-warning\:1000:hover {
+        background-color: var(--warning_1000) !important;
+    }
+
+    // ===================
+    //      DANGER
+    // ===================
+
+    &\:bg-danger:hover {
+        background-color: var(--danger_500) !important;
+    }
+    &\:bg-danger\:50:hover {
+        background-color: var(--danger_50) !important;
+    }
+    &\:bg-danger\:100:hover {
+        background-color: var(--danger_100) !important;
+    }
+    &\:bg-danger\:200:hover {
+        background-color: var(--danger_200) !important;
+    }
+    &\:bg-danger\:300:hover {
+        background-color: var(--danger_300) !important;
+    }
+    &\:bg-danger\:400:hover {
+        background-color: var(--danger_400) !important;
+    }
+    &\:bg-danger\:500:hover {
+        background-color: var(--danger_500) !important;
+    }
+    &\:bg-danger\:600:hover {
+        background-color: var(--danger_600) !important;
+    }
+    &\:bg-danger\:700:hover {
+        background-color: var(--danger_700) !important;
+    }
+    &\:bg-danger\:800:hover {
+        background-color: var(--danger_800) !important;
+    }
+    &\:bg-danger\:900:hover {
+        background-color: var(--danger_900) !important;
+    }
+    &\:bg-danger\:1000:hover {
+        background-color: var(--danger_1000) !important;
+    }
+
+    // ===================
+    //      SECONDARY
+    // ===================
+
+    &\:bg-secondary:hover {
+        background-color: var(--secondary_500) !important;
+    }
+    &\:bg-secondary\:50:hover {
+        background-color: var(--secondary_50) !important;
+    }
+    &\:bg-secondary\:100:hover {
+        background-color: var(--secondary_100) !important;
+    }
+    &\:bg-secondary\:200:hover {
+        background-color: var(--secondary_200) !important;
+    }
+    &\:bg-secondary\:300:hover {
+        background-color: var(--secondary_300) !important;
+    }
+    &\:bg-secondary\:400:hover {
+        background-color: var(--secondary_400) !important;
+    }
+    &\:bg-secondary\:500:hover {
+        background-color: var(--secondary_500) !important;
+    }
+    &\:bg-secondary\:600:hover {
+        background-color: var(--secondary_600) !important;
+    }
+    &\:bg-secondary\:700:hover {
+        background-color: var(--secondary_700) !important;
+    }
+    &\:bg-secondary\:800:hover {
+        background-color: var(--secondary_800) !important;
+    }
+    &\:bg-secondary\:900:hover {
+        background-color: var(--secondary_900) !important;
+    }
+    &\:bg-secondary\:1000:hover {
+        background-color: var(--secondary_1000) !important;
+    }
+
+    // ===================
+    //      DARK
+    // ===================
+
+    &\:bg-dark:hover {
+        background-color: var(--dark_500) !important;
+    }
+    &\:bg-dark\:50:hover {
+        background-color: var(--dark_50) !important;
+    }
+    &\:bg-dark\:100:hover {
+        background-color: var(--dark_100) !important;
+    }
+    &\:bg-dark\:200:hover {
+        background-color: var(--dark_200) !important;
+    }
+    &\:bg-dark\:300:hover {
+        background-color: var(--dark_300) !important;
+    }
+    &\:bg-dark\:400:hover {
+        background-color: var(--dark_400) !important;
+    }
+    &\:bg-dark\:500:hover {
+        background-color: var(--dark_500) !important;
+    }
+    &\:bg-dark\:600:hover {
+        background-color: var(--dark_600) !important;
+    }
+    &\:bg-dark\:700:hover {
+        background-color: var(--dark_700) !important;
+    }
+    &\:bg-dark\:800:hover {
+        background-color: var(--dark_800) !important;
+    }
+    &\:bg-dark\:900:hover {
+        background-color: var(--dark_900) !important;
+    }
+    &\:bg-dark\:1000:hover {
+        background-color: var(--dark_1000) !important;
+    }
+
+}
+
+
+:is(.dark) {
+    .dark {
+
+        &\:hover {
+
+            // ===================
+            //      Pure Colors
+            // ===================
+        
+            &\:bg-white:hover {
+                background-color: var(--white) !important;
+            }
+            &\:bg-black:hover {
+                background-color: var(--black) !important;
+            }
+            // ===================
+            //      PRIMARY
+            // ===================
+        
+            &\:bg-primary:hover {
+                background-color: var(--primary_500) !important;
+            }
+            &\:bg-primary\:50:hover {
+                background-color: var(--primary_50) !important;
+            }
+            &\:bg-primary\:100:hover {
+                background-color: var(--primary_100) !important;
+            }
+            &\:bg-primary\:200:hover {
+                background-color: var(--primary_200) !important;
+            }
+            &\:bg-primary\:300:hover {
+                background-color: var(--primary_300) !important;
+            }
+            &\:bg-primary\:400:hover {
+                background-color: var(--primary_400) !important;
+            }
+            &\:bg-primary\:500:hover {
+                background-color: var(--primary_500) !important;
+            }
+            &\:bg-primary\:600:hover {
+                background-color: var(--primary_600) !important;
+            }
+            &\:bg-primary\:700:hover {
+                background-color: var(--primary_700) !important;
+            }
+            &\:bg-primary\:800:hover {
+                background-color: var(--primary_800) !important;
+            }
+            &\:bg-primary\:900:hover {
+                background-color: var(--primary_900) !important;
+            }
+            &\:bg-primary\:1000:hover {
+                background-color: var(--primary_1000) !important;
+            }
+        
+        
+            // ===================
+            //      INFO
+            // ===================
+        
+            &\:bg-info:hover {
+                background-color: var(--info_500) !important;
+            }
+            &\:bg-info\:50:hover {
+                background-color: var(--info_50) !important;
+            }
+            &\:bg-info\:100:hover {
+                background-color: var(--info_100) !important;
+            }
+            &\:bg-info\:200:hover {
+                background-color: var(--info_200) !important;
+            }
+            &\:bg-info\:300:hover {
+                background-color: var(--info_300) !important;
+            }
+            &\:bg-info\:400:hover {
+                background-color: var(--info_400) !important;
+            }
+            &\:bg-info\:500:hover {
+                background-color: var(--info_500) !important;
+            }
+            &\:bg-info\:600:hover {
+                background-color: var(--info_600) !important;
+            }
+            &\:bg-info\:700:hover {
+                background-color: var(--info_700) !important;
+            }
+            &\:bg-info\:800:hover {
+                background-color: var(--info_800) !important;
+            }
+            &\:bg-info\:900:hover {
+                background-color: var(--info_900) !important;
+            }
+            &\:bg-info\:1000:hover {
+                background-color: var(--info_1000) !important;
+            }
+        
+            // ===================
+            //      SUCCESS
+            // ===================
+        
+            &\:bg-success:hover {
+                background-color: var(--success_500) !important;
+            }
+            &\:bg-success\:50:hover {
+                background-color: var(--success_50) !important;
+            }
+            &\:bg-success\:100:hover {
+                background-color: var(--success_100) !important;
+            }
+            &\:bg-success\:200:hover {
+                background-color: var(--success_200) !important;
+            }
+            &\:bg-success\:300:hover {
+                background-color: var(--success_300) !important;
+            }
+            &\:bg-success\:400:hover {
+                background-color: var(--success_400) !important;
+            }
+            &\:bg-success\:500:hover {
+                background-color: var(--success_500) !important;
+            }
+            &\:bg-success\:600:hover {
+                background-color: var(--success_600) !important;
+            }
+            &\:bg-success\:700:hover {
+                background-color: var(--success_700) !important;
+            }
+            &\:bg-success\:800:hover {
+                background-color: var(--success_800) !important;
+            }
+            &\:bg-success\:900:hover {
+                background-color: var(--success_900) !important;
+            }
+            &\:bg-success\:1000:hover {
+                background-color: var(--success_1000) !important;
+            }
+        
+            // ===================
+            //      WARNING
+            // ===================
+        
+            &\:bg-warning:hover {
+                background-color: var(--warning_500) !important;
+            }
+            &\:bg-warning\:50:hover {
+                background-color: var(--warning_50) !important;
+            }
+            &\:bg-warning\:100:hover {
+                background-color: var(--warning_100) !important;
+            }
+            &\:bg-warning\:200:hover {
+                background-color: var(--warning_200) !important;
+            }
+            &\:bg-warning\:300:hover {
+                background-color: var(--warning_300) !important;
+            }
+            &\:bg-warning\:400:hover {
+                background-color: var(--warning_400) !important;
+            }
+            &\:bg-warning\:500:hover {
+                background-color: var(--warning_500) !important;
+            }
+            &\:bg-warning\:600:hover {
+                background-color: var(--warning_600) !important;
+            }
+            &\:bg-warning\:700:hover {
+                background-color: var(--warning_700) !important;
+            }
+            &\:bg-warning\:800:hover {
+                background-color: var(--warning_800) !important;
+            }
+            &\:bg-warning\:900:hover {
+                background-color: var(--warning_900) !important;
+            }
+            &\:bg-warning\:1000:hover {
+                background-color: var(--warning_1000) !important;
+            }
+        
+            // ===================
+            //      DANGER
+            // ===================
+        
+            &\:bg-danger:hover {
+                background-color: var(--danger_500) !important;
+            }
+            &\:bg-danger\:50:hover {
+                background-color: var(--danger_50) !important;
+            }
+            &\:bg-danger\:100:hover {
+                background-color: var(--danger_100) !important;
+            }
+            &\:bg-danger\:200:hover {
+                background-color: var(--danger_200) !important;
+            }
+            &\:bg-danger\:300:hover {
+                background-color: var(--danger_300) !important;
+            }
+            &\:bg-danger\:400:hover {
+                background-color: var(--danger_400) !important;
+            }
+            &\:bg-danger\:500:hover {
+                background-color: var(--danger_500) !important;
+            }
+            &\:bg-danger\:600:hover {
+                background-color: var(--danger_600) !important;
+            }
+            &\:bg-danger\:700:hover {
+                background-color: var(--danger_700) !important;
+            }
+            &\:bg-danger\:800:hover {
+                background-color: var(--danger_800) !important;
+            }
+            &\:bg-danger\:900:hover {
+                background-color: var(--danger_900) !important;
+            }
+            &\:bg-danger\:1000:hover {
+                background-color: var(--danger_1000) !important;
+            }
+        
+            // ===================
+            //      SECONDARY
+            // ===================
+        
+            &\:bg-secondary:hover {
+                background-color: var(--secondary_500) !important;
+            }
+            &\:bg-secondary\:50:hover {
+                background-color: var(--secondary_50) !important;
+            }
+            &\:bg-secondary\:100:hover {
+                background-color: var(--secondary_100) !important;
+            }
+            &\:bg-secondary\:200:hover {
+                background-color: var(--secondary_200) !important;
+            }
+            &\:bg-secondary\:300:hover {
+                background-color: var(--secondary_300) !important;
+            }
+            &\:bg-secondary\:400:hover {
+                background-color: var(--secondary_400) !important;
+            }
+            &\:bg-secondary\:500:hover {
+                background-color: var(--secondary_500) !important;
+            }
+            &\:bg-secondary\:600:hover {
+                background-color: var(--secondary_600) !important;
+            }
+            &\:bg-secondary\:700:hover {
+                background-color: var(--secondary_700) !important;
+            }
+            &\:bg-secondary\:800:hover {
+                background-color: var(--secondary_800) !important;
+            }
+            &\:bg-secondary\:900:hover {
+                background-color: var(--secondary_900) !important;
+            }
+            &\:bg-secondary\:1000:hover {
+                background-color: var(--secondary_1000) !important;
+            }
+        
+            // ===================
+            //      DARK
+            // ===================
+        
+            &\:bg-dark:hover {
+                background-color: var(--dark_500) !important;
+            }
+            &\:bg-dark\:50:hover {
+                background-color: var(--dark_50) !important;
+            }
+            &\:bg-dark\:100:hover {
+                background-color: var(--dark_100) !important;
+            }
+            &\:bg-dark\:200:hover {
+                background-color: var(--dark_200) !important;
+            }
+            &\:bg-dark\:300:hover {
+                background-color: var(--dark_300) !important;
+            }
+            &\:bg-dark\:400:hover {
+                background-color: var(--dark_400) !important;
+            }
+            &\:bg-dark\:500:hover {
+                background-color: var(--dark_500) !important;
+            }
+            &\:bg-dark\:600:hover {
+                background-color: var(--dark_600) !important;
+            }
+            &\:bg-dark\:700:hover {
+                background-color: var(--dark_700) !important;
+            }
+            &\:bg-dark\:800:hover {
+                background-color: var(--dark_800) !important;
+            }
+            &\:bg-dark\:900:hover {
+                background-color: var(--dark_900) !important;
+            }
+            &\:bg-dark\:1000:hover {
+                background-color: var(--dark_1000) !important;
+            }
+        
+        }
+
+    }
+}

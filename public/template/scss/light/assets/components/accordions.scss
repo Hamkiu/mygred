@@ -1,0 +1,175 @@
+@import '../../../base/base';
+/*
+    Basic
+*/
+
+.accordion {
+  .card {
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    box-shadow: none;
+  }
+
+  .card-header {
+    background-color: transparent;
+    color: var(--x_20);
+    border-radius: 0;
+    padding: 0;
+    position: relative;
+    border-bottom: none;
+
+    .accordion-title > div {
+      padding: 13px 19px;
+      cursor: pointer;
+      display: block;
+      font-size: 14px;
+
+      border-radius: 10px;
+      border: 1px solid var(--dark_100);
+
+      &.collapsed {
+        color: var(--dark_500);
+      }
+
+      &:not(.collapsed) {
+        color: var(--primary_500);
+        font-weight: 500;
+        background-color: var(--success_100);
+        color: var(--success_800);
+      }
+
+      .icons {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 9px;
+
+        svg {
+          width: 18px;
+          transition: .5s;
+          transform: rotate(0);
+        }
+      }
+
+      &[aria-expanded="true"] .icons svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .card .card-body {
+
+    border: 1px solid var(--dark_100);
+    border-radius: 10px;
+    margin-top: 5px;
+    
+    p {
+      color: var(--dark_500);
+      letter-spacing: 1px;
+      font-size: 13px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+
+      li {
+        font-size: 12px;
+        letter-spacing: 1px;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        a {
+          color: var(--dark_500);
+          font-size: 13px;
+          font-weight: 500;
+
+          &:hover {
+            color: var(--primary_500);
+          }
+        }
+      }
+    }
+  }
+
+  &.no-outer-spacing {
+    border: 1px solid var(--dark_100);
+    border-radius: 10px;
+
+    .card {
+      margin-bottom: 0;
+      border: none;
+      border-radius: 0;
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--dark_100);
+      }
+
+      .card-header {
+
+        .accordion-title {
+          > div {
+            border: none;
+            // border-radius: 2px;
+            border-radius: 5px;
+          }
+        }
+        
+      }
+      
+      .card-body {
+        border: none;
+      }
+      
+    }
+
+    .card-header section > div:not(.collapsed) {
+      border-bottom: none;
+    }
+  }
+}
+
+/*
+    No Outer Spacing
+*/
+
+
+/*
+    Accordin with Icons
+*/
+
+.accordion-icons {
+  .accordion-icon {
+    display: inline-block;
+    margin-right: 10px;
+
+    svg {
+      color: var(--x_7);
+      margin-right: 6px;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  div:not(.collapsed) .accordion-icon svg {
+    color: var(--success_700);
+  }
+}

@@ -1,0 +1,374 @@
+@import '../../../base/base';
+
+/* 
+
+About Me Wrapper
+
+*/
+
+body.dark {
+  &.page-about-us #headerWrapper {
+    position: relative;
+    padding: 84px 30px;
+    min-height: 560px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 74px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../../img/pages/about-us/overlay.svg'), url('../../../img/pages/about-us/header-1.jpg');
+  }
+
+  #aboutMeWrapper {
+    padding: 84px 30px 206px 30px;
+
+    .about-me-wrapper {
+      .am-overlay {
+        overflow: hidden;
+        border-radius: 15px;
+        z-index: 0;
+        position: relative;
+
+        &.ab-me-1 {
+          width: 290px;
+          height: 290px;
+
+          img {
+            width: 713px;
+            right: -105px;
+          }
+        }
+
+        &.ab-me-2 {
+          width: 280px;
+          height: 400px;
+
+          img {
+            width: 753px;
+            left: -360px;
+          }
+        }
+
+        img {
+          position: absolute;
+          z-index: -2;
+        }
+      }
+
+      h1 {
+        font-weight: 800;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .progress-skills-content .progress-skill {
+        h5 {
+          font-size: 13px;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+
+        p {
+          font-size: 13px;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        .progress {
+          border-radius: 8px;
+          height: 5px;
+
+          .progress-bar {
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  #aboutMeVideoWrapper {
+    position: relative;
+    padding: 0 30px 84px 30px;
+    text-align: center;
+    background-color: #1b1d25;
+
+    .aboutMeVideo-overlay {
+      position: absolute;
+      height: 42%;
+      width: 100%;
+      left: 0;
+      opacity: 0.45;
+      background: linear-gradient(75deg, rgba(22, 28, 36, 0.48) 0%, rgb(22, 28, 36) 100%);
+      z-index: -1;
+      bottom: 0;
+    }
+
+    .about-me-video-wrapper {
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .abm-video-cs {
+        position: relative;
+        margin-top: -122px;
+
+        .abm-overlay {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          background: linear-gradient(180deg, rgb(22 28 36 / 60%) 0%, rgb(22, 28, 36) 100%);
+          z-index: 0;
+          border-radius: 15px;
+        }
+      }
+
+      .company-supports {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+
+        img {
+          width: 150px;
+          border-radius: 15px;
+          filter: invert(1);
+          opacity: 0.8;
+        }
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  #teamWrapper {
+    position: relative;
+    padding: 84px 30px;
+    text-align: center;
+
+    .team-wrapper {
+      .splide.team-wrapper-slider {
+        max-width: 1158px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-weight: 800;
+      }
+
+      p {}
+
+      .team-profile {
+        text-align: center;
+        max-width: 390px;
+        background: #1b1d25;
+        border-color: #1b1d25;
+
+        .card-body {
+          h5 {
+            font-size: 15px;
+            font-weight: 5f00;
+            margin-bottom: 4px;
+          }
+
+          p {
+            font-weight: 500;
+          }
+
+          img {
+            width: 100%;
+            border-radius: 15px;
+          }
+
+          .social-list a {
+            svg {
+              stroke-width: 1.5px;
+            }
+
+            &.tp-social-fb svg {
+              color: #778ef7;
+            }
+
+            &.tp-social-insta svg {
+              color: #e67980;
+            }
+
+            &.tp-social-in svg {
+              color: #4db0ff;
+            }
+
+            &.tp-social-x svg {
+              color: #6c6e78;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #testimonialWrapper {
+    position: relative;
+    padding: 160px 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../../img/pages/about-us/overlay.svg), url(../../../img/pages/about-us/header-1.jpg);
+
+    .testimonial-overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.45;
+      background: linear-gradient(75deg, rgba(22, 28, 36, 0.48) 0%, rgb(22, 28, 36) 100%);
+      z-index: 0;
+    }
+
+    .testimonial-wrapper {
+      position: relative;
+
+      h1 {
+        font-size: 45px;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      p {
+        margin-bottom: 0;
+        color: #fff;
+      }
+
+      .splide {
+        margin-bottom: 0;
+        color: #fff;
+        max-width: 450px;
+        margin: 0 auto;
+
+        .splide__arrows {
+          .splide__arrow {
+            background-color: #cbcbcf;
+
+            svg {
+              fill: #1b1d25;
+            }
+          }
+
+          .splide__arrow--prev {
+            left: -14px;
+          }
+
+          .splide__arrow--next {
+            right: -14px;
+          }
+        }
+
+        .splide__slide {
+          display: flex;
+          align-items: center;
+        }
+
+        .testimonial-content {
+          max-width: 450px;
+          background: #ffffff12;
+          border-color: #ffffff12;
+          box-shadow: none;
+          margin: 0 auto;
+          backdrop-filter: blur(6px);
+
+          .card-body {
+            padding: 43px 43px;
+          }
+
+          p {
+            font-size: 14px;
+            color: var(--dark_100);
+            font-weight: 500;
+          }
+
+          .testimonial-rating ul {
+            display: flex;
+
+            li {
+              margin-right: 3px;
+
+              svg {
+                color: #eab764;
+                width: 22px;
+                height: 22px;
+              }
+            }
+          }
+
+          .media {
+            img {
+              width: 52px;
+              height: 52px;
+              border-radius: 20px;
+            }
+
+            .media-body {
+              h4 {
+                font-size: 15px;
+                color: #fff;
+                font-weight: 500;
+              }
+
+              p {
+                font-size: 13px;
+                color: var(--dark_100);
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 
+
+About Me Video Wrapper
+
+*/
+
+/* 
+
+Team Wrapper
+
+*/
+
+/* 
+
+Testimonial Wrapper
+
+*/
+
+/* 
+
+About - Media Query
+
+*/
+
+@media (max-width: 991px) {
+  body.dark #aboutMeVideoWrapper .about-me-video-wrapper .company-supports img {
+    width: 85px;
+  }
+}
+
+@media (max-width: 575px) {
+  body.dark #aboutMeVideoWrapper .about-me-video-wrapper .company-supports img {
+    width: 55px;
+  }
+}

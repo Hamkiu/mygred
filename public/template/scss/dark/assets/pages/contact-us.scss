@@ -1,0 +1,70 @@
+@import '../../../base/base';
+
+/* 
+
+--------------Contact Us Wrapper------------
+
+*/
+
+/* 
+
+Header Wrapper
+
+ */
+
+ body.dark {
+  #headerWrapper .contact-us-locations {
+    h5 {
+      font-weight: 600;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 0;
+      letter-spacing: 0;
+      color: var(--dark_100);
+    }
+  }
+
+  &.page-contact-us #headerWrapper {
+    position: relative;
+    padding: 84px 30px;
+    min-height: 560px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 74px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../../img/pages/about-us/overlay.svg'), url('../../../img/pages/about-us/header-1.jpg');
+  }
+
+  #contactUsWrapper {
+    padding: 84px 30px 84px 30px;
+
+    .contact-us-wrapper h3 {
+      font-weight: 700;
+      line-height: 1.4;
+      font-size: 32px;
+    }
+
+    #contact-us {
+      border-radius: 15px;
+    }
+  }
+}
+
+/* 
+
+Contact Us Wrapper
+
+*/
+
+@media (max-width: 767px) {
+  body.dark #contactUsWrapper {
+    padding: 84px 12px;
+  }
+}
