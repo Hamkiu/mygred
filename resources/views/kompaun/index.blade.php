@@ -42,37 +42,36 @@
     },
 
     columns: [
-        { 
-            data: 'kod_kompaun', 
-            name: 'kod_kompaun' 
+        {
+            data: 'nil_nilaicode',
+            name: 'NIL_NILAICODE'
         },
 
-        { 
-            data: 'nilai_kompaun', 
-            name: 'nilai_kompaun',
+        {
+            data: 'nil_nilaikomp',
+            name: 'NIL_NILAIKOMP',
             className: 'text-center'
         },
 
-        { 
-            data: 'pegawai_input', 
-            name: 'pegawai_input' 
-        },
-
-        { 
-            data: 'tarikh_input', 
-            name: 'tarikh_input',
+        {
+            data: 'nil_entryoper',
+            name: 'NIL_ENTRYOPER',
             className: 'text-center'
         },
 
-        { 
-            data: 'kemaskini_oleh', 
-            name: 'kemaskini_oleh' 
+        {
+            data: 'nil_entrydate',
+            name: 'NIL_ENTRYDATE'
         },
 
-        { 
-            data: 'tarikh_kemaskini', 
-            name: 'tarikh_kemaskini',
-            className: 'text-center'
+        {
+            data: 'nil_modfyoper',
+            name: 'NIL_MODFYOPER'
+        },
+
+        {
+            data: 'nil_modfydate',
+            name: 'NIL_MODFYDATE'
         },
 
         { 

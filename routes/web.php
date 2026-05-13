@@ -6,6 +6,14 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KompaunController;
 use Illuminate\Support\Facades\Route;
 
+// Route::get('/test-oracle', function () {
+
+//     $data = Kompaun::first();
+
+//     dd($data);
+
+// });
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -32,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('kompaun')->group(function () {
 
         Route::get('/', [KompaunController::class, 'index'])->name('kompaun');
-        Route::post('/list', [KompaunController::class, 'list'])->name('kompaun.list');
+        Route::any('/list', [KompaunController::class, 'list'])->name('kompaun.list');
         Route::get('/create', [KompaunController::class, 'create'])->name('kompaun.create');
     });
 });
