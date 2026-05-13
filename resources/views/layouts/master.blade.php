@@ -45,6 +45,14 @@
     <link href="{{ asset('template/src/assets/css/light/components/font-icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('template/src/assets/css/dark/components/font-icons.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/src/assets/css/light/forms/switches.css') }}">
+
+    {{-- datatable --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/src/table/datatable/datatables.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/css/light/table/datatable/dt-global_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/css/dark/table/datatable/dt-global_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/assets/css/light/forms/switches.css') }}">
+    {{-- end datatable --}}
 </head>
 <body class=" layout-boxed">
     <!-- BEGIN LOADER -->
@@ -79,6 +87,9 @@
             <div class="layout-px-spacing">
 
                 <div class="middle-content container-xxl p-0">
+                    <div class="d-flex justify-content-end mb-3">
+                        {{ Breadcrumbs::render() }}
+                    </div>
                     @yield('content')
                 </div>
 
@@ -153,6 +164,7 @@
 
     <!--  BEGIN SEARCH MODAL  -->
     <!-- Modal -->
+    @stack('modal')
     <div class="modal fade search-content-modal" id="searchDialog" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -659,6 +671,7 @@
     
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="{{ asset('template/src/plugins/src/global/vendors.min.js') }}"></script>
     <script src="{{ asset('template/src/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('template/src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('template/src/plugins/src/mousetrap/mousetrap.min.js') }}"></script>
@@ -673,10 +686,12 @@
     <script src="{{ asset('template/src/plugins/src/apex/apexcharts.min.js') }}"></script>
     <script src="{{ asset('template/src/assets/js/dashboard/analytics.js') }}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="{{ asset('template/src/plugins/src/table/datatable/datatables.js') }}"></script>
     <script src="{{ asset('template/src/plugins/src/font-icons/feather/feather.min.js') }}"></script>
     <script>
         feather.replace();
     </script>
-  
+
+  @stack('scripts')
 </body>
 </html>

@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('kompaun')->group(function () {
 
         Route::get('/', [KompaunController::class, 'index'])->name('kompaun');
+        Route::post('/list', [KompaunController::class, 'list'])->name('kompaun.list');
+        Route::get('/create', [KompaunController::class, 'create'])->name('kompaun.create');
     });
 });
 

@@ -20,7 +20,7 @@ class KompaunController extends Controller
      */
     public function create()
     {
-        //
+        return view('kompaun.create');
     }
 
     /**
