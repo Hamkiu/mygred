@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MyGRED | @yield('title')</title>
-    <link rel="icon" type="image/x-icon" href="../src/assets/img/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/src/assets/img/mbi_logo2.png') }}"/>
     <link href="{{ asset('template/layouts/horizontal-light-menu/css/light/loader.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/layouts/horizontal-light-menu/css/dark/loader.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('template/layouts/horizontal-light-menu/loader.js') }}"></script>
@@ -42,6 +42,9 @@
     <link href="{{ asset('template/src/assets/css/dark/components/timeline.css') }}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
+    <link href="{{ asset('template/src/assets/css/light/components/font-icons.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('template/src/assets/css/dark/components/font-icons.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/assets/css/light/forms/switches.css') }}">
 </head>
 <body class=" layout-boxed">
     <!-- BEGIN LOADER -->
@@ -670,6 +673,10 @@
     <script src="{{ asset('template/src/plugins/src/apex/apexcharts.min.js') }}"></script>
     <script src="{{ asset('template/src/assets/js/dashboard/analytics.js') }}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="{{ asset('template/src/plugins/src/font-icons/feather/feather.min.js') }}"></script>
+    <script>
+        feather.replace();
+    </script>
   
 </body>
 </html>
