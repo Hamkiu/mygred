@@ -154,10 +154,17 @@
         </div>
 
         <div class="profile-fixed">
-            <a href="{{ route('welcome') }}" 
-               class="btn bg-dark text-white dark:bg-danger dark:text-white w-100">
-                Logout
-            </a>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+        
+                <button type="submit"
+                    class="btn bg-dark text-white dark:bg-danger dark:text-white w-100">
+                    Logout
+                </button>
+        
+            </form>
+        
         </div>
         
     </div>
