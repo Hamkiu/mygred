@@ -21,23 +21,18 @@ class ModelSeeder extends Seeder
         $components_no = 1;
         $components = [
             'Dashboard',
-            'Daftar Kod',
             'Pengredan',
         ];
 
         $component_icon = [
             'Dashboard' => 'home',
-            'Daftar Kod' => 'list',
             'Pengredan' => 'file-text',
         ];
 
         $sub_components = [];
 
         array_push($sub_components, ['sub_components_name' => 'Dashboard', 'sub_components' => 'dashboard', 'route' => 'dashboard', 'components_no' => 1]);
-        array_push($sub_components, ['sub_components_name' => 'Kategori', 'sub_components' => 'kategori', 'route' => 'kategori', 'components_no' => 2]);
-        array_push($sub_components, ['sub_components_name' => 'Nilai Kompaun', 'sub_components' => 'kompaun', 'route' => 'kompaun', 'components_no' => 2]);
-
-        array_push($sub_components, ['sub_components_name' => 'Premis Makanan', 'sub_components' => 'premis', 'route' => 'premis', 'components_no' => 3]);
+        array_push($sub_components, ['sub_components_name' => 'Penilaian Premis', 'sub_components' => 'inspection', 'route' => 'inspection', 'components_no' => 2]);
 
         
         foreach($components as $component) {

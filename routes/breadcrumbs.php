@@ -5,26 +5,12 @@ Breadcrumbs::for('dashboard', function ($trail) {
     $trail->push('Home', route('dashboard'));
 });
 
-// Nilai Kompaun
-Breadcrumbs::for('kompaun', function ($trail) {
+Breadcrumbs::for('inspection', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push('Senarai Nilai Kompaun', route('kompaun'));
+    $trail->push('Penilaian Premis', route('inspection'));
 });
 
-// Daftar Nilai Kompaun
-Breadcrumbs::for('kompaun.create', function ($trail) {
-    $trail->parent('kompaun');
-    $trail->push('Daftar Nilai Kompaun', route('kompaun.create'));
-});
-
-//Kategori
-Breadcrumbs::for('kategori', function ($trail) {
-    $trail->parent('dashboard');
-    $trail->push('Senarai Kategori', route('kategori'));
-});
-
-//Premis
-Breadcrumbs::for('premis', function ($trail) {
-    $trail->parent('dashboard');
-    $trail->push('Senarai Premis', route('premis'));
+Breadcrumbs::for('inspection.create', function ($trail) {
+    $trail->parent('inspection');
+    $trail->push('Penilaian Baharu', route('inspection.create'));
 });

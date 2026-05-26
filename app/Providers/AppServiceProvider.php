@@ -49,9 +49,7 @@ class AppServiceProvider extends ServiceProvider
     
                     $query->whereIn('sub_components', [
                         'dashboard',
-                        'kategori',
-                        'kompaun',
-                        'premis',
+                        'inspection'
                     ]);
     
                 }
