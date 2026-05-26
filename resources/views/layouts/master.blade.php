@@ -121,8 +121,8 @@
                     <img src="{{ asset('template/src/assets/img/mbi_logo2.png') }}" alt="Profile Image"  class="p-image">
                 </div>
     
-                <h4 class="profile-name mb-1">Shaun Park</h4>
-                <p class="profile-mail mb-0 text-dark:800 dark:text-dark:200">shaun@mail.com</p>
+                <h4 class="profile-name mb-1">{{ Auth::user()->name }}</h4>
+                <p class="profile-mail mb-0 text-dark:800 dark:text-dark:200">{{ Auth::user()->email }}</p>
     
             </div>
     

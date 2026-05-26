@@ -41,15 +41,17 @@ class AppServiceProvider extends ServiceProvider
     
                     $query->whereIn('sub_components', [
                         
-                        'dashboard',
-                        'kategori',
+                        'dashboard'
+                        
                     ]);
     
                 } elseif ($user->hasRole('User')) {
     
                     $query->whereIn('sub_components', [
                         'dashboard',
+                        'kategori',
                         'kompaun',
+                        'premis',
                     ]);
     
                 }
