@@ -695,6 +695,7 @@
     <script src="{{ asset('template/src/assets/js/dashboard/analytics.js') }}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="{{ asset('template/src/plugins/src/table/datatable/datatables.js') }}"></script>
+    <script src="{{ asset('template/src/assets/js/datatable-config.js') }}"></script>
     <script src="{{ asset('template/src/plugins/src/font-icons/feather/feather.min.js') }}"></script>
     <script>
         feather.replace();

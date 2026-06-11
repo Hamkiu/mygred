@@ -14,3 +14,13 @@ Breadcrumbs::for('inspection.create', function ($trail) {
     $trail->parent('inspection');
     $trail->push('Penilaian Baharu', route('inspection.create'));
 });
+
+Breadcrumbs::for('premis', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Senarai Premis', route('premis'));
+});
+
+Breadcrumbs::for('premis.create', function ($trail) {
+    $trail->parent('premis');
+    $push('Premis Baharu', route('premis.create'));
+});

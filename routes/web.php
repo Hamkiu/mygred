@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InspectionController;
+use App\Http\Controllers\PremisController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/test-oracle', function () {
@@ -42,6 +43,12 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('inspection')->group(function () {
             Route::get('/', [InspectionController::class, 'index'])->name('inspection');
             Route::get('/create', [InspectionController::class, 'create'])->name('inspection.create');
+        });
+
+        Route::prefix('premis')->group(function () {
+            Route::get('/', [PremisController::class, 'index'])->name('premis');
+            Route::get('/list', [PremisController::class, 'list'])->name('premis.list');
+            Route::get('/create', [PremisController::class, 'create'])->name('premis.create');
         });
 
     });

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Premis;
+use App\Models\MaklumatPremis;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class PremisController extends Controller
 {
@@ -13,6 +14,22 @@ class PremisController extends Controller
     public function index()
     {
         return view('premis.index');
+    }
+
+    public function list(Request $request)
+    {
+        $query = MaklumatPremis::query();
+        return DataTables::of($query)
+        ->addIndexColumn()
+        ->addColumn('tindakan', function ($row) {
+            $btn = '';
+            $btn .= '<a href="" class="btn btn-outline-primary btn-sm me-1" title="Edit Premis"><i data-feather="edit"></i></a>';
+
+            $btn .= '<a href="" class="btn btn-outline-danger btn-sm me-1" title="Delete Premis"><i data-feather="trash-2"></i></a>';
+            return $btn;
+        })
+        ->rawColumns(['tindakan'])
+        ->make(true);
     }
 
     /**

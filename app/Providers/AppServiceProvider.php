@@ -49,7 +49,8 @@ class AppServiceProvider extends ServiceProvider
     
                     $query->whereIn('sub_components', [
                         'dashboard',
-                        'inspection'
+                        'inspection',
+                        'premis'
                     ]);
     
                 }
