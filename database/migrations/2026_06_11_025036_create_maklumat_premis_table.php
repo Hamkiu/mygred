@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('id', 15)->primary();
             //alamat premis daripada SPBT
             $table->integer('nombakaun');
+            $table->string('oracle_id')->nullable();
             $table->integer('nomserial')->nullable();
             $table->string('codeakaun')->nullable();
             $table->string('namamilik')->nullable();
@@ -26,12 +27,12 @@ return new class extends Migration
             $table->string('jalancode')->nullable();
             $table->string('permitodc')->nullable();
             $table->string('nomborssm')->nullable();
-            $table->decimal('latitudss', 10, 8)->nullable();
-            $table->decimal('longtitud', 10, 8)->nullable();
+            $table->decimal('latituds', 12, 8)->nullable();
+            $table->decimal('longtitud', 12, 8)->nullable();
             $table->string('jalanname')->nullable();
             $table->string('statuslsn')->nullable();
             $table->string('zonelesen')->nullable();
-            
+
             $table->timestamps();
         });
     }

@@ -37,9 +37,11 @@ return new class extends Migration
             $table->integer('jumlah_star');
             $table->text('catatan')->nullable();
             $table->date('tarikh_tamat')->nullable();
+            $table->enum('source', ['SYSTEM','ORACLE_MIGRATION'])->default('SYSTEM');
 
             $table->timestamps();
-            $table->foreign('premis_id')->references('id')->on('maklumat_premis')->cascadeOnDelete();
+            $table->foreign('premis_id')->references('id')->on('maklumat_premis')->restrictOnDelete();
+
         });
     }
 
