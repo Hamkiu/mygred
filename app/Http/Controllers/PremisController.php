@@ -23,7 +23,7 @@ class PremisController extends Controller
         ->addIndexColumn()
         ->addColumn('tindakan', function ($row) {
             $btn = '';
-            $btn .= '<a href="" class="btn btn-outline-primary btn-sm me-1" title="Edit Premis"><i data-feather="edit"></i></a>';
+            $btn .= '<a href="'.route('premis.edit', $row->id).'" class="btn btn-outline-primary btn-sm me-1" title="Edit Premis"><i data-feather="edit"></i></a>';
 
             $btn .= '<a href="" class="btn btn-outline-danger btn-sm me-1" title="Delete Premis"><i data-feather="trash-2"></i></a>';
             return $btn;
@@ -59,9 +59,10 @@ class PremisController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Premis $premis)
+    public function edit($id)
     {
-        //
+        $premis = MaklumatPremis::find($id);
+        return view('premis.edit', compact('premis'));
     }
 
     /**

@@ -47,8 +47,10 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('premis')->group(function () {
             Route::get('/', [PremisController::class, 'index'])->name('premis');
-            Route::get('/list', [PremisController::class, 'list'])->name('premis.list');
+            Route::any('/list', [PremisController::class, 'list'])->name('premis.list');
             Route::get('/create', [PremisController::class, 'create'])->name('premis.create');
+            Route::get('/edit/{id}', [PremisController::class, 'edit'])->name('premis.edit');
+            Route::post('/update/{id}', [PremisController::class, 'update'])->name('premis.update');
         });
 
     });

@@ -24,3 +24,8 @@ Breadcrumbs::for('premis.create', function ($trail) {
     $trail->parent('premis');
     $push('Premis Baharu', route('premis.create'));
 });
+
+Breadcrumbs::for('premis.edit', function ($trail, $id) {
+    $trail->parent('premis');
+    $trail->push('Edit Premis', route('premis.edit', $id));
+});
