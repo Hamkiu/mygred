@@ -1,14 +1,32 @@
-@extends('layouts.master')
-@section('title', 'Penilaian Premis')
-@section('content')
-    <div class="row layout-top-spacing">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-            <div class="widget widget-stat-card-one">
-                <div class="widget-content d-flex align-items-center justify-content-between">
-                    <h1>Penilaian Premis</h1>
-                    <a href="{{ route('inspection.create') }}" class="btn btn-primary">Penilaian Baharu</a>
-                </div>
+<div class="card mt-2">
+    <div class="card-header" id="head2">
+        <section class="mb-0 mt-0">
+            <div role="menu" class="collapsed d-flex justify-content-center align-items-center" data-bs-toggle="collapse" data-bs-target="#defaultAccordionTwo" aria-expanded="false" aria-controls="defaultAccordionTwo">
+                <i data-feather="layers"></i>&nbsp;Senarai Inspection - {{ $premis->id }}
+            </div>
+        </section>
+    </div>
+    <div id="defaultAccordionTwo" class="collapse" aria-labelledby="head2" data-bs-parent="#toggleAccordion">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="list_inspection" class="table dt-table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Id Inspection</th>
+                            <th>Markah</th>
+                            <th>Gred</th>
+                            <th>Jumlah Star</th>
+                            <th>Tarikh Periksa</th>
+                            <th>Tarikh Tamat</th>
+                            <th>Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-@endsection
+</div>

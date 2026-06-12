@@ -53,6 +53,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/css/dark/table/datatable/dt-global_style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/src/assets/css/light/forms/switches.css') }}">
     {{-- end datatable --}}
+    {{-- modal --}}
+    <link href="{{ asset('template/src/assets/css/light/components/carousel.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('template/src/assets/css/light/components/modal.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/src/assets/css/light/components/tabs.css') }}" rel="stylesheet" type="text/css">
+    
+    
+    <link href="{{ asset('template/src/assets/css/dark/components/carousel.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('template/src/assets/css/dark/components/modal.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/src/assets/css/dark/components/tabs.css') }}" rel="stylesheet" type="text/css">
+    {{-- end modal --}}
 </head>
 <body class=" layout-boxed">
     <!-- BEGIN LOADER -->
