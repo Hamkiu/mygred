@@ -51,7 +51,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">No Akaun Lesen</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->nombakaun }}">
+                                        <input type="text" name="name" class="form-control" value="{{ $premis->nombakaun }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -113,7 +113,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Status Lesen</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->statuslsn }}">
+                                        <input type="text" name="name" class="form-control" value="{{ $premis->statuslsn }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-2">

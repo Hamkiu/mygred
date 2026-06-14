@@ -17,6 +17,8 @@
 <div class="card">
     <header class="card-header">
         Senarai Premis
+
+        <a href="{{ route('premis.create') }}" class="btn btn-primary float-end btn-sm"><i data-feather="plus"></i> Tambah Premis</a>
     </header>
     
     <div class="card-body">

@@ -51,7 +51,6 @@
     
     <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/css/light/table/datatable/dt-global_style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/src/plugins/css/dark/table/datatable/dt-global_style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/src/assets/css/light/forms/switches.css') }}">
     {{-- end datatable --}}
     {{-- modal --}}
     <link href="{{ asset('template/src/assets/css/light/components/carousel.css') }}" rel="stylesheet" type="text/css">
@@ -63,6 +62,11 @@
     <link href="{{ asset('template/src/assets/css/dark/components/modal.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/src/assets/css/dark/components/tabs.css') }}" rel="stylesheet" type="text/css">
     {{-- end modal --}}
+    {{-- sweetalert --}}
+    <link rel="stylesheet" href="{{ asset('template/src/plugins/src/sweetalerts2/sweetalerts2.css') }}">
+    <link href="{{ asset('template/src/plugins/css/light/sweetalerts2/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/src/plugins/css/dark/sweetalerts2/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    {{-- end sweetalert --}}
 </head>
 <body class=" layout-boxed">
     <!-- BEGIN LOADER -->
@@ -707,6 +711,8 @@
     <script src="{{ asset('template/src/plugins/src/table/datatable/datatables.js') }}"></script>
     <script src="{{ asset('template/src/assets/js/datatable-config.js') }}"></script>
     <script src="{{ asset('template/src/plugins/src/font-icons/feather/feather.min.js') }}"></script>
+    <script src="{{ asset('template/src/plugins/src/sweetalerts2/sweetalerts2.min.js') }}"></script>
+    <script src="{{ asset('template/src/plugins/src/sweetalerts2/custom-sweetalert.js') }}"></script>
     <script>
         feather.replace();
     </script>

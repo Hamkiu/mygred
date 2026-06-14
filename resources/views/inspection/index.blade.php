@@ -16,7 +16,7 @@
                             <th>Id Inspection</th>
                             <th>Markah</th>
                             <th>Gred</th>
-                            <th>Jumlah Star</th>
+                            <th>Star Tandas</th>
                             <th>Tarikh Periksa</th>
                             <th>Tarikh Tamat</th>
                             <th>Tindakan</th>

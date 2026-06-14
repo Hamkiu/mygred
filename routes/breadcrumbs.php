@@ -22,7 +22,7 @@ Breadcrumbs::for('premis', function ($trail) {
 
 Breadcrumbs::for('premis.create', function ($trail) {
     $trail->parent('premis');
-    $push('Premis Baharu', route('premis.create'));
+    $trail->push('Daftar Premis', route('premis.create'));
 });
 
 Breadcrumbs::for('premis.edit', function ($trail, $id) {
