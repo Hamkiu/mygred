@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Edit Premis')
 @section('content')
+@include('include.error')
     <div class="accordion" id="toggleAccordion">
         <div class="card">
             <div class="card-header" id="head1">
@@ -11,21 +12,21 @@
                 </section>
             </div>
 
-            <div id="defaultAccordionOne" class="collapse show" aria-labelledby="head1" data-bs-parent="#toggleAccordion">
-                <form action="{{ route('premis.update', $premis->id) }}" method="post">
+            <div id="defaultAccordionOne" class="collapse" aria-labelledby="head1" data-bs-parent="#toggleAccordion">
+                <form action="{{ route('premis.update', encode($premis->id)) }}" method="post">
                     @csrf
                     <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <label for="name">Nama Pemilik</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->namamilik }}">
+                                        <input type="text" name="namamilik" class="form-control text-uppercase" value="{{ $premis->namamilik }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <label for="name">Nama Syarikat</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->namasyrkt }}">
+                                        <input type="text" name="namasyrkt" class="form-control text-uppercase" value="{{ $premis->namasyrkt }}">
                                     </div>
                                 </div>
                             </div>
@@ -33,37 +34,37 @@
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Kad Pengenalan</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->pdaftaran }}">
+                                        <input type="text" name="pdaftaran" class="form-control" value="{{ $premis->pdaftaran }}">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">No Telefon</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->telephone }}">
+                                        <input type="text" name="telephone" class="form-control" value="{{ $premis->telephone }}">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">No SSM</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->nomborssm }}">
+                                        <input type="text" name="nomborssm" class="form-control text-uppercase" placeholder="masukkan sendiri" value="{{ $premis->nomborssm }}">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">No Akaun Lesen</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->nombakaun }}" readonly>
+                                        <input type="text" name="nombakaun" class="form-control" value="{{ $premis->nombakaun }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Kod Akaun</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->codeakaun }}" readonly>
+                                        <input type="text" name="codeakaun" class="form-control" value="{{ $premis->codeakaun }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Rujukan Fail</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->rujukfail }}">
+                                        <input type="text" name="rujukfail" class="form-control text-uppercase" value="{{ $premis->rujukfail }}">
                                     </div>
                                 </div>
                             </div>
@@ -79,30 +80,30 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-3">
-                                                        <input type="text" name="name" class="form-control" value="{{ $premis->alamatbus }}">
+                                                        <input type="text" name="alamatbus" class="form-control text-uppercase" value="{{ $premis->alamatbus }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-3">
-                                                        <input type="text" name="name" class="form-control" value="{{ $premis->jalanname }}">
+                                                        <input type="text" name="jalanname" class="form-control text-uppercase" value="{{ $premis->jalanname }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group mb-3">
                                                         <label for="name">Kod Jalan</label>
-                                                        <input type="text" name="name" class="form-control" value="{{ $premis->jalancode }}">
+                                                        <input type="text" name="jalancode" class="form-control" value="{{ $premis->jalancode }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group mb-3">
                                                         <label for="name">Longitude</label>
-                                                        <input type="text" name="name" class="form-control" value="{{ $premis->longtitud }}">
+                                                        <input type="text" name="longtitud" class="form-control" placeholder="masukkan sendiri" value="{{ $premis->longtitud }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group mb-3">
                                                         <label for="name">Latitude</label>
-                                                        <input type="text" name="name" class="form-control" value="{{ $premis->latituds }}">
+                                                        <input type="text" name="latituds" class="form-control" placeholder="masukkan sendiri" value="{{ $premis->latituds }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,19 +114,19 @@
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Status Lesen</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->statuslsn }}" readonly>
+                                        <input type="text" name="statuslsn" class="form-control" value="{{ $premis->statuslsn }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Zon Lesen</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->zonelesen }}">
+                                        <input type="text" name="zonelesen" class="form-control text-uppercase" value="{{ $premis->zonelesen }}">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Permit ODC</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $premis->permitodc }}">
+                                        <input type="text" name="permitodc" class="form-control" value="{{ $premis->permitodc }}">
                                     </div>
                                 </div>
                             </div>    
@@ -198,6 +199,22 @@
                 }
             });
         });
+
+        @if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berjaya',
+                text: '{{ session('success') }}',
+            });
+        @endif
+
+        @if(session('success2'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berjaya',
+                text: '{{ session('success2') }}',
+            });
+        @endif
     });
 </script>
 @endpush

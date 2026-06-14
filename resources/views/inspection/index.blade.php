@@ -6,7 +6,7 @@
             </div>
         </section>
     </div>
-    <div id="defaultAccordionTwo" class="collapse" aria-labelledby="head2" data-bs-parent="#toggleAccordion">
+    <div id="defaultAccordionTwo" class="collapse show" aria-labelledby="head2" data-bs-parent="#toggleAccordion">
         <div class="card-body">
             <div class="table-responsive">
                 <table id="list_inspection" class="table dt-table-hover">

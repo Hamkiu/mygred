@@ -26,7 +26,7 @@ class PremisController extends Controller
             $btn = '';
             $btn .= '<a href="'.route('premis.edit', encode($row->id)).'" class="btn btn-outline-primary btn-sm me-1" title="Edit Premis"><i data-feather="edit"></i></a>';
 
-            $btn .= '<a href="" class="btn btn-outline-danger btn-sm me-1" title="Delete Premis"><i data-feather="trash-2"></i></a>';
+            $btn .= '<a href="'.route('premis.destroy', encode($row->id)).'" class="btn btn-outline-danger btn-sm me-1" title="Delete Premis"><i data-feather="trash-2"></i></a>';
             return $btn;
         })
         ->rawColumns(['tindakan'])
@@ -123,11 +123,35 @@ class PremisController extends Controller
     {
         $validated = $request->validate([
             'nombakaun' => 'required',
+            'codeakaun' => 'required',
         ],
         [
             'nombakaun.required' => 'No Akaun Lesen tidak boleh kosong',
+            'codeakaun.required' => 'No Rujukan Lesen tidak boleh kosong',
         ]);
-        dd($request->all());
+        // dd($request->all());
+        $premisId = generateId('PR', 'maklumat_premis', 'id');
+        MaklumatPremis::create([
+            'id' => $premisId,
+            'nombakaun' => $request->nombakaun,
+            'codeakaun' => $request->codeakaun,
+            'namamilik' => strtoupper($request->namamilik),
+            'namasyrkt' => strtoupper($request->namasyrkt),
+            'pdaftaran' => $request->pdaftaran,
+            'alamatbus' => strtoupper($request->alamatbus),
+            'telephone' => $request->telephone,
+            'rujukfail' => strtoupper($request->rujukfail),
+            'jalancode' => $request->jalancode,
+            'permitodc' => $request->permitodc,
+            'nomborssm' => strtoupper($request->nomborssm),
+            'latituds' => $request->latituds,
+            'longtitud' => $request->longtitud,
+            'jalanname' => strtoupper($request->jalanname),
+            'statuslsn' => $request->statuslsn,
+            'zonelesen' => $request->zonelesen,
+        ]);
+
+        return redirect()->route('premis.edit', encode($premisId))->with('success', 'Premis berjaya ditambah:'.$premisId);
     }
 
     /**
@@ -150,16 +174,43 @@ class PremisController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Premis $premis)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'namamilik' => 'required',
+            'namasyrkt' => 'required',
+        ],
+        [
+            'namamilik.required' => 'Nama Pemilik tidak boleh kosong',
+            'namasyrkt.required' => 'Nama Syarikat tidak boleh kosong',
+        ]);
+        $premis = MaklumatPremis::find(decode($id));
+        $premis->update([
+            'namamilik' => strtoupper($request->namamilik),
+            'namasyrkt' => strtoupper($request->namasyrkt),
+            'pdaftaran' => $request->pdaftaran,
+            'alamatbus' => strtoupper($request->alamatbus),
+            'telephone' => $request->telephone,
+            'rujukfail' => strtoupper($request->rujukfail),
+            'jalancode' => $request->jalancode,
+            'permitodc' => $request->permitodc,
+            'nomborssm' => strtoupper($request->nomborssm),
+            'latituds' => $request->latituds,
+            'longtitud' => $request->longtitud,
+            'jalanname' => strtoupper($request->jalanname),
+            'statuslsn' => $request->statuslsn,
+            'zonelesen' => strtoupper($request->zonelesen),
+        ]);
+        return redirect()->route('premis.edit', $id)->with('success2', 'Premis berjaya diupdate:'.decode($id));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Premis $premis)
+    public function destroy($id)
     {
-        //
+        $premis = MaklumatPremis::find(decode($id));
+        $premis->delete();
+        return redirect()->route('premis')->with('success', 'Premis berjaya dihapus');
     }
 }

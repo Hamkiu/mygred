@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/store', [PremisController::class, 'store'])->name('premis.store');
             Route::get('/edit/{id}', [PremisController::class, 'edit'])->name('premis.edit');
             Route::post('/update/{id}', [PremisController::class, 'update'])->name('premis.update');
+            Route::get('/destroy/{id}', [PremisController::class, 'destroy'])->name('premis.destroy');
         });
 
     });

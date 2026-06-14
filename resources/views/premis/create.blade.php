@@ -44,13 +44,13 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="name">Nama Pemilik</label>
-                    <input type="text" name="namamilik" class="form-control" value="{{ old('namamilik') }}">
+                    <input type="text" name="namamilik" class="form-control text-uppercase" value="{{ old('namamilik') }}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="name">Nama Syarikat</label>
-                    <input type="text" name="namasyrkt" class="form-control" value="{{ old('namasyrkt') }}">
+                    <input type="text" name="namasyrkt" class="form-control text-uppercase" value="{{ old('namasyrkt') }}">
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="col-md-2">
                 <div class="form-group mb-3">
                     <label for="name">No SSM</label>
-                    <input type="text" name="nomborssm" class="form-control" placeholder="masukkan sendiri" value="{{ old('nomborssm') }}">
+                    <input type="text" name="nomborssm" class="form-control text-uppercase" placeholder="masukkan sendiri" value="{{ old('nomborssm') }}">
                 </div>
             </div>
             
@@ -84,7 +84,7 @@
             <div class="col-md-3">
                 <div class="form-group mb-3">
                     <label for="name">Rujukan Fail</label>
-                    <input type="text" name="rujukfail" class="form-control" value="{{ old('rujukfail') }}">
+                    <input type="text" name="rujukfail" class="form-control text-uppercase" value="{{ old('rujukfail') }}">
                 </div>
             </div>
         </div>
@@ -100,12 +100,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="alamatbus" class="form-control" value="{{ old('alamatbus') }}">
+                                    <input type="text" name="alamatbus" class="form-control text-uppercase" value="{{ old('alamatbus') }}">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="jalanname" class="form-control" value="{{ old('jalanname') }}">
+                                    <input type="text" name="jalanname" class="form-control text-uppercase" value="{{ old('jalanname') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -223,10 +223,16 @@
     
             },
             error: function(){
-                alert('Ralat semasa mendapatkan maklumat.');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ralat',
+                    text: 'Ralat semasa mendapatkan maklumat.'
+                });
             }
         });
     
     });
+
+
     </script>
 @endpush
