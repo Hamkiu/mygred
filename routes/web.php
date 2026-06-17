@@ -40,13 +40,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         });
 
-        Route::prefix('inspection')->group(function () {
-            Route::get('/', [InspectionController::class, 'index'])->name('inspection');
-            Route::get('/create', [InspectionController::class, 'create'])->name('inspection.create');
-            Route::any('/list/{id}', [InspectionController::class, 'list'])->name('inspection.list');    
-            Route::get('/edit/{id}', [InspectionController::class, 'edit'])->name('inspection.edit');
-            Route::get('/show/{id}', [InspectionController::class, 'show'])->name('inspection.show');
-        });
+       
 
         Route::prefix('premis')->group(function () {
             Route::get('/', [PremisController::class, 'index'])->name('premis');
@@ -57,6 +51,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/edit/{id}', [PremisController::class, 'edit'])->name('premis.edit');
             Route::post('/update/{id}', [PremisController::class, 'update'])->name('premis.update');
             Route::get('/destroy/{id}', [PremisController::class, 'destroy'])->name('premis.destroy');
+
+            Route::prefix('inspection')->group(function () {
+                Route::get('/', [InspectionController::class, 'index'])->name('inspection');
+                Route::get('/create/{id}', [InspectionController::class, 'create'])->name('premis.inspection.create');
+                Route::post('/store/{id}', [InspectionController::class, 'store'])->name('premis.inspection.store');
+                Route::any('/list/{id}', [InspectionController::class, 'list'])->name('inspection.list');    
+                Route::get('/edit/{id}', [InspectionController::class, 'edit'])->name('inspection.edit');
+                Route::get('/show/{id}', [InspectionController::class, 'show'])->name('inspection.show');
+            });
         });
 
     });

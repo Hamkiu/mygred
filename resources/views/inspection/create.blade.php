@@ -1,215 +1,105 @@
 @extends('layouts.master')
 @section('title', 'Penilaian Premis')
 @section('content')
-@foreach($sections as $section)
+@include('include.error')
 
-<div class="card mb-4 section-card">
+<form action="{{ route('premis.inspection.store', encode($premis->id)) }}" method="post">
+    @csrf
+    <div class="accordion" id="toggleAccordion">
+        <div class="card">
+            <div class="card-header" id="head1">
+                <section class="mb-0 mt-0">
+                    <div role="menu" class="collapsed d-flex justify-content-center align-items-center" data-bs-toggle="collapse" data-bs-target="#defaultAccordionOne" aria-expanded="false" aria-controls="defaultAccordionOne">
+                        <i data-feather="folder-plus"></i>&nbsp;Daftar Penilaian - Premis: {{ $premis->id }}
+                    </div>
+                </section>
+            </div>
 
-    <div class="card-header d-flex justify-content-between align-items-center">
+            <div id="defaultAccordionOne" class="collapse show" aria-labelledby="head1" data-bs-parent="#toggleAccordion">
 
-        <div>
-            <strong>
-                {{ $section->code }} - {{ $section->perkara }}
-            </strong>
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group mb-3">
+                                    <label for="name">Bil. Tempatan Lelaki</label>
+                                    <input type="number" name="bil_tempatan_lelaki" class="form-control" value="{{ old('bil_tempatan_lelaki', 0) }}" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-3">
+                                    <label for="name">Bil. Tempatan Perempuan</label>
+                                    <input type="number" name="bil_tempatan_perempuan" class="form-control" value="{{ old('bil_tempatan_perempuan', 0) }}" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-3">
+                                    <label for="name">Bil. Asing Lelaki</label>
+                                    <input type="number" name="bil_asing_lelaki" class="form-control" value="{{ old('bil_asing_lelaki', 0) }}" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-3">
+                                    <label for="name">Bil. Asing Perempuan</label>
+                                    <input type="number" name="bil_asing_perempuan" class="form-control" value="{{ old('bil_asing_perempuan', 0) }}" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Kursus Kendali Makanan</label>
+                                    <input type="number" name="kursus_kendalimakanan" class="form-control" value="{{ old('kursus_kendalimakanan', 0) }}" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Suntikan Tifoid</label>
+                                    <input type="number" name="suntikan_tifoid" class="form-control" value="{{ old('suntikan_tifoid', 0) }}" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Status GT</label>
+                                    <input type="text" name="status_gt" class="form-control" value="{{ old('status_gt', 'Tiada') }}">
+                                    <small id="sh-text1" class="form-text text-muted">Sila masukkan status GT jika ada.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Surat Amaran</label>
+                                    <input type="text" name="surat_amaran" class="form-control" value="{{ old('surat_amaran', 'Tiada') }}">
+                                    <small id="sh-text2" class="form-text text-muted">Sila masukkan surat amaran jika ada.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">No Kompaun</label>
+                                    <input type="text" name="no_kompaun" class="form-control" value="{{ old('no_kompaun', 'Tiada') }}">
+                                    <small id="sh-text3" class="form-text text-muted">Sila masukkan no kompaun jika ada.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Nilai Kompaun</label>
+                                    <input type="number" name="nilai_kompaun" class="form-control" value="{{ old('nilai_kompaun', 0) }}" min="0" step="0.01">
+                                    <small id="sh-text4" class="form-text text-muted">Sila masukkan nilai kompaun jika ada.</small>
+                                </div>
+                            </div>
+                        </div>   
+                </div>
+            </div>
         </div>
 
-        {{-- TOTAL SECTION --}}
-        <div>
-
-            <span class="badge bg-dark fs-6">
-
-                Jumlah:
-                <span id="section_total_{{ $section->id }}">
-
-                    0
-
-                </span>
-
-                markah
-
-            </span>
-
+        {{-- accordian 2 --}}
+        @include('inspection.pemarkahan')
+        {{-- tamat accordian 2 --}}
+        <br/>
+        <div class="card-footer text-end">
+            <a href="{{ route('premis.edit', encode($premis->id)) }}" class="btn btn-secondary">Kembali</a>
+            <button type="submit" class="btn btn-success">Simpan</button>
         </div>
-
     </div>
-
-    <div class="card-body p-0">
-
-        <div class="table-responsive">
-
-            <table class="table table-bordered table-hover mb-0">
-
-                <thead class="table-light">
-
-                    <tr class="text-center align-middle">
-
-                        <th width="60%">
-                            Perkara
-                        </th>
-
-                        <th width="25%">
-                            Pilihan
-                        </th>
-
-                        <th width="15%">
-                            Markah
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    @foreach($section->components as $component)
-
-                        @if($component->has_items)
-
-                            <tr class="table-primary">
-
-                                <td colspan="3">
-
-                                    <strong>
-                                        {{ $component->code }}
-                                        -
-                                        {{ $component->name }}
-                                    </strong>
-
-                                </td>
-
-                            </tr>
-
-                            @foreach($component->items as $item)
-
-                                <tr class="section-{{ $section->id }}">
-
-                                    <td>
-
-                                        {{ $item->description }}
-
-                                    </td>
-
-                                    <td class="text-center">
-
-                                        <label class="me-3">
-
-                                            <input type="radio"
-                                                name="item_{{ $item->id }}"
-                                                value="1"
-                                                data-markah="{{ $item->markah }}"
-                                                data-section="{{ $section->id }}"
-                                                onchange="showMarkah(this, 'item_{{ $item->id }}')">
-
-                                            Patuh
-
-                                        </label>
-
-                                        <label>
-
-                                            <input type="radio"
-                                                name="item_{{ $item->id }}"
-                                                value="0"
-                                                data-markah="0"
-                                                data-section="{{ $section->id }}"
-                                                onchange="showMarkah(this, 'item_{{ $item->id }}')">
-
-                                            Tidak Patuh
-
-                                        </label>
-
-                                    </td>
-
-                                    <td class="text-center">
-
-                                        <span id="markah_item_{{ $item->id }}"
-                                            class="badge bg-secondary item-markah"
-                                            data-current="0">
-
-                                            -
-
-                                        </span>
-
-                                    </td>
-
-                                </tr>
-
-                            @endforeach
-
-                        @else
-
-                            <tr class="section-{{ $section->id }}">
-
-                                <td>
-
-                                    <strong>
-                                        {{ $component->code }}
-                                    </strong>
-
-                                    -
-
-                                    {{ $component->name }}
-
-                                </td>
-
-                                <td class="text-center">
-
-                                    <label class="me-3">
-
-                                        <input type="radio"
-                                            name="component_{{ $component->id }}"
-                                            value="1"
-                                            data-markah="{{ $component->markah }}"
-                                            data-section="{{ $section->id }}"
-                                            onchange="showMarkah(this, 'component_{{ $component->id }}')">
-
-                                        Patuh
-
-                                    </label>
-
-                                    <label>
-
-                                        <input type="radio"
-                                            name="component_{{ $component->id }}"
-                                            value="0"
-                                            data-markah="0"
-                                            data-section="{{ $section->id }}"
-                                            onchange="showMarkah(this, 'component_{{ $component->id }}')">
-
-                                        Tidak Patuh
-
-                                    </label>
-
-                                </td>
-
-                                <td class="text-center">
-
-                                    <span id="markah_component_{{ $component->id }}"
-                                        class="badge bg-secondary item-markah"
-                                        data-current="0">
-
-                                        -
-
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
-                        @endif
-
-                    @endforeach
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
-
-@endforeach
+</form>
 @endsection
 
 @push('scripts')

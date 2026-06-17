@@ -8,6 +8,14 @@
     </div>
     <div id="defaultAccordionTwo" class="collapse show" aria-labelledby="head2" data-bs-parent="#toggleAccordion">
         <div class="card-body">
+            <div class="row">
+                <div class="col-12 text-end">
+                    <a href="{{ route('premis.inspection.create', encode($premis->id)) }}"
+                       class="btn btn-primary btn-sm">
+                        <i data-feather="plus"></i> Tambah Penilaian
+                    </a>
+                </div>
+            </div>
             <div class="table-responsive">
                 <table id="list_inspection" class="table dt-table-hover">
                     <thead>

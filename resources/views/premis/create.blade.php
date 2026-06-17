@@ -117,13 +117,13 @@
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
                                     <label for="name">Longitude</label>
-                                    <input type="text" name="longtitud" class="form-control" placeholder="masukkan sendiri" value="{{ old('longtitud') }}">
+                                    <input type="text" name="longtitud" class="form-control" value="{{ old('longtitud') }}" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
                                     <label for="name">Latitude</label>
-                                    <input type="text" name="latituds" class="form-control" placeholder="masukkan sendiri" value="{{ old('latituds') }}">
+                                    <input type="text" name="latituds" class="form-control" value="{{ old('latituds') }}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -221,6 +221,9 @@
                 $('input[name="jalanname"]').val(d.jal_jalanname);
                 $('input[name="jalancode"]').val(d.lic_jalancode);
     
+                $('input[name="longtitud"]').val(d.peg_xcordinat);
+                $('input[name="latituds"]').val(d.peg_ycordinat);
+
             },
             error: function(){
                 Swal.fire({

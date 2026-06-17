@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InspectionSection;
 use App\Models\InspectionMain;
+use App\Models\MaklumatPremis;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -42,19 +43,24 @@ class InspectionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
+        $premis = MaklumatPremis::find(decode($id));
         $sections = InspectionSection::with(['components.items'])->orderBy('sort')->get();
     
-        return view('inspection.create',compact('sections'));
+        return view('inspection.create',compact('sections','premis'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+        dd(request()->all());
+        $premis = MaklumatPremis::find(decode($id));
+        $sections = InspectionSection::with(['components.items'])->orderBy('sort')->get();
+        $data = $request->all();
+        dd($data);
     }
 
     /**

@@ -114,7 +114,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <label for="name">Status Lesen</label>
-                                        <input type="text" name="statuslsn" class="form-control" value="{{ $premis->statuslsn }}" readonly>
+                                        <input type="text" name="statuslsn" class="form-control" value="{{ $premis->statuslsn }}">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
