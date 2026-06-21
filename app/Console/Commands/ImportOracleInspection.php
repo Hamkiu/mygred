@@ -79,6 +79,8 @@ class ImportOracleInspection extends Command
                     // gunakan admin sementara
                     'user_id' => 1,
 
+                    'status' => 'DALAM PROSES',
+
                     'tarikh_periksa' => $row->pen_tarikhins
                         ? date('Y-m-d', strtotime($row->pen_tarikhins))
                         : now(),
@@ -104,6 +106,10 @@ class ImportOracleInspection extends Command
                     'nilai_kompaun' => $row->pen_nilaikomp ?? 0,
 
                     'no_sijil' => $row->pen_nombsijil ?? '',
+
+                    'jumlah_markah' =>  0,
+
+                    'jumlah_demerit' => 0,
 
                     'markah' => $row->pen_jummarkah ?? 0,
 

@@ -173,6 +173,7 @@
                 { data: 'markah', name: 'markah', className: 'text-center' },
                 { data: 'gred', name: 'gred', className: 'text-center' },
                 { data: 'jumlah_star', name: 'jumlah_star', className: 'text-center' },
+                { data: 'status', name: 'status', className: 'text-center' },
                 { data: 'tarikh_periksa', name: 'tarikh_periksa' },
                 { data: 'tarikh_tamat', name: 'tarikh_tamat' },
                 { data: 'tindakan', name: 'tindakan', orderable: false, searchable: false }

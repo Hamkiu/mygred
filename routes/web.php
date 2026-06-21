@@ -59,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::any('/list/{id}', [InspectionController::class, 'list'])->name('inspection.list');    
                 Route::get('/edit/{id}', [InspectionController::class, 'edit'])->name('inspection.edit');
                 Route::get('/show/{id}', [InspectionController::class, 'show'])->name('inspection.show');
+                Route::get('/destroy/{id}', [InspectionController::class, 'destroy'])->name('inspection.destroy');
             });
         });
 

@@ -25,6 +25,7 @@
                             <th>Markah</th>
                             <th>Gred</th>
                             <th>Star Tandas</th>
+                            <th>Status</th>
                             <th>Tarikh Periksa</th>
                             <th>Tarikh Tamat</th>
                             <th>Tindakan</th>

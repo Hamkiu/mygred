@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('premis_id', 15);
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
 
+            $table->string('status')->default('DALAM PROSES');
             $table->date('tarikh_periksa');
-            $table->time('masa_mula');
-            $table->time('masa_tamat');
+            $table->time('masa_mula')->nullable();
+            $table->time('masa_tamat')->nullable();
             $table->integer('bil_tempatan_lelaki');
             $table->integer('bil_tempatan_perempuan');
             $table->integer('bil_asing_lelaki');
@@ -29,19 +30,20 @@ return new class extends Migration
             $table->boolean('surat_amaran')->default(false);
             $table->string('no_kompaun');
             $table->decimal('nilai_kompaun', 10, 2);
-            $table->string('no_sijil');
-            $table->decimal('markah', 10, 2);
-            $table->string('gred');
+            $table->string('no_sijil')->nullable();
+            $table->integer('jumlah_markah')->default(0);
+            $table->integer('jumlah_demerit')->default(0);
+            $table->decimal('markah', 10, 2)->default(0);
+            $table->string('gred')->nullable();
             $table->boolean('status_ccp')->default(false);
             $table->boolean('tandas')->default(false);
-            $table->integer('jumlah_star');
+            $table->integer('jumlah_star')->default(0);
             $table->text('catatan')->nullable();
             $table->date('tarikh_tamat')->nullable();
             $table->enum('source', ['SYSTEM','ORACLE_MIGRATION'])->default('SYSTEM');
 
             $table->timestamps();
             $table->foreign('premis_id')->references('id')->on('maklumat_premis')->restrictOnDelete();
-
         });
     }
 

@@ -59,16 +59,39 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group mb-3">
-                                    <label for="name">Status GT</label>
-                                    <input type="text" name="status_gt" class="form-control" value="{{ old('status_gt', 'Tiada') }}">
-                                    <small id="sh-text1" class="form-text text-muted">Sila masukkan status GT jika ada.</small>
+                                    <label>Status GT</label>
+                            
+                                    <select name="status_gt" class="form-control">
+                            
+                                        <option value="0"
+                                            {{ old('status_gt', 0) == 0 ? 'selected' : '' }}>
+                                            Tiada
+                                        </option>
+                            
+                                        <option value="1"
+                                            {{ old('status_gt') == 1 ? 'selected' : '' }}>
+                                            Ada
+                                        </option>
+                            
+                                    </select>
+                            
+                                    <small class="form-text text-muted">
+                                        Sila pilih status GT.
+                                    </small>
+                            
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group mb-3">
-                                    <label for="name">Surat Amaran</label>
-                                    <input type="text" name="surat_amaran" class="form-control" value="{{ old('surat_amaran', 'Tiada') }}">
-                                    <small id="sh-text2" class="form-text text-muted">Sila masukkan surat amaran jika ada.</small>
+                                    <label>Surat Amaran</label>
+                            
+                                    <select name="surat_amaran" class="form-control">
+                            
+                                        <option value="0">Tiada</option>
+                                        <option value="1">Ada</option>
+                            
+                                    </select>
+                            
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -132,6 +155,26 @@
         calculateSectionTotal(sectionId);
     }
 
+    function toggleRemark(radio, prefix)
+    {
+        let demerit = document.getElementById('demerit_' + prefix);
+        let catatan = document.getElementById('catatan_' + prefix);
+
+        if (radio.value == '0') {
+
+            demerit.style.display = 'block';
+            catatan.style.display = 'block';
+
+        } else {
+
+            demerit.style.display = 'none';
+            catatan.style.display = 'none';
+
+            demerit.value = 0;
+            catatan.value = '';
+        }
+    }
+
     function calculateSectionTotal(sectionId)
     {
         let total = 0;
@@ -146,6 +189,8 @@
         document.getElementById('section_total_' + sectionId)
             .innerHTML = total;
     }
+
+    
 
 </script>
 @endpush
