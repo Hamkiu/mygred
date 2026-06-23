@@ -16,17 +16,11 @@ class ItemSeeder extends Seeder
         //A1
         InspectionComponentItem::create([
             'component_id' => 1,
-            'description' => 'Suhu sejuk beku: -18°C hingga 0°C',
-            'markah' => 6,
+            'description' => "• Suhu sejuk beku: -18°C hingga 0°C\n• Suhu dingin (chiller): 0°C hingga 10°C",
+            'markah' => 12,
             'sort' => 1,
         ]);
 
-        InspectionComponentItem::create([
-            'component_id' => 1,
-            'description' => 'Suhu dingin (chiller): 0°C hingga 10°C',
-            'markah' => 6,
-            'sort' => 2,
-        ]);
         //tamat A1
         //A2
         InspectionComponentItem::create([
@@ -124,21 +118,9 @@ class ItemSeeder extends Seeder
         //B1
         InspectionComponentItem::create([
             'component_id' => 7,
-            'description' => 'Suhu makanan panas: > 60°C',
-            'markah' => 4,
+            'description' => "• Suhu makanan panas: > 60°C\n• Suhu makanan dingin: 1°C hingga 4°C\n• Suhu makanan sejuk beku: < -18°C",
+            'markah' => 12,
             'sort' => 1,
-        ]);
-        InspectionComponentItem::create([
-            'component_id' => 7,
-            'description' => 'Suhu makanan dingin: 1°C hingga 4°C',
-            'markah' => 4,
-            'sort' => 2,
-        ]);
-        InspectionComponentItem::create([
-            'component_id' => 7,
-            'description' => 'Suhu makanan sejuk beku: < -18°C',
-            'markah' => 4,
-            'sort' => 3,
         ]);
         //tamat B1
         //B2
@@ -186,15 +168,9 @@ class ItemSeeder extends Seeder
         //C1
         InspectionComponentItem::create([
             'component_id' => 11,
-            'description' => 'Mendapat suntikan pelalian anti-tifoid',
-            'markah' => 3,
+            'description' => "• Mendapat suntikan pelalian anti-tifoid\n• Menghadiri Kursus Pengendali Makanan",
+            'markah' => 6,
             'sort' => 1,
-        ]);
-        InspectionComponentItem::create([
-            'component_id' => 11,
-            'description' => 'Menghadiri Kursus Pengendali Makanan',
-            'markah' => 3,
-            'sort' => 2,
         ]);
         //tamat C1
         //C2

@@ -8,36 +8,67 @@
     </div>
     <div id="defaultAccordionTwo" class="collapse" aria-labelledby="head2" data-bs-parent="#toggleAccordion">
         <div class="card-body">
+            
             @foreach($sections as $section)
+                @php
 
-                <div class="card mb-4 section-card">
+                    $maxMarkah = 0;
+
+                    foreach($section->components as $component){
+
+                        if($component->has_items){
+
+                            $maxMarkah += $component->items->sum('markah');
+
+                        }else{
+
+                            $maxMarkah += $component->markah;
+
+                        }
+                    }
+
+                @endphp
+
+                <div class="card mb-4 section-card" data-section-id="{{ $section->id }}"
+                    data-section-name="{{ $section->code }} - {{ $section->perkara }}"
+                    data-max-markah="{{ $maxMarkah }}">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
 
                         <div>
-                            <strong>
+                            <strong class="section-title">
                                 {{ $section->code }} - {{ $section->perkara }}
                             </strong>
                         </div>
-
-                        {{-- TOTAL SECTION --}}
-                        <div>
-
-                            <span class="badge bg-dark fs-6">
-
-                                Jumlah:
-                                <span id="section_total_{{ $section->id }}">
-
+                    
+                        <div class="d-flex gap-2">
+                    
+                            <span class="badge bg-success fs-6">
+                                Markah :
+                                <span id="section_markah_{{ $section->id }}">
                                     0
-
                                 </span>
-
-                                markah
-
                             </span>
-
+                    
+                            <span class="badge bg-danger fs-6">
+                                Demerit :
+                                <span id="section_demerit_{{ $section->id }}">
+                                    0
+                                </span>
+                            </span>
+                    
+                            <span class="badge bg-primary fs-6">
+                                Skor :
+                                <span id="section_skor_{{ $section->id }}">
+                                    0
+                                </span>
+                                /
+                                {{ $maxMarkah }}
+                            </span>
+                            <input type="hidden" id="section_max_{{ $section->id }}" value="{{ $maxMarkah }}">
+                    
                         </div>
-
+                    
                     </div>
 
                     <div class="card-body p-0">
@@ -100,7 +131,7 @@
                                         
                                                         <td>
                                         
-                                                            {{ $item->description }}
+                                                            {!! nl2br(e($item->description)) !!}
                                         
                                                             <input type="hidden"
                                                                 name="answers[item_{{ $item->id }}][component_id]"
@@ -135,7 +166,7 @@
                                                                 <input type="radio"
                                                                     name="answers[item_{{ $item->id }}][is_patuh]"
                                                                     value="0"
-                                                                    data-markah="0"
+                                                                    data-markah="{{ $item->markah }}"
                                                                     data-section="{{ $section->id }}"
                                                                     onchange="
                                                                         showMarkah(this, 'item_{{ $item->id }}');
@@ -161,18 +192,23 @@
                                         
                                                         </td>
                                         
-                                                        <td>
-                                        
-                                                            <input
-                                                                type="number"
-                                                                min="0"
-                                                                max="100"
-                                                                value="0"
-                                                                class="form-control form-control-sm"
+                                                        <td class="text-center">
+
+                                                            <span
                                                                 id="demerit_item_{{ $item->id }}"
+                                                                class="badge bg-danger item-demerit"
+                                                                data-current="0">
+                                                        
+                                                                -
+                                                        
+                                                            </span>
+                                                        
+                                                            <input
+                                                                type="hidden"
+                                                                id="hidden_demerit_item_{{ $item->id }}"
                                                                 name="answers[item_{{ $item->id }}][demerit]"
-                                                                style="display:none;">
-                                        
+                                                                value="0">
+                                                        
                                                         </td>
                                         
                                                         <td>
@@ -233,7 +269,7 @@
                                                             <input type="radio"
                                                                 name="answers[component_{{ $component->id }}][is_patuh]"
                                                                 value="0"
-                                                                data-markah="0"
+                                                                data-markah="{{ $component->markah }}"
                                                                 data-section="{{ $section->id }}"
                                                                 onchange="
                                                                     showMarkah(this, 'component_{{ $component->id }}');
@@ -259,18 +295,23 @@
                                         
                                                     </td>
                                         
-                                                    <td>
-                                        
-                                                        <input
-                                                            type="number"
-                                                            min="0"
-                                                            max="100"
-                                                            value="0"
-                                                            class="form-control form-control-sm"
+                                                    <td class="text-center">
+
+                                                        <span
                                                             id="demerit_component_{{ $component->id }}"
+                                                            class="badge bg-danger item-demerit"
+                                                            data-current="0">
+                                                    
+                                                            -
+                                                    
+                                                        </span>
+                                                    
+                                                        <input
+                                                            type="hidden"
+                                                            id="hidden_demerit_component_{{ $component->id }}"
                                                             name="answers[component_{{ $component->id }}][demerit]"
-                                                            style="display:none;">
-                                        
+                                                            value="0">
+                                                    
                                                     </td>
                                         
                                                     <td>

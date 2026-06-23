@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/', [InspectionController::class, 'index'])->name('inspection');
                 Route::get('/create/{id}', [InspectionController::class, 'create'])->name('premis.inspection.create');
                 Route::post('/store/{id}', [InspectionController::class, 'store'])->name('premis.inspection.store');
+                Route::get('/review/{id}', [InspectionController::class, 'review'])->name('premis.inspection.review');
                 Route::any('/list/{id}', [InspectionController::class, 'list'])->name('inspection.list');    
                 Route::get('/edit/{id}', [InspectionController::class, 'edit'])->name('inspection.edit');
                 Route::get('/show/{id}', [InspectionController::class, 'show'])->name('inspection.show');

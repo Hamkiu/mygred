@@ -71,11 +71,43 @@ class InspectionController extends Controller
         return view('inspection.create',compact('sections','premis'));
     }
 
+    public function review(Request $request, $id)
+    {
+        $premis = MaklumatPremis::findOrFail(decode($id));
+    
+        $sections = InspectionSection::with([
+            'components.items'
+        ])->get();
+    
+        $answers = $request->answers;
+    
+        $jumlahMarkah = 0;
+        $jumlahDemerit = 0;
+    
+        foreach ($answers as $answer) {
+    
+            $jumlahMarkah += $answer['markah'] ?? 0;
+            $jumlahDemerit += $answer['demerit'] ?? 0;
+        }
+    
+        return view(
+            'inspection.review',
+            compact(
+                'premis',
+                'answers',
+                'sections',
+                'jumlahMarkah',
+                'jumlahDemerit'
+            )
+        );
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request, $id)
     {
+        dd($request->all());
         $validated = $request->validate([
             'demerit' => 'nullable|integer|min:0|max:100',
         ],

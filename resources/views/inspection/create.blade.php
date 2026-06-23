@@ -3,7 +3,7 @@
 @section('content')
 @include('include.error')
 
-<form action="{{ route('premis.inspection.store', encode($premis->id)) }}" method="post">
+<form action="{{ route('premis.inspection.review', encode($premis->id)) }}" method="post">
     @csrf
     <div class="accordion" id="toggleAccordion">
         <div class="card">
@@ -119,8 +119,109 @@
         <br/>
         <div class="card-footer text-end">
             <a href="{{ route('premis.edit', encode($premis->id)) }}" class="btn btn-secondary">Kembali</a>
-            <button type="submit" class="btn btn-success">Simpan</button>
+            <button
+                type="button"
+                class="btn btn-primary review" onclick="showReviewModal()">
+
+                Review Penilaian
+
+            </button>
         </div>
+    </div>
+    <div class="modal fade" id="reviewModal" tabindex="-1">
+
+        <div class="modal-dialog modal-xl">
+    
+            <div class="modal-content">
+    
+                <div class="modal-header">
+    
+                    <h5 class="modal-title">
+                        Semakan Penilaian Premis
+                    </h5>
+    
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal">
+                    </button>
+    
+                </div>
+    
+                <div class="modal-body">
+    
+                    <div id="reviewSectionSummary"></div>
+    
+                    <hr>
+    
+                    <table class="table table-bordered">
+    
+                        <tbody>
+    
+                            <tr>
+                                <th width="30%">
+                                    Jumlah Markah
+                                </th>
+                                <td id="review_markah">
+                                    0
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <th>
+                                    Jumlah Demerit
+                                </th>
+                                <td id="review_demerit">
+                                    0
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <th>
+                                    Skor Keseluruhan
+                                </th>
+                                <td id="review_skor">
+                                    0 / 0
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <th>
+                                    Gred Akhir
+                                </th>
+                                <td id="review_gred">
+                                    -
+                                </td>
+                            </tr>
+    
+                        </tbody>
+    
+                    </table>
+    
+                </div>
+    
+                <div class="modal-footer">
+    
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+    
+                        Kembali
+    
+                    </button>
+    
+                    <button type="submit"
+                            class="btn btn-success">
+    
+                        Sahkan & Simpan
+    
+                    </button>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
     </div>
 </form>
 @endsection
@@ -130,14 +231,28 @@
 
     function showMarkah(radio, targetId)
     {
-        let markah = parseInt(radio.dataset.markah);
-
+        let markahAsal = parseInt(radio.dataset.markah);
         let sectionId = radio.dataset.section;
 
+        let markah = 0;
+        let demerit = 0;
+
+        if (radio.value == '1') {
+
+            markah = markahAsal;
+            demerit = 0;
+
+        } else {
+
+            markah = 0;
+            demerit = markahAsal;
+
+        }
+
+        // MARKAH
         let badge = document.getElementById('markah_' + targetId);
 
         badge.setAttribute('data-current', markah);
-
         badge.innerHTML = markah + ' markah';
 
         if (markah > 0) {
@@ -152,43 +267,179 @@
 
         }
 
+        // DEMERIT
+        let demeritBadge = document.getElementById('demerit_' + targetId);
+
+        if (demeritBadge) {
+
+            demeritBadge.innerHTML = demerit + ' markah';
+            demeritBadge.setAttribute('data-current', demerit);
+
+        }
+
+        let hiddenDemerit = document.getElementById('hidden_demerit_' + targetId);
+
+        if (hiddenDemerit) {
+
+            hiddenDemerit.value = demerit;
+
+        }
+
         calculateSectionTotal(sectionId);
     }
 
     function toggleRemark(radio, prefix)
     {
-        let demerit = document.getElementById('demerit_' + prefix);
         let catatan = document.getElementById('catatan_' + prefix);
 
         if (radio.value == '0') {
 
-            demerit.style.display = 'block';
             catatan.style.display = 'block';
 
         } else {
 
-            demerit.style.display = 'none';
             catatan.style.display = 'none';
-
-            demerit.value = 0;
             catatan.value = '';
+
         }
     }
 
     function calculateSectionTotal(sectionId)
     {
-        let total = 0;
+        let totalMarkah = 0;
+        let totalDemerit = 0;
 
-        document.querySelectorAll('.section-' + sectionId + ' .item-markah')
-            .forEach(function(item) {
+        document
+            .querySelectorAll('.section-' + sectionId + ' .item-markah')
+            .forEach(function(el){
 
-                total += parseInt(item.dataset.current || 0);
+                totalMarkah += parseInt(el.dataset.current || 0);
 
             });
 
-        document.getElementById('section_total_' + sectionId)
-            .innerHTML = total;
+        document
+            .querySelectorAll('.section-' + sectionId + ' .item-demerit')
+            .forEach(function(el){
+
+                totalDemerit += parseInt(el.dataset.current || 0);
+
+            });
+
+        let skor = totalMarkah + totalDemerit;
+
+        document.getElementById(
+            'section_markah_' + sectionId
+        ).innerHTML = totalMarkah;
+
+        document.getElementById(
+            'section_demerit_' + sectionId
+        ).innerHTML = totalDemerit;
+
+        document.getElementById(
+            'section_skor_' + sectionId
+        ).innerHTML = skor;
     }
+
+    function calculateGrade(skor)
+{
+    if (skor >= 86)
+        return 'A';
+
+    if (skor >= 71)
+        return 'B';
+
+    if (skor >= 51)
+        return 'C';
+
+    return 'D';
+}
+
+function showReviewModal()
+{
+    
+    let totalMarkah = 0;
+    let totalDemerit = 0;
+
+    let html = '';
+
+    $('.section-card').each(function(){
+        
+
+        let sectionId = $(this).data('section-id');
+        
+
+        let nama = $(this).find('.section-title').text().trim();
+
+        let markah = parseInt(
+            $('#section_markah_' + sectionId).text()
+        ) || 0;
+
+        let demerit = parseInt(
+            $('#section_demerit_' + sectionId).text()
+        ) || 0;
+
+        let skor = parseInt(
+            $('#section_skor_' + sectionId).text()
+        ) || 0;
+
+        let maksimum = parseInt(
+            $('#section_max_' + sectionId).val()
+        ) || 0;
+
+        totalMarkah += markah;
+        totalDemerit += demerit;
+
+        html += `
+        <div class="card shadow-sm mb-2">
+
+            <div class="card-body">
+
+                <h6 class="mb-3">
+                    ${nama}
+                </h6>
+
+                <div class="row text-center">
+
+                    <div class="col-6">
+                        <div class="text-success fw-bold fs-5">
+                            ${markah}/${maksimum}
+                        </div>
+                        <small>Markah</small>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="text-danger fw-bold fs-5">
+                            ${demerit}
+                        </div>
+                        <small>Demerit</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        `;
+    });
+
+    $('#reviewSectionSummary').html(html);
+
+    let skorAkhir = 100 - totalDemerit;
+
+    $('#review_markah').html(totalMarkah);
+
+    $('#review_demerit').html(totalDemerit);
+
+    $('#review_skor').html(
+        skorAkhir + ' / 100'
+    );
+
+    $('#review_gred').html(
+        calculateGrade(skorAkhir)
+    );
+
+    $('#reviewModal').modal('show');
+}
 
     
 
