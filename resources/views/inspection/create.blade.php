@@ -3,7 +3,7 @@
 @section('content')
 @include('include.error')
 
-<form action="{{ route('premis.inspection.review', encode($premis->id)) }}" method="post">
+<form action="{{ route('premis.inspection.store', encode($premis->id)) }}" method="post">
     @csrf
     <div class="accordion" id="toggleAccordion">
         <div class="card">
@@ -19,25 +19,37 @@
 
                 <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Masa Mula</label>
+                                    <input type="time" name="masa_mula" class="form-control" value="{{ old('masa_mula', '00:00') }}">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Masa Tamat (Auto)</label>
+                                    <input type="time" name="" class="form-control" value="{{ old('masa_tamat', '00:00') }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="name">Bil. Tempatan Lelaki</label>
                                     <input type="number" name="bil_tempatan_lelaki" class="form-control" value="{{ old('bil_tempatan_lelaki', 0) }}" min="0">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="name">Bil. Tempatan Perempuan</label>
                                     <input type="number" name="bil_tempatan_perempuan" class="form-control" value="{{ old('bil_tempatan_perempuan', 0) }}" min="0">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="name">Bil. Asing Lelaki</label>
                                     <input type="number" name="bil_asing_lelaki" class="form-control" value="{{ old('bil_asing_lelaki', 0) }}" min="0">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="name">Bil. Asing Perempuan</label>
                                     <input type="number" name="bil_asing_perempuan" class="form-control" value="{{ old('bil_asing_perempuan', 0) }}" min="0">
@@ -108,7 +120,21 @@
                                     <small id="sh-text4" class="form-text text-muted">Sila masukkan nilai kompaun jika ada.</small>
                                 </div>
                             </div>
-                        </div>   
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Tarikh Periksa (Auto)</label>
+                                    <input type="date" name="" class="form-control" value="{{ old('tarikh_periksa', now()->format('Y-m-d')) }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="name">Tarikh Tamat</label>
+                                    <input type="date" name="tarikh_tamat" class="form-control" value="{{ old('tarikh_tamat', now()->format('Y-m-d')) }}">
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -121,7 +147,7 @@
             <a href="{{ route('premis.edit', encode($premis->id)) }}" class="btn btn-secondary">Kembali</a>
             <button
                 type="button"
-                class="btn btn-primary review" onclick="showReviewModal()">
+                class="btn btn-primary review" onclick="validateForm()">
 
                 Review Penilaian
 
@@ -341,107 +367,154 @@
     }
 
     function calculateGrade(skor)
-{
-    if (skor >= 86)
-        return 'A';
+    {
+        if (skor >= 86)
+            return 'A';
 
-    if (skor >= 71)
-        return 'B';
+        if (skor >= 71)
+            return 'B';
 
-    if (skor >= 51)
-        return 'C';
+        if (skor >= 51)
+            return 'C';
 
-    return 'D';
-}
+        return 'D';
+    }
 
-function showReviewModal()
-{
-    
-    let totalMarkah = 0;
-    let totalDemerit = 0;
-
-    let html = '';
-
-    $('.section-card').each(function(){
+    function showReviewModal()
+    {
         
+        let totalMarkah = 0;
+        let totalDemerit = 0;
 
-        let sectionId = $(this).data('section-id');
-        
+        let html = '';
 
-        let nama = $(this).find('.section-title').text().trim();
+        $('.section-card').each(function(){
+            
 
-        let markah = parseInt(
-            $('#section_markah_' + sectionId).text()
-        ) || 0;
+            let sectionId = $(this).data('section-id');
+            
 
-        let demerit = parseInt(
-            $('#section_demerit_' + sectionId).text()
-        ) || 0;
+            let nama = $(this).find('.section-title').text().trim();
 
-        let skor = parseInt(
-            $('#section_skor_' + sectionId).text()
-        ) || 0;
+            let markah = parseInt(
+                $('#section_markah_' + sectionId).text()
+            ) || 0;
 
-        let maksimum = parseInt(
-            $('#section_max_' + sectionId).val()
-        ) || 0;
+            let demerit = parseInt(
+                $('#section_demerit_' + sectionId).text()
+            ) || 0;
 
-        totalMarkah += markah;
-        totalDemerit += demerit;
+            let skor = parseInt(
+                $('#section_skor_' + sectionId).text()
+            ) || 0;
 
-        html += `
-        <div class="card shadow-sm mb-2">
+            let maksimum = parseInt(
+                $('#section_max_' + sectionId).val()
+            ) || 0;
 
-            <div class="card-body">
+            totalMarkah += markah;
+            totalDemerit += demerit;
 
-                <h6 class="mb-3">
-                    ${nama}
-                </h6>
+            html += `
+            <div class="card shadow-sm mb-2">
 
-                <div class="row text-center">
+                <div class="card-body">
 
-                    <div class="col-6">
-                        <div class="text-success fw-bold fs-5">
-                            ${markah}/${maksimum}
+                    <h6 class="mb-3">
+                        ${nama}
+                    </h6>
+
+                    <div class="row text-center">
+
+                        <div class="col-6">
+                            <div class="text-success fw-bold fs-5">
+                                ${markah}/${maksimum}
+                            </div>
+                            <small>Markah</small>
                         </div>
-                        <small>Markah</small>
-                    </div>
 
-                    <div class="col-6">
-                        <div class="text-danger fw-bold fs-5">
-                            ${demerit}
+                        <div class="col-6">
+                            <div class="text-danger fw-bold fs-5">
+                                ${demerit}
+                            </div>
+                            <small>Demerit</small>
                         </div>
-                        <small>Demerit</small>
+
                     </div>
 
                 </div>
 
             </div>
+            `;
+        });
 
-        </div>
-        `;
-    });
+        $('#reviewSectionSummary').html(html);
 
-    $('#reviewSectionSummary').html(html);
+        let skorAkhir = 100 - totalDemerit;
 
-    let skorAkhir = 100 - totalDemerit;
+        $('#review_markah').html(totalMarkah);
 
-    $('#review_markah').html(totalMarkah);
+        $('#review_demerit').html(totalDemerit);
 
-    $('#review_demerit').html(totalDemerit);
+        $('#review_skor').html(
+            skorAkhir + ' / 100'
+        );
 
-    $('#review_skor').html(
-        skorAkhir + ' / 100'
-    );
+        $('#review_gred').html(
+            calculateGrade(skorAkhir)
+        );
 
-    $('#review_gred').html(
-        calculateGrade(skorAkhir)
-    );
+        $('#reviewModal').modal('show');
+    }
 
-    $('#reviewModal').modal('show');
-}
+    function validateForm()
+    {
+        let belumJawab = false;
 
-    
+        $('tr[class^="section-"]').each(function () {
+
+            let radios = $(this).find('input[type="radio"]');
+
+            // Skip jika tiada radio
+            if (radios.length === 0) {
+                return;
+            }
+
+            let name = radios.first().attr('name');
+
+            if ($('input[name="' + name + '"]:checked').length === 0) {
+
+                belumJawab = true;
+
+                // Scroll ke item yang belum dijawab
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top - 120
+                }, 500);
+
+                $(this).addClass('table-danger');
+
+                return false; // break each()
+            }
+
+        });
+
+        if (belumJawab) {
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Penilaian Belum Lengkap',
+                text: 'Sila jawab semua item sebelum membuat semakan.',
+                confirmButtonText: 'OK'
+            });
+
+            return;
+        }
+
+        // Buang highlight lama
+        $('.table-danger').removeClass('table-danger');
+
+        showReviewModal();
+    }
 
 </script>
 @endpush

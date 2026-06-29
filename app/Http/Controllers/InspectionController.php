@@ -107,116 +107,58 @@ class InspectionController extends Controller
      */
     public function store(Request $request, $id)
     {
-        dd($request->all());
-        $validated = $request->validate([
-            'demerit' => 'nullable|integer|min:0|max:100',
-        ],
-        [
-            'demerit.integer' => 'Demerit harus berupa angka',
-            'demerit.min' => 'Demerit minimum 0',
-            'demerit.max' => 'Demerit maksimum 100',
-        ]);
-        $premis = MaklumatPremis::find(decode($id));    
-        $inspectionId = generateId('IN', 'inspection_mains', 'id');
-    
-        $inspectionMain = InspectionMain::create([
-            'id' => $inspectionId,
-            'premis_id' => $premis->id,
-            'user_id' => Auth::id(),
-            'status' => 'DALAM PROSES',
-            'tarikh_periksa' => now()->format('Y-m-d'),
-    
-            'bil_tempatan_lelaki' => $request->bil_tempatan_lelaki,
-            'bil_tempatan_perempuan' => $request->bil_tempatan_perempuan,
-            'bil_asing_lelaki' => $request->bil_asing_lelaki,
-            'bil_asing_perempuan' => $request->bil_asing_perempuan,
-    
-            'kursus_kendalimakanan' => $request->kursus_kendalimakanan,
-            'suntikan_tifoid' => $request->suntikan_tifoid,
-    
-            'status_gt' => $request->status_gt,
-    
-            'surat_amaran' => $request->surat_amaran,
-            'no_kompaun' => $request->no_kompaun,
-            'nilai_kompaun' => $request->nilai_kompaun,
-    
-            'source' => 'SYSTEM',
-        ]);
-    
-        $jumlahMarkah = 0;
-        $jumlahDemerit = 0;
-    
-        foreach ($request->answers as $answer) {
-    
-            $markah = 0;
-    
-            if (!empty($answer['component_item_id'])) {
-    
-                $item = InspectionComponentItem::find($answer['component_item_id']);
-    
-                if (($answer['is_patuh'] ?? 0) == 1) {
-                    $markah = $item->markah;
-                }
-    
-            } else {
-    
-                $component = InspectionComponent::find($answer['component_id']);
-    
-                if (($answer['is_patuh'] ?? 0) == 1) {
-                    $markah = $component->markah;
-                }
+        // dd($request->all());
+        foreach ($request->answers as $key => $answer) {
+
+            if (!isset($answer['is_patuh'])) {
+        
+                return back()
+                    ->withErrors([
+                        'answers' => "Item {$key} masih belum dijawab."
+                    ])
+                    ->withInput();
             }
-    
-            InspectionAnswer::create([
-                'main_id' => $inspectionMain->id,
-                'component_id' => $answer['component_id'] ?? null,
-                'component_item_id' => $answer['component_item_id'] ?? null,
-                'is_patuh' => $answer['is_patuh'] ?? 0,
-                'markah_diperolehi' => $markah,
-                'demerit' => $answer['demerit'] ?? 0,
-                'catatan' => $answer['catatan'] ?? null,
-            ]);
-    
-            $jumlahMarkah += $markah;
-            $jumlahDemerit += ($answer['demerit'] ?? 0);
+        
         }
+        // $request->validate([
+        //     'answers.*.is_patuh' => 'required|in:0,1',
+        // ],[
+        //     'answers.*.is_patuh.required' => 'Sila jawab semua item pemeriksaan.',
+        // ]);
+
+        // dd("asd");
+        // $premis = MaklumatPremis::find(decode($id));    
+        // $inspectionId = generateId('IN', 'inspection_mains', 'id');
     
-        // Kira peratus
-        $markahAkhir = 0;
+        // $inspectionMain = InspectionMain::create([
+        //     'id' => $inspectionId,
+        //     'premis_id' => $premis->id,
+        //     'user_id' => Auth::id(),
+        //     'status' => 'DALAM PROSES',
+        //     'tarikh_periksa' => now()->format('Y-m-d'),
     
-        if ($jumlahMarkah > 0) {
-            $markahAkhir = (($jumlahMarkah - $jumlahDemerit) / $jumlahMarkah) * 100;
-        }
+        //     'bil_tempatan_lelaki' => $request->bil_tempatan_lelaki,
+        //     'bil_tempatan_perempuan' => $request->bil_tempatan_perempuan,
+        //     'bil_asing_lelaki' => $request->bil_asing_lelaki,
+        //     'bil_asing_perempuan' => $request->bil_asing_perempuan,
     
-        // Kira gred
-        $gred = null;
+        //     'kursus_kendalimakanan' => $request->kursus_kendalimakanan,
+        //     'suntikan_tifoid' => $request->suntikan_tifoid,
     
-        if ($markahAkhir >= 86) {
-            $gred = 'A';
-        } elseif ($markahAkhir >= 71) {
-            $gred = 'B';
-        } elseif ($markahAkhir >= 51) {
-            $gred = 'C';
-        }
+        //     'status_gt' => $request->status_gt,
     
-        // Semakan CCP
-        // $ccpFail = InspectionAnswer::where('main_id', $inspectionMain->id)
-        //     ->whereHas('component', function ($q) {
-        //         $q->where('status_ccp', 1);
-        //     })
-        //     ->where('is_patuh', 0)
-        //     ->exists();
+        //     'surat_amaran' => $request->surat_amaran,
+        //     'no_kompaun' => $request->no_kompaun,
+        //     'nilai_kompaun' => $request->nilai_kompaun,
     
-        $inspectionMain->update([
-            'jumlah_markah' => $jumlahMarkah,
-            'jumlah_demerit' => $jumlahDemerit,
-            'markah' => round($markahAkhir, 2),
-            'gred' => $gred,
-        ]);
+        //     'source' => 'SYSTEM',
+        // ]);
     
-        return redirect()
-            ->route('premis.edit', encode($premis->id))
-            ->with('success', 'Pemeriksaan berjaya disimpan.');
+       
+    
+        // return redirect()
+        //     ->route('premis.edit', encode($premis->id))
+        //     ->with('success', 'Pemeriksaan berjaya disimpan.');
     }
 
     /**

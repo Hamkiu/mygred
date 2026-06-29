@@ -218,7 +218,7 @@
                                                                 class="form-control form-control-sm"
                                                                 id="catatan_item_{{ $item->id }}"
                                                                 name="answers[item_{{ $item->id }}][catatan]"
-                                                                style="display:none;"></textarea>
+                                                                style="display:none;">Tiada</textarea>
                                         
                                                         </td>
                                         
@@ -321,7 +321,7 @@
                                                             class="form-control form-control-sm"
                                                             id="catatan_component_{{ $component->id }}"
                                                             name="answers[component_{{ $component->id }}][catatan]"
-                                                            style="display:none;"></textarea>
+                                                            style="display:none;">Tiada</textarea>
                                         
                                                     </td>
                                         
