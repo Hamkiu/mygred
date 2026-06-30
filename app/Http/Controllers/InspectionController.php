@@ -107,19 +107,7 @@ class InspectionController extends Controller
      */
     public function store(Request $request, $id)
     {
-        // dd($request->all());
-        foreach ($request->answers as $key => $answer) {
-
-            if (!isset($answer['is_patuh'])) {
-        
-                return back()
-                    ->withErrors([
-                        'answers' => "Item {$key} masih belum dijawab."
-                    ])
-                    ->withInput();
-            }
-        
-        }
+        dd($request->all());
         // $request->validate([
         //     'answers.*.is_patuh' => 'required|in:0,1',
         // ],[
