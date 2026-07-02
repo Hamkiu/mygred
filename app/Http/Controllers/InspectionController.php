@@ -107,7 +107,7 @@ class InspectionController extends Controller
      */
     public function store(Request $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
         // $request->validate([
         //     'answers.*.is_patuh' => 'required|in:0,1',
         // ],[
@@ -115,38 +115,123 @@ class InspectionController extends Controller
         // ]);
 
         // dd("asd");
-        // $premis = MaklumatPremis::find(decode($id));    
-        // $inspectionId = generateId('IN', 'inspection_mains', 'id');
+        $premis = MaklumatPremis::find(decode($id)); 
+        $jumlahMarkah = 0;
+        $jumlahDemerit = 0;
+
+        // ===============================
+        // KIRA MARKAH
+        // ===============================
+        foreach ($request->answers as $answer) {
+
+            if (!empty($answer['component_item_id'])) {
+
+                $markah = InspectionComponentItem::findOrFail(
+                    $answer['component_item_id']
+                )->markah;
+
+            } else {
+
+                $markah = InspectionComponent::findOrFail(
+                    $answer['component_id']
+                )->markah;
+            }
+
+            if ((int)$answer['is_patuh'] === 1) {
+
+                $jumlahMarkah += $markah;
+
+            } else {
+
+                $jumlahDemerit += $markah;
+            }
+        }
+
+        // ===============================
+        // KIRA SKOR & GRED
+        // ===============================
+        $markahAkhir = 100 - $jumlahDemerit;
+
+        if ($markahAkhir >= 86) {
+
+            $gred = 'A';
+
+        } elseif ($markahAkhir >= 71) {
+
+            $gred = 'B';
+
+        } elseif ($markahAkhir >= 51) {
+
+            $gred = 'C';
+
+        } else {
+
+            $gred = 'Gagal';
+        }
+
+        $inspectionId = generateId('IN', 'inspection_mains', 'id');
     
-        // $inspectionMain = InspectionMain::create([
-        //     'id' => $inspectionId,
-        //     'premis_id' => $premis->id,
-        //     'user_id' => Auth::id(),
-        //     'status' => 'DALAM PROSES',
-        //     'tarikh_periksa' => now()->format('Y-m-d'),
+        $inspectionMain = InspectionMain::create([
+            'id' => $inspectionId,
+            'premis_id' => $premis->id,
+            'user_id' => Auth::id(),
+            'status' => 'DALAM PROSES',
+            'tarikh_periksa' => now()->format('Y-m-d'),
+            'masa_mula' => $request->masa_mula,
+            'masa_tamat' => now()->format('H:i:s'),
     
-        //     'bil_tempatan_lelaki' => $request->bil_tempatan_lelaki,
-        //     'bil_tempatan_perempuan' => $request->bil_tempatan_perempuan,
-        //     'bil_asing_lelaki' => $request->bil_asing_lelaki,
-        //     'bil_asing_perempuan' => $request->bil_asing_perempuan,
+            'bil_tempatan_lelaki' => $request->bil_tempatan_lelaki,
+            'bil_tempatan_perempuan' => $request->bil_tempatan_perempuan,
+            'bil_asing_lelaki' => $request->bil_asing_lelaki,
+            'bil_asing_perempuan' => $request->bil_asing_perempuan,
     
-        //     'kursus_kendalimakanan' => $request->kursus_kendalimakanan,
-        //     'suntikan_tifoid' => $request->suntikan_tifoid,
+            'kursus_kendalimakanan' => $request->kursus_kendalimakanan,
+            'suntikan_tifoid' => $request->suntikan_tifoid,
     
-        //     'status_gt' => $request->status_gt,
+            'status_gt' => $request->status_gt,
     
-        //     'surat_amaran' => $request->surat_amaran,
-        //     'no_kompaun' => $request->no_kompaun,
-        //     'nilai_kompaun' => $request->nilai_kompaun,
+            'surat_amaran' => $request->surat_amaran,
+            'no_kompaun' => $request->no_kompaun,
+            'nilai_kompaun' => $request->nilai_kompaun,
+            'tarikh_tamat' => $request->tarikh_tamat,
+
+            'jumlah_markah' => $jumlahMarkah,
+            'jumlah_demerit' => $jumlahDemerit,
+            'markah' => $markahAkhir,
+            'gred' => $gred,
     
-        //     'source' => 'SYSTEM',
-        // ]);
+            'source' => 'SYSTEM',
+        ]);
+
+        foreach ($request->answers as $answer) {
+
+            if (!empty($answer['component_item_id'])) {
+        
+                $markah = InspectionComponentItem::findOrFail(
+                    $answer['component_item_id']
+                )->markah;
+        
+            } else {
+        
+                $markah = InspectionComponent::findOrFail(
+                    $answer['component_id']
+                )->markah;
+            }
+            InspectionAnswer::create([
+                'main_id' => $inspectionMain->id,
+                'component_id' => $answer['component_id'],
+                'component_item_id' => $answer['component_item_id'] ?? null,
+                'is_patuh' => $answer['is_patuh'],
+                'markah_diperolehi' => $answer['is_patuh'] ? $markah : 0,
+                'demerit' => $answer['is_patuh'] ? 0 : $markah,
+                'catatan' => $answer['catatan'] ?? null,
+        
+            ]);
+        }
     
-       
-    
-        // return redirect()
-        //     ->route('premis.edit', encode($premis->id))
-        //     ->with('success', 'Pemeriksaan berjaya disimpan.');
+        return redirect()
+            ->route('premis.edit', encode($premis->id))
+            ->with('success', 'Pemeriksaan berjaya disimpan.');
     }
 
     /**
@@ -156,6 +241,12 @@ class InspectionController extends Controller
     {
         $inspection = InspectionMain::find(decode($id));
         return view('inspection.show', compact('inspection'));
+    }
+
+    public function keterangan($id)
+    {
+        $inspection = InspectionMain::with('premis')->find(decode($id));
+        return view('inspection.keterangan', compact('inspection'));
     }
 
     /**
@@ -181,6 +272,7 @@ class InspectionController extends Controller
     {
         $inspection = InspectionMain::find(decode($id));
         $inspection->delete();
+        InspectionAnswer::where('main_id', $inspection->id)->delete();
         return redirect()->route('premis.edit', encode($inspection->premis_id))->with('success', 'Pemeriksaan berjaya dihapus.');
     }
 }

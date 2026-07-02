@@ -147,7 +147,7 @@
             <a href="{{ route('premis.edit', encode($premis->id)) }}" class="btn btn-secondary">Kembali</a>
             <button
                 type="button"
-                class="btn btn-primary review" onclick="showReviewModal()">
+                class="btn btn-primary review" onclick="validateForm()">
 
                 Review Penilaian
 

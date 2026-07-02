@@ -145,5 +145,8 @@
 </div>
 <div class="modal-footer">
     <button class="btn" data-bs-dismiss="modal"><i class="flaticon-cancel-12"></i> Tutup</button>
-    <button type="button" class="btn btn-primary">Keterangan</button>
+    <a href="{{ route('premis.inspection.keterangan', encode($inspection->id)) }}"
+        class="btn btn-primary">
+         Keterangan
+     </a>
 </div>
