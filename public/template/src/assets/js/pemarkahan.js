@@ -124,7 +124,7 @@ function calculateGrade(skor)
     if (skor >= 51)
         return 'C';
 
-    return 'D';
+    return 'Gagal';
 }
 
 function showReviewModal()

@@ -246,7 +246,7 @@ class InspectionController extends Controller
     public function keterangan($id)
     {
         $inspection = InspectionMain::with('premis')->find(decode($id));
-        return view('inspection.keterangan', compact('inspection'));
+        return view('keterangan.index', compact('inspection'));
     }
 
     /**
