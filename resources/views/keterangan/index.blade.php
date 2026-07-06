@@ -19,37 +19,37 @@
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Masa Mula</label>
-                                <input type="time" name="masa_mula" class="form-control" value="{{ old('masa_mula', '00:00') }}">
+                                <input type="time" name="masa_mula" class="form-control" value="{{ $inspection->masa_mula }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Masa Tamat (Auto)</label>
-                                <input type="time" name="" class="form-control" value="{{ old('masa_tamat', '00:00') }}" readonly>
+                                <input type="time" name="" class="form-control" value="{{ $inspection->masa_tamat }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Bil. Tempatan Lelaki</label>
-                                <input type="number" name="bil_tempatan_lelaki" class="form-control" value="{{ old('bil_tempatan_lelaki', 0) }}" min="0">
+                                <input type="number" name="bil_tempatan_lelaki" class="form-control" value="{{ $inspection->bil_tempatan_lelaki }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Bil. Tempatan Perempuan</label>
-                                <input type="number" name="bil_tempatan_perempuan" class="form-control" value="{{ old('bil_tempatan_perempuan', 0) }}" min="0">
+                                <input type="number" name="bil_tempatan_perempuan" class="form-control" value="{{ $inspection->bil_tempatan_perempuan }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Bil. Asing Lelaki</label>
-                                <input type="number" name="bil_asing_lelaki" class="form-control" value="{{ old('bil_asing_lelaki', 0) }}" min="0">
+                                <input type="number" name="bil_asing_lelaki" class="form-control" value="{{ $inspection->bil_asing_lelaki }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Bil. Asing Perempuan</label>
-                                <input type="number" name="bil_asing_perempuan" class="form-control" value="{{ old('bil_asing_perempuan', 0) }}" min="0">
+                                <input type="number" name="bil_asing_perempuan" class="form-control" value="{{ $inspection->bil_asing_perempuan }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -57,64 +57,37 @@
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Kursus Kendali Makanan</label>
-                                <input type="number" name="kursus_kendalimakanan" class="form-control" value="{{ old('kursus_kendalimakanan', 0) }}" min="0">
+                                <input type="number" name="kursus_kendalimakanan" class="form-control" value="{{ $inspection->kursus_kendalimakanan }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Suntikan Tifoid</label>
-                                <input type="number" name="suntikan_tifoid" class="form-control" value="{{ old('suntikan_tifoid', 0) }}" min="0">
+                                <input type="number" name="suntikan_tifoid" class="form-control" value="{{ $inspection->suntikan_tifoid }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label>Status GT</label>
-                        
-                                <select name="status_gt" class="form-control">
-                        
-                                    <option value="0"
-                                        {{ old('status_gt', 0) == 0 ? 'selected' : '' }}>
-                                        Tiada
-                                    </option>
-                        
-                                    <option value="1"
-                                        {{ old('status_gt') == 1 ? 'selected' : '' }}>
-                                        Ada
-                                    </option>
-                        
-                                </select>
-                        
-                                <small class="form-text text-muted">
-                                    Sila pilih status GT.
-                                </small>
-                        
+                                <input type="text" name="status_gt" class="form-control" value="{{ $inspection->status_gt }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label>Surat Amaran</label>
-                        
-                                <select name="surat_amaran" class="form-control">
-                        
-                                    <option value="0">Tiada</option>
-                                    <option value="1">Ada</option>
-                        
-                                </select>
-                        
+                                <input type="text" name="surat_amaran" class="form-control" value="{{ $inspection->surat_amaran }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">No Kompaun</label>
-                                <input type="text" name="no_kompaun" class="form-control" value="{{ old('no_kompaun', 'Tiada') }}">
-                                <small id="sh-text3" class="form-text text-muted">Sila masukkan no kompaun jika ada.</small>
+                                <input type="text" name="no_kompaun" class="form-control" value="{{ $inspection->no_kompaun }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Nilai Kompaun</label>
-                                <input type="number" name="nilai_kompaun" class="form-control" value="{{ old('nilai_kompaun', 0) }}" min="0" step="0.01">
-                                <small id="sh-text4" class="form-text text-muted">Sila masukkan nilai kompaun jika ada.</small>
+                                <input type="number" name="nilai_kompaun" class="form-control" value="{{ $inspection->nilai_kompaun }}" readonly>
                             </div>
                         </div>
                     </div> 
@@ -122,13 +95,13 @@
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Tarikh Periksa (Auto)</label>
-                                <input type="date" name="" class="form-control" value="{{ old('tarikh_periksa', now()->format('Y-m-d')) }}" readonly>
+                                <input type="date" name="" class="form-control" value="{{ $inspection->tarikh_periksa }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="name">Tarikh Tamat</label>
-                                <input type="date" name="tarikh_tamat" class="form-control" value="{{ old('tarikh_tamat', now()->format('Y-m-d')) }}">
+                                <input type="date" name="tarikh_tamat" class="form-control" value="{{ $inspection->tarikh_tamat }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -141,14 +114,7 @@
     {{-- tamat accordian 2 --}}
     <br/>
     <div class="card-footer text-end">
-        {{-- <a href="{{ route('premis.edit', encode($premis->id)) }}" class="btn btn-secondary">Kembali</a> --}}
-        <button
-            type="button"
-            class="btn btn-primary review" onclick="validateForm()">
-
-            Review Penilaian
-
-        </button>
+        <a href="{{ route('premis.edit', encode($inspection->premis_id)) }}" class="btn btn-secondary">Kembali</a>
     </div>
 </div>
 @endsection
