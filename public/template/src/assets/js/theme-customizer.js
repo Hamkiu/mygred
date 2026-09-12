@@ -7,7 +7,7 @@
  * 
  */
 
- const corkThemeCustomizer = function(options) {
+const corkThemeCustomizer = function (options) {
 
     let OPTIONS = {
         // _Base: options.base,
@@ -24,8 +24,8 @@
      * @param {  } options
      */
 
-    this.Components = function() {
-        return _components = { 
+    this.Components = function () {
+        return _components = {
             MediaSize,
             Dom,
             Locations
@@ -38,13 +38,13 @@
      * @param { } options 
      */
 
-    this.HTML = function() {
+    this.HTML = function () {
         let _admin_selector = document.querySelector('.main-container');
         let _page_selector = document.body;
 
         let _get_dataPage = document.body.dataset.page;
         let _get_dataMain = document.body.dataset.main;
-        
+
         let $html_TriggerButton = `<div class="theme-customizer-trigger">
             <div class="tct-trigger-content">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -160,7 +160,7 @@
 
 
 
-    
+
         let content_3 = "";
 
         if ((_get_dataPage !== undefined) || (_get_dataPage === `true`)) {
@@ -178,8 +178,8 @@
         }
 
 
-        
-        
+
+
         let $html_ThemeCustomizer = `<aside class="theme-customizor-container">
 
         <div class="tc-header">
@@ -209,8 +209,8 @@
                                     <div class="row">
 
                                     ${((sessionStorage.getItem('_LayoutName') !== 'Horizontal Light Menu') && (sessionStorage.getItem('_LayoutName') !== 'Horizontal Dark Menu')) ?
-                                    
-                                        `<div class="col-6">
+
+                `<div class="col-6">
                                             <div class="tc-option tc-card-switch">
 
                                                 <label class="tc-option mb-0 me-0" for="theme-collapsible">
@@ -241,11 +241,11 @@
                                             </div>
                                         </div>`
 
-                                    :
+                :
 
-                                    ``
+                ``
 
-                                    }
+            }
 
                                         <div class="${((sessionStorage.getItem('_LayoutName') !== 'Horizontal Light Menu') && (sessionStorage.getItem('_LayoutName') !== 'Horizontal Dark Menu')) ? `col-6` : `col-7 mx-auto`} ">
                                             <div class="tc-option tc-card-switch">
@@ -476,13 +476,13 @@
                                     <div class="rtl text-center">
 
                                         ${((_get_dataPage !== undefined) || (_get_dataPage === `true`)) ?
-                                             
-                                            `<a href="../html/rtl/vertical-light-menu/index.html" target="_blank" class="btn btn-gradient-secondary">View</a>`
-                                            
-                                            :
-                                            
-                                            `<a href="../rtl/vertical-light-menu/index.html" target="_blank" class="btn btn-gradient-secondary">View</a>`
-                                        }
+
+                `<a href="../html/rtl/vertical-light-menu/index.html" target="_blank" class="btn btn-gradient-secondary">View</a>`
+
+                :
+
+                `<a href="../rtl/vertical-light-menu/index.html" target="_blank" class="btn btn-gradient-secondary">View</a>`
+            }
                                         
                                     </div>
                                 </div>
@@ -498,17 +498,17 @@
         </div>
 
     </aside>`;
-                
 
-    // console.log(_admin_selector);
-    if (_admin_selector !== null) {
-        _admin_selector.insertAdjacentHTML('afterend', $html_TriggerButton)
-        _admin_selector.insertAdjacentHTML('afterend', $html_ThemeCustomizer)
-    } else {
-        console.log(_page_selector)
-        _page_selector.insertAdjacentHTML('beforeend', $html_TriggerButton)
-        _page_selector.insertAdjacentHTML('beforeend', $html_ThemeCustomizer)
-    }
+
+        // console.log(_admin_selector);
+        if (_admin_selector !== null) {
+            _admin_selector.insertAdjacentHTML('afterend', $html_TriggerButton)
+            _admin_selector.insertAdjacentHTML('afterend', $html_ThemeCustomizer)
+        } else {
+            console.log(_page_selector)
+            _page_selector.insertAdjacentHTML('beforeend', $html_TriggerButton)
+            _page_selector.insertAdjacentHTML('beforeend', $html_ThemeCustomizer)
+        }
 
 
         this.ThemeLayout();
@@ -516,24 +516,24 @@
         this.ThemeCustomizerScroll();
 
     }
-    
+
 
     /**
      * @function ThemeLayout
      * @param {  } options
      */
 
-    this.ThemeLayout = function() {
+    this.ThemeLayout = function () {
 
         let DomCustomizer = {
             _class: {
                 themeInput: document.querySelectorAll('.theme-customization-input')
             }
         }
-        
+
         DomCustomizer._class.themeInput.forEach(element => {
 
-            element.addEventListener('change', function() {
+            element.addEventListener('change', function () {
 
                 let _GetInputNameAttribute = this.name;
                 let _GetInputValueAttribute = this.value;
@@ -543,25 +543,25 @@
                 switch (_GetInputNameAttribute) {
 
                     case 'theme-colorScheme-style':
-                        
+
                         switch (_GetInputValueAttribute) {
                             case 'theme-light':
                                 document.body.classList.remove('dark');
                                 document.querySelector(`#theme-dark-mode`).checked = false;
                                 sessionStorage.setItem('_LayoutDark', false);
                                 break;
-                                
+
                             case 'theme-dark':
                                 document.body.classList.add('dark');
                                 document.querySelector(`#theme-light-mode`).checked = false;
                                 sessionStorage.setItem('_LayoutDark', true);
                                 break;
-                        
+
                             default:
                                 console.error('Undefined value');
                                 break;
                         }
-                        
+
                         break;
 
 
@@ -576,9 +576,9 @@
                             document.body.classList.remove('layout-theme-monochrome');
                             sessionStorage.setItem('_LayoutMonochrome', false);
                         }
-                        
+
                         break;
-                        
+
                     case 'theme-menu-settings-collaspible':
 
                         if (document.querySelector(`[name="${_GetInputNameAttribute}"]`).checked === true) {
@@ -600,17 +600,17 @@
                         break;
 
                     // LAYOUT = FULL AND BOXED
-                    
+
                     case 'theme-layout-width':
 
                         switch (_GetInputValueAttribute) {
 
                             case 'full':
 
-                                if ((_get_PageData === undefined) || (_get_PageData !== `true`))  {
+                                if ((_get_PageData === undefined) || (_get_PageData !== `true`)) {
 
                                     get_layoutName = sessionStorage.getItem("_LayoutName");
-                                    
+
                                     if ((get_layoutName === "Vertical Light Menu") || (get_layoutName === "Vertical Dark Menu")) {
                                         document.querySelector('.middle-content').classList.remove('container-xxl');
                                     } else if ((get_layoutName === "Modern Light Menu") || (get_layoutName === "Modern Dark Menu")) {
@@ -620,23 +620,23 @@
                                         document.querySelector('.header-container .header').classList.remove('container-xxl');
                                         document.querySelector('.topbar-wrapper .menu-categories').classList.remove('container-xxl');
                                         document.querySelector('.middle-content').classList.remove('container-xxl');
-                                        
+
                                     } else {
                                         console.warn("No layout Defined");
                                     }
-                                    
+
                                 }
                                 document.body.classList.remove("layout-boxed");
                                 document.querySelector(`#theme-boxed-mode`).checked = false;
                                 sessionStorage.setItem('_LayoutBoxed', false);
                                 break;
-                                
+
                             case 'boxed':
-                                    
-                                if ((_get_PageData === undefined) || (_get_PageData !== `true`))  {
+
+                                if ((_get_PageData === undefined) || (_get_PageData !== `true`)) {
 
                                     get_layoutName = sessionStorage.getItem("_LayoutName");
-                                    
+
                                     if ((get_layoutName === "Vertical Light Menu") || (get_layoutName === "Vertical Dark Menu")) {
                                         document.querySelector('.middle-content').classList.add('container-xxl');
                                     } else if ((get_layoutName === "Modern Light Menu") || (get_layoutName === "Modern Dark Menu")) {
@@ -650,19 +650,19 @@
                                         console.warn("No layout Defined");
                                     }
                                 }
-                                
+
                                 document.body.classList.add("layout-boxed");
                                 document.querySelector(`#theme-full-mode`).checked = false;
                                 sessionStorage.setItem('_LayoutBoxed', true);
                                 break;
-                        
+
                             default:
                                 console.error('Undefined value')
                                 break;
                         }
-                        
+
                         break;
-                
+
                     default:
                         console.error('default value')
                         break;
@@ -676,32 +676,32 @@
      * @param {  } options
      */
 
-    this.Active = function() {
+    this.Active = function () {
 
         // Monochrome
 
         let _get_LayoutMonochrome = sessionStorage.getItem('_LayoutMonochrome');
         let _convert_Parse_LayoutMonochrome = JSON.parse(_get_LayoutMonochrome)
-        
+
         if (_convert_Parse_LayoutMonochrome) {
             document.querySelector('.theme-customization-input#theme-monochrome').checked = true
         } else {
             document.querySelector('.theme-customization-input#theme-monochrome').checked = false
         }
-        
+
         //  Menu Collapsible
 
         if ((sessionStorage.getItem("_LayoutName") !== "Horizontal Light Menu") && (sessionStorage.getItem("_LayoutName") !== "Horizontal Dark Menu")) {
             let _get_LayoutCollapsible = sessionStorage.getItem('_LayoutAltMenu');
             let _convert_Parse_LayoutCollapsible = JSON.parse(_get_LayoutCollapsible)
-    
+
             if (_convert_Parse_LayoutCollapsible) {
                 document.querySelector(`.theme-customization-input#theme-collapsible`).checked = true;
             } else {
                 document.querySelector(`.theme-customization-input#theme-collapsible`).checked = false;
             }
         }
-        
+
 
         //  Boxed
 
@@ -735,14 +735,14 @@
      * @param {  } options
      */
 
-    this.ThemeCustomizerScroll = function() {
+    this.ThemeCustomizerScroll = function () {
         themeCustomizerScroll = new PerfectScrollbar('.tc-options-categories', {
-            wheelSpeed:.5,
-            swipeEasing:!0,
-            minScrollbarLength:40,
-            maxScrollbarLength:300,
-            suppressScrollX : true
-        });        
+            wheelSpeed: .5,
+            swipeEasing: !0,
+            minScrollbarLength: 40,
+            maxScrollbarLength: 300,
+            suppressScrollX: true
+        });
     }
 
     /**
@@ -750,47 +750,47 @@
      * @param {  } options
      */
 
-     this.Reset = function() {
+    this.Reset = function () {
         if (sessionStorage.length) {
             sessionStorage.clear();
             window.location.reload();
         }
-     }
+    }
 
-     /**
-     * @access themeCustomizer Functions
-     * @param
-     * @functions 
-     */
+    /**
+    * @access themeCustomizer Functions
+    * @param
+    * @functions 
+    */
 
-    this.themeCustomizerTrigger = function() {
+    this.themeCustomizerTrigger = function () {
         setTimeout(() => {
             let _getThemeTrigger = document.querySelector('.theme-customizer-trigger');
             let _getThemeCustomizerOverlay = document.querySelector('.tc-overlay');
-            
-            _getThemeTrigger.addEventListener('click', function() {
+
+            _getThemeTrigger.addEventListener('click', function () {
                 document.body.classList.add('theme-customizer-show')
                 _getThemeCustomizerOverlay.classList.add('show');
             })
-            document.querySelector('.tc-action-close .tc-btn-action-close').addEventListener('click', function() {
+            document.querySelector('.tc-action-close .tc-btn-action-close').addEventListener('click', function () {
                 document.body.classList.remove('theme-customizer-show')
                 _getThemeCustomizerOverlay.classList.remove('show');
             })
-        
+
             if (!sessionStorage.themeCustomizer) {
                 document.body.classList.add('theme-customizer-show')
                 _getThemeCustomizerOverlay.classList.add('show');
-                sessionStorage.setItem('themeCustomizer', true);                    
+                sessionStorage.setItem('themeCustomizer', true);
             }
-            
-            _getThemeCustomizerOverlay.addEventListener('click', function() {
+
+            _getThemeCustomizerOverlay.addEventListener('click', function () {
                 document.body.classList.remove('theme-customizer-show')
                 _getThemeCustomizerOverlay.classList.remove('show');
             })
-        }, 500);  
+        }, 500);
     }
-     
-     
+
+
 
     /**
      * @access Init Functions
@@ -799,26 +799,26 @@
      */
 
     this.HTML();
-    
+
 }
 
 setTimeout(() => {
-    
+
     /**
      *  @access corkThemeCustomizer()
      */
-    
-        let ThemeCustomizer = new corkThemeCustomizer();
-        
-        
-    
+
+    let ThemeCustomizer = new corkThemeCustomizer();
+
+
+
     /**
      *  @Reset
     */
-    
-    document.querySelector('.reset-btn').addEventListener('click', function() {
+
+    document.querySelector('.reset-btn').addEventListener('click', function () {
         ThemeCustomizer.Reset();
     })
-    
+
     ThemeCustomizer.themeCustomizerTrigger();
 }, 400);

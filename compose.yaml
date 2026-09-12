@@ -1,0 +1,95 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+
+        container_name: mygred_app
+
+        working_dir: /var/www/html
+
+        volumes:
+            - .:/var/www/html
+
+        env_file:
+            - .env.docker
+
+        depends_on:
+            - db
+
+    nginx:
+        image: nginx:alpine
+
+        container_name: mygred_nginx
+
+        restart: unless-stopped
+
+        ports:
+            - "8100:80"
+
+        volumes:
+            - .:/var/www/html
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+        depends_on:
+            - app
+
+    db:
+        image: mysql:8.0
+
+        container_name: mygred_db
+
+        restart: unless-stopped
+
+        environment:
+            MYSQL_DATABASE: mygred
+            MYSQL_USER: mygred
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: root
+
+        ports:
+            - "3309:3306"
+
+        volumes:
+            - mygred_db_data:/var/lib/mysql
+
+    node:
+        image: node:22
+
+        container_name: mygred_node
+
+        working_dir: /var/www/html
+
+        volumes:
+            - .:/var/www/html
+
+        ports:
+            - "5175:5173"
+
+        command: npm run dev -- --host 0.0.0.0
+
+    queue:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+
+        container_name: mygred_queue
+
+        working_dir: /var/www/html
+
+        volumes:
+            - .:/var/www/html
+
+        env_file:
+            - .env.docker
+
+        command: php artisan queue:work --tries=1 --timeout=90
+
+        restart: unless-stopped
+
+        depends_on:
+            - db
+
+volumes:
+    mygred_db_data:
+    node_modules:
