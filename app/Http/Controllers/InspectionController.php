@@ -22,42 +22,42 @@ class InspectionController extends Controller
         return view('inspection.index');
     }
 
-    public function list(Request $request,$id)
+    public function list(Request $request, $id)
     {
         $query = InspectionMain::where('premis_id', decode($id))->get();
         return DataTables::of($query)
-        ->addIndexColumn()
-        ->addColumn('status', function ($row) {
-            $btn = '';
-            if ($row->status == 'DALAM PROSES') {
-                $btn .= '<span class="badge bg-warning">'.$row->status.'</span>';
-            } elseif ($row->status == 'AKTIF') {
-                $btn .= '<span class="badge bg-success">'.$row->status.'</span>';
-            } else {
-                $btn .= '<span class="badge bg-danger">'.$row->status.'</span>';
-            }
-            return $btn;
-        })
-        ->addColumn('tarikh_periksa', function ($row) {
-            $name = optional($row->user)->name;
-            $date = date('d/m/Y', strtotime($row->tarikh_periksa));
-            return $name.'<br/>&emsp;'.$date;
-        })
-        ->addColumn('tarikh_tamat', function ($row) {
-            if ($row->tarikh_tamat) {
-                return date('d/m/Y', strtotime($row->tarikh_tamat));
-            } else {
-                return '-';
-            }
-        })
-        ->addColumn('tindakan', function ($row) {
-            $btn = '';
-            $btn .= ' <button type="button" class="btn btn-outline-warning btn-sm me-1 viewInspection" data-id="'.encode($row->id).'" title="View Inspection"><i data-feather="eye"></i></button>';
-            $btn .= ' <a href="'.route('inspection.destroy', encode($row->id)).'" class="btn btn-outline-danger btn-sm me-1" title="Delete Inspection"><i data-feather="trash-2"></i></a>';
-            return $btn;
-        })
-        ->rawColumns(['tindakan','tarikh_periksa','tarikh_tamat','status'])
-        ->make(true);
+            ->addIndexColumn()
+            ->addColumn('status', function ($row) {
+                $btn = '';
+                if ($row->status == 'DALAM PROSES') {
+                    $btn .= '<span class="badge bg-warning">' . $row->status . '</span>';
+                } elseif ($row->status == 'AKTIF') {
+                    $btn .= '<span class="badge bg-success">' . $row->status . '</span>';
+                } else {
+                    $btn .= '<span class="badge bg-danger">' . $row->status . '</span>';
+                }
+                return $btn;
+            })
+            ->addColumn('tarikh_periksa', function ($row) {
+                $name = optional($row->user)->name;
+                $date = date('d/m/Y', strtotime($row->tarikh_periksa));
+                return $name . '<br/>&emsp;' . $date;
+            })
+            ->addColumn('tarikh_tamat', function ($row) {
+                if ($row->tarikh_tamat) {
+                    return date('d/m/Y', strtotime($row->tarikh_tamat));
+                } else {
+                    return '-';
+                }
+            })
+            ->addColumn('tindakan', function ($row) {
+                $btn = '';
+                $btn .= ' <button type="button" class="btn btn-outline-warning btn-sm me-1 viewInspection" data-id="' . encode($row->id) . '" title="View Inspection"><i data-feather="eye"></i></button>';
+                $btn .= ' <a href="' . route('inspection.destroy', encode($row->id)) . '" class="btn btn-outline-danger btn-sm me-1" title="Delete Inspection"><i data-feather="trash-2"></i></a>';
+                return $btn;
+            })
+            ->rawColumns(['tindakan', 'tarikh_periksa', 'tarikh_tamat', 'status'])
+            ->make(true);
     }
 
     /**
@@ -67,29 +67,29 @@ class InspectionController extends Controller
     {
         $premis = MaklumatPremis::find(decode($id));
         $sections = InspectionSection::with(['components.items'])->orderBy('sort')->get();
-    
-        return view('inspection.create',compact('sections','premis'));
+
+        return view('inspection.create', compact('sections', 'premis'));
     }
 
     public function review(Request $request, $id)
     {
         $premis = MaklumatPremis::findOrFail(decode($id));
-    
+
         $sections = InspectionSection::with([
             'components.items'
         ])->get();
-    
+
         $answers = $request->answers;
-    
+
         $jumlahMarkah = 0;
         $jumlahDemerit = 0;
-    
+
         foreach ($answers as $answer) {
-    
+
             $jumlahMarkah += $answer['markah'] ?? 0;
             $jumlahDemerit += $answer['demerit'] ?? 0;
         }
-    
+
         return view(
             'inspection.review',
             compact(
@@ -115,7 +115,7 @@ class InspectionController extends Controller
         // ]);
 
         // dd("asd");
-        $premis = MaklumatPremis::find(decode($id)); 
+        $premis = MaklumatPremis::find(decode($id));
         $jumlahMarkah = 0;
         $jumlahDemerit = 0;
 
@@ -129,7 +129,6 @@ class InspectionController extends Controller
                 $markah = InspectionComponentItem::findOrFail(
                     $answer['component_item_id']
                 )->markah;
-
             } else {
 
                 $markah = InspectionComponent::findOrFail(
@@ -140,7 +139,6 @@ class InspectionController extends Controller
             if ((int)$answer['is_patuh'] === 1) {
 
                 $jumlahMarkah += $markah;
-
             } else {
 
                 $jumlahDemerit += $markah;
@@ -155,22 +153,19 @@ class InspectionController extends Controller
         if ($markahAkhir >= 86) {
 
             $gred = 'A';
-
         } elseif ($markahAkhir >= 71) {
 
             $gred = 'B';
-
         } elseif ($markahAkhir >= 51) {
 
             $gred = 'C';
-
         } else {
 
             $gred = 'Gagal';
         }
 
         $inspectionId = generateId('IN', 'inspection_mains', 'id');
-    
+
         $inspectionMain = InspectionMain::create([
             'id' => $inspectionId,
             'premis_id' => $premis->id,
@@ -179,17 +174,17 @@ class InspectionController extends Controller
             'tarikh_periksa' => now()->format('Y-m-d'),
             'masa_mula' => $request->masa_mula,
             'masa_tamat' => now()->format('H:i:s'),
-    
+
             'bil_tempatan_lelaki' => $request->bil_tempatan_lelaki,
             'bil_tempatan_perempuan' => $request->bil_tempatan_perempuan,
             'bil_asing_lelaki' => $request->bil_asing_lelaki,
             'bil_asing_perempuan' => $request->bil_asing_perempuan,
-    
+
             'kursus_kendalimakanan' => $request->kursus_kendalimakanan,
             'suntikan_tifoid' => $request->suntikan_tifoid,
-    
+
             'status_gt' => $request->status_gt,
-    
+
             'surat_amaran' => $request->surat_amaran,
             'no_kompaun' => $request->no_kompaun,
             'nilai_kompaun' => $request->nilai_kompaun,
@@ -199,20 +194,19 @@ class InspectionController extends Controller
             'jumlah_demerit' => $jumlahDemerit,
             'markah' => $markahAkhir,
             'gred' => $gred,
-    
+
             'source' => 'SYSTEM',
         ]);
 
         foreach ($request->answers as $answer) {
 
             if (!empty($answer['component_item_id'])) {
-        
+
                 $markah = InspectionComponentItem::findOrFail(
                     $answer['component_item_id']
                 )->markah;
-        
             } else {
-        
+
                 $markah = InspectionComponent::findOrFail(
                     $answer['component_id']
                 )->markah;
@@ -225,10 +219,10 @@ class InspectionController extends Controller
                 'markah_diperolehi' => $answer['is_patuh'] ? $markah : 0,
                 'demerit' => $answer['is_patuh'] ? 0 : $markah,
                 'catatan' => $answer['catatan'] ?? null,
-        
+
             ]);
         }
-    
+
         return redirect()
             ->route('premis.edit', encode($premis->id))
             ->with('success', 'Pemeriksaan berjaya disimpan.');
@@ -245,8 +239,61 @@ class InspectionController extends Controller
 
     public function keterangan($id)
     {
-        $inspection = InspectionMain::with('premis')->find(decode($id));
-        return view('keterangan.index', compact('inspection'));
+        $inspection = InspectionMain::with('premis')
+            ->findOrFail(decode($id));
+
+        /*
+    |--------------------------------------------------------------------------
+    | Ambil Struktur Pemarkahan
+    |--------------------------------------------------------------------------
+    */
+
+        $sections = InspectionSection::with([
+            'components.items'
+        ])
+            ->orderBy('code')
+            ->get();
+
+        /*
+    |--------------------------------------------------------------------------
+    | Ambil Jawapan Inspection
+    |--------------------------------------------------------------------------
+    */
+
+        $savedAnswers = InspectionAnswer::where('main_id', $inspection->id)
+            ->get();
+
+        /*
+    |--------------------------------------------------------------------------
+    | Mapping Jawapan
+    |--------------------------------------------------------------------------
+    |
+    | Component yang mempunyai item:
+    | item_1, item_2, item_3...
+    |
+    | Component yang tidak mempunyai item:
+    | component_1, component_2...
+    |
+    */
+
+        $answers = [];
+
+        foreach ($savedAnswers as $answer) {
+
+            if (!empty($answer->component_item_id)) {
+
+                $answers['item_' . $answer->component_item_id] = $answer;
+            } else {
+
+                $answers['component_' . $answer->component_id] = $answer;
+            }
+        }
+
+        return view('keterangan.index', compact(
+            'inspection',
+            'sections',
+            'answers'
+        ));
     }
 
     /**
